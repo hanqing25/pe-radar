@@ -247,6 +247,86 @@
     gap: 7px;
   }
 
+  .target-panel {
+    overflow: visible;
+  }
+
+  .panel-toolbar {
+    min-width: 0;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 11px;
+    margin-bottom: 12px;
+  }
+
+  .filters {
+    justify-content: space-between;
+  }
+
+  .filters label,
+  .filters button {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .table-head {
+    display: none;
+  }
+
+  .target-list {
+    min-width: 0;
+    background: transparent;
+  }
+
+  .target-row {
+    min-height: 126px;
+    margin-bottom: 9px;
+    padding: 13px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "company score"
+      "owner owner"
+      "size status";
+    gap: 10px 12px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: #fff;
+  }
+
+  .target-row.selected {
+    background: #eef4f1;
+  }
+
+  .target-row .company-cell {
+    grid-area: company;
+  }
+
+  .target-row .owner-cell {
+    grid-area: owner;
+    padding-top: 8px;
+    border-top: 1px solid var(--soft);
+  }
+
+  .target-row .size-cell {
+    grid-area: size;
+  }
+
+  .target-row .score-cell {
+    grid-area: score;
+    align-self: start;
+  }
+
+  .target-row > span:nth-child(5) {
+    grid-area: status;
+    justify-self: end;
+  }
+
+  .target-row > svg {
+    display: none;
+  }
+
   .universe-wrap,
   .credit-layout {
     padding: 14px 12px;
