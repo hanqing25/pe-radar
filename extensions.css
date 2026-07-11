@@ -177,6 +177,30 @@
   color: var(--red);
 }
 
+.action-section {
+  border-left: 3px solid var(--green);
+  padding-left: 11px;
+}
+
+.trigger-list {
+  display: grid;
+  gap: 7px;
+}
+
+.trigger-list span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #586562;
+  font-size: 8px;
+  line-height: 1.4;
+}
+
+.trigger-list svg {
+  flex: 0 0 auto;
+  color: var(--amber);
+}
+
 @media (max-width: 1080px) {
   .credit-layout {
     grid-template-columns: 1fr;
@@ -216,9 +240,49 @@
     width: min(32vw, 125px);
   }
 
+  .view-heading {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-content: center;
+    gap: 7px;
+  }
+
   .universe-wrap,
   .credit-layout {
     padding: 14px 12px;
+  }
+
+  .credit-table {
+    min-width: 0;
+    border: 0;
+    background: transparent;
+  }
+
+  .credit-table > header {
+    display: none;
+  }
+
+  .credit-table > a {
+    min-height: 132px;
+    margin-bottom: 9px;
+    padding: 14px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    align-items: start;
+    border: 1px solid var(--line);
+    background: #fff;
+  }
+
+  .credit-table > a > span:first-child,
+  .credit-table > a > em {
+    grid-column: 1 / -1;
+  }
+
+  .credit-table > a > strong,
+  .credit-table > a > span {
+    min-width: 0;
+    overflow-wrap: anywhere;
   }
 }
 
