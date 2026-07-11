@@ -1,0 +1,951 @@
+{
+  "generated_at": "2026-07-06T17:45:39.786002+00:00",
+  "targets": [
+    {
+      "aliases": [
+        "H&MV",
+        "H&MV Engineering"
+      ],
+      "company_name": "H&MV Engineering",
+      "country": "Ireland",
+      "current_owner": "Exponent",
+      "entry_date": "2022-01-01",
+      "estimated_ev_usd_m": 1100,
+      "evidence": [
+        {
+          "date": "2026-07-04",
+          "note": "Reported as approaching roughly EUR 1bn valuation as Exponent considers a single-asset continuation/stake restructuring. Paywalled public source; verify before outreach.",
+          "source": "The Times",
+          "url": "https://www.thetimes.com/world/ireland-world/article/hmv-engineering-limerick-exponent-shareholder-restructuring-billion-valuation-business-ireland-dskjnj20x"
+        }
+      ],
+      "hold_years": 4.5,
+      "recommendation": "Reach out / deep dive",
+      "region": "Europe",
+      "related_signals": [],
+      "scores": {
+        "availability": 91,
+        "business_quality": 90,
+        "hsg_fit": 58,
+        "pe_suitability": 78,
+        "total": 80
+      },
+      "sector": "infrastructure services",
+      "status": "active_watch",
+      "sub_sector": "data-center and grid electrical engineering",
+      "tags": [
+        "international expansion",
+        "mission-critical",
+        "profitable growth",
+        "data centers",
+        "energy transition"
+      ]
+    },
+    {
+      "aliases": [
+        "Singular Bank"
+      ],
+      "company_name": "Singular Bank",
+      "country": "Spain",
+      "current_owner": "Warburg Pincus",
+      "entry_date": null,
+      "estimated_ev_usd_m": null,
+      "evidence": [
+        {
+          "date": "2026-07-06",
+          "note": "PE Hub Europe headline reported Warburg Pincus to exit Singular Bank. Verify valuation, process status, and buyer universe.",
+          "source": "PE Hub Europe",
+          "url": "https://www.pehub.com/regions_and_countries/europe/"
+        }
+      ],
+      "hold_years": null,
+      "recommendation": "Watch closely",
+      "region": "Europe",
+      "related_signals": [
+        {
+          "company_name": "Singular Bank",
+          "confidence": "reported",
+          "created_at": "2026-07-06T17:45:39.117898+00:00",
+          "excerpt": "Warburg Pincus to exit Singular Bank",
+          "matched_sponsors": [
+            "Warburg Pincus"
+          ],
+          "matched_terms": [
+            "to exit"
+          ],
+          "region": "Europe",
+          "signal_type": "sale_process",
+          "source_name": "pehub_europe",
+          "source_tier": "deal_news",
+          "source_url": "https://www.pehub.com/regions_and_countries/europe/"
+        }
+      ],
+      "scores": {
+        "availability": 53,
+        "business_quality": 86,
+        "hsg_fit": 58,
+        "pe_suitability": 78,
+        "total": 68
+      },
+      "sector": "financial services",
+      "status": "sale_signal",
+      "sub_sector": "private banking and wealth platform",
+      "tags": [
+        "regulated workflow",
+        "recurring revenue",
+        "wealth management"
+      ]
+    },
+    {
+      "aliases": [
+        "D-Marin",
+        "D Marin"
+      ],
+      "company_name": "D-Marin",
+      "country": "Europe",
+      "current_owner": "CVC Capital Partners",
+      "entry_date": null,
+      "estimated_ev_usd_m": null,
+      "evidence": [
+        {
+          "date": "2026-07-06",
+          "note": "PE Hub Europe headline reported CVC agreed sale of D-Marin to InfraVia. Treat as completed/late-stage exit signal pending full article verification.",
+          "source": "PE Hub Europe",
+          "url": "https://www.pehub.com/regions_and_countries/europe/"
+        }
+      ],
+      "hold_years": null,
+      "recommendation": "Watch closely",
+      "region": "Europe",
+      "related_signals": [
+        {
+          "company_name": "D-Marin",
+          "confidence": "reported",
+          "created_at": "2026-07-06T17:45:39.117028+00:00",
+          "excerpt": "CVC agrees sale of D-Marin to InfraVia",
+          "matched_sponsors": [
+            "CVC Capital Partners"
+          ],
+          "matched_terms": [
+            "agrees sale"
+          ],
+          "region": "Europe",
+          "signal_type": "exit_completed",
+          "source_name": "pehub_europe",
+          "source_tier": "deal_news",
+          "source_url": "https://www.pehub.com/regions_and_countries/europe/"
+        }
+      ],
+      "scores": {
+        "availability": 27,
+        "business_quality": 82,
+        "hsg_fit": 86,
+        "pe_suitability": 82,
+        "total": 66
+      },
+      "sector": "consumer",
+      "status": "late_exit_signal",
+      "sub_sector": "premium marina operator",
+      "tags": [
+        "brand",
+        "real assets",
+        "tourism",
+        "fragmented market"
+      ]
+    },
+    {
+      "aliases": [
+        "Marshall",
+        "Marshall Group"
+      ],
+      "company_name": "Marshall Group",
+      "country": "Sweden / United Kingdom",
+      "current_owner": "HSG",
+      "entry_date": "2025-01-24",
+      "estimated_ev_usd_m": 1150,
+      "evidence": [
+        {
+          "date": "2025-01-24",
+          "note": "HSG agreed to acquire a majority stake from Altor, Telia Company, Time for Growth, and Zenith VC at a reported EUR 1.1bn valuation; useful as an HSG-fit precedent, not a current target.",
+          "source": "audioXpress",
+          "url": "https://audioxpress.com/news/marshall-group-sold-to-hongshan-capital-group-hsg"
+        }
+      ],
+      "exclude_from_shortlist": true,
+      "hold_years": 1.4,
+      "recommendation": "Precedent only",
+      "region": "Europe",
+      "related_signals": [],
+      "scores": {
+        "availability": 15,
+        "business_quality": 94,
+        "hsg_fit": 92,
+        "pe_suitability": 79,
+        "total": 67
+      },
+      "sector": "consumer",
+      "status": "hsg_precedent",
+      "sub_sector": "iconic audio and music brand",
+      "tags": [
+        "brand",
+        "category leader",
+        "digital channels",
+        "international expansion",
+        "repeat purchase",
+        "supply chain optimization"
+      ]
+    },
+    {
+      "aliases": [
+        "Benchmark",
+        "Benchmark Capital"
+      ],
+      "company_name": "Benchmark Capital",
+      "country": "United Kingdom",
+      "current_owner": "Soderberg & Partners (KKR/TA-backed)",
+      "entry_date": "2026-07-06",
+      "estimated_ev_usd_m": null,
+      "evidence": [
+        {
+          "date": "2026-07-06",
+          "note": "Schroders announced sale to Soderberg & Partners, which is backed by KKR and TA Associates. Completed transaction; useful for wealth/financial-services category mapping.",
+          "source": "Financial News London",
+          "url": "https://www.fnlondon.com/articles/schroders-sells-financial-planning-arm-benchmark-capital-to-swedens-soderberg-440fb38d"
+        }
+      ],
+      "exclude_from_shortlist": true,
+      "hold_years": 0.0,
+      "recommendation": "Precedent only",
+      "region": "Europe",
+      "related_signals": [],
+      "scores": {
+        "availability": 15,
+        "business_quality": 86,
+        "hsg_fit": 58,
+        "pe_suitability": 86,
+        "total": 58
+      },
+      "sector": "financial services",
+      "status": "completed_transaction",
+      "sub_sector": "wealth management platform and adviser technology",
+      "tags": [
+        "regulated workflow",
+        "recurring revenue",
+        "platform",
+        "financial advice"
+      ]
+    },
+    {
+      "aliases": [
+        "Skello"
+      ],
+      "company_name": "Skello",
+      "country": "France",
+      "current_owner": "Bridgepoint",
+      "entry_date": "2026-07-06",
+      "estimated_ev_usd_m": null,
+      "evidence": [
+        {
+          "date": "2026-07-06",
+          "note": "PE Hub Europe headline reported Bridgepoint backing Skello with EUR 200m minority investment. Below current EV target but relevant vertical software watch item.",
+          "source": "PE Hub Europe",
+          "url": "https://www.pehub.com/regions_and_countries/europe/"
+        }
+      ],
+      "exclude_from_shortlist": true,
+      "hold_years": 0.0,
+      "recommendation": "Precedent only",
+      "region": "Europe",
+      "related_signals": [
+        {
+          "company_name": "Skello",
+          "confidence": "reported",
+          "created_at": "2026-07-06T17:45:39.117086+00:00",
+          "excerpt": "Bridgepoint backs Skello with €200m minority investment",
+          "matched_sponsors": [
+            "Bridgepoint"
+          ],
+          "matched_terms": [
+            "€"
+          ],
+          "region": "Europe",
+          "signal_type": "valuation_marker",
+          "source_name": "pehub_europe",
+          "source_tier": "deal_news",
+          "source_url": "https://www.pehub.com/regions_and_countries/europe/"
+        }
+      ],
+      "scores": {
+        "availability": 15,
+        "business_quality": 74,
+        "hsg_fit": 84,
+        "pe_suitability": 70,
+        "total": 58
+      },
+      "sector": "software",
+      "status": "below_size_watch",
+      "sub_sector": "workforce management software",
+      "tags": [
+        "recurring revenue",
+        "vertical software",
+        "technology enablement"
+      ]
+    }
+  ],
+  "signals": [
+    {
+      "company_name": "D-Marin",
+      "confidence": "reported",
+      "created_at": "2026-07-06T17:45:39.117028+00:00",
+      "excerpt": "CVC agrees sale of D-Marin to InfraVia",
+      "matched_sponsors": [
+        "CVC Capital Partners"
+      ],
+      "matched_terms": [
+        "agrees sale"
+      ],
+      "region": "Europe",
+      "signal_type": "exit_completed",
+      "source_name": "pehub_europe",
+      "source_tier": "deal_news",
+      "source_url": "https://www.pehub.com/regions_and_countries/europe/"
+    },
+    {
+      "company_name": "Skello",
+      "confidence": "reported",
+      "created_at": "2026-07-06T17:45:39.117086+00:00",
+      "excerpt": "Bridgepoint backs Skello with €200m minority investment",
+      "matched_sponsors": [
+        "Bridgepoint"
+      ],
+      "matched_terms": [
+        "€"
+      ],
+      "region": "Europe",
+      "signal_type": "valuation_marker",
+      "source_name": "pehub_europe",
+      "source_tier": "deal_news",
+      "source_url": "https://www.pehub.com/regions_and_countries/europe/"
+    },
+    {
+      "company_name": null,
+      "confidence": "reported",
+      "created_at": "2026-07-06T17:45:39.117863+00:00",
+      "excerpt": "HIG agrees to acquire a majority stake in Germany’s Terras Group",
+      "matched_sponsors": [],
+      "matched_terms": [
+        "to acquire"
+      ],
+      "region": "Europe",
+      "signal_type": "exit_completed",
+      "source_name": "pehub_europe",
+      "source_tier": "deal_news",
+      "source_url": "https://www.pehub.com/regions_and_countries/europe/"
+    },
+    {
+      "company_name": "Singular Bank",
+      "confidence": "reported",
+      "created_at": "2026-07-06T17:45:39.117898+00:00",
+      "excerpt": "Warburg Pincus to exit Singular Bank",
+      "matched_sponsors": [
+        "Warburg Pincus"
+      ],
+      "matched_terms": [
+        "to exit"
+      ],
+      "region": "Europe",
+      "signal_type": "sale_process",
+      "source_name": "pehub_europe",
+      "source_tier": "deal_news",
+      "source_url": "https://www.pehub.com/regions_and_countries/europe/"
+    },
+    {
+      "company_name": "Lone Star",
+      "confidence": "reported",
+      "created_at": "2026-07-06T17:45:39.117942+00:00",
+      "excerpt": "Lone Star agrees to acquire ContiTech for €4 billion",
+      "matched_sponsors": [],
+      "matched_terms": [
+        "billion",
+        "to acquire",
+        "€"
+      ],
+      "region": "Europe",
+      "signal_type": "exit_completed",
+      "source_name": "pehub_europe",
+      "source_tier": "deal_news",
+      "source_url": "https://www.pehub.com/regions_and_countries/europe/"
+    },
+    {
+      "company_name": "ContiTech in",
+      "confidence": "reported",
+      "created_at": "2026-07-06T17:45:39.117990+00:00",
+      "excerpt": "Foresight eyes industrial decarbonization opportunities; Lone Star to acquire ContiTech in...",
+      "matched_sponsors": [],
+      "matched_terms": [
+        "to acquire"
+      ],
+      "region": "Europe",
+      "signal_type": "exit_completed",
+      "source_name": "pehub_europe",
+      "source_tier": "deal_news",
+      "source_url": "https://www.pehub.com/regions_and_countries/europe/"
+    },
+    {
+      "company_name": "India's Aseem Infrastructure Finance",
+      "confidence": "reported",
+      "created_at": "2026-07-06T17:45:39.617716+00:00",
+      "excerpt": "TPG Rise Climate to acquire India's Aseem Infrastructure Finance from NIIF",
+      "matched_sponsors": [
+        "TPG"
+      ],
+      "matched_terms": [
+        "to acquire"
+      ],
+      "region": "Asia",
+      "signal_type": "exit_completed",
+      "source_name": "dealstreetasia_home",
+      "source_tier": "deal_news",
+      "source_url": "https://www.dealstreetasia.com/"
+    },
+    {
+      "company_name": null,
+      "confidence": "reported",
+      "created_at": "2026-07-06T17:45:39.617821+00:00",
+      "excerpt": "India Deal Review: CRED megadeal powers startup funding past $2b in June",
+      "matched_sponsors": [],
+      "matched_terms": [
+        "$",
+        "ev"
+      ],
+      "region": "Asia",
+      "signal_type": "valuation_marker",
+      "source_name": "dealstreetasia_home",
+      "source_tier": "deal_news",
+      "source_url": "https://www.dealstreetasia.com/"
+    },
+    {
+      "company_name": "Kuaishou's HK-listed shares",
+      "confidence": "reported",
+      "created_at": "2026-07-06T17:45:39.617938+00:00",
+      "excerpt": "Tencent unit seeks up to $1.6b from sale of Kuaishou's HK-listed shares",
+      "matched_sponsors": [],
+      "matched_terms": [
+        "$"
+      ],
+      "region": "Asia",
+      "signal_type": "valuation_marker",
+      "source_name": "dealstreetasia_home",
+      "source_tier": "deal_news",
+      "source_url": "https://www.dealstreetasia.com/"
+    },
+    {
+      "company_name": null,
+      "confidence": "reported",
+      "created_at": "2026-07-06T17:45:39.617982+00:00",
+      "excerpt": "Taiwanese chip firm Unimicron seeks $1.4b from global share sale to tap AI boom",
+      "matched_sponsors": [],
+      "matched_terms": [
+        "$",
+        "sale to"
+      ],
+      "region": "Asia",
+      "signal_type": "exit_completed",
+      "source_name": "dealstreetasia_home",
+      "source_tier": "deal_news",
+      "source_url": "https://www.dealstreetasia.com/"
+    },
+    {
+      "company_name": "Malaysian firm",
+      "confidence": "reported",
+      "created_at": "2026-07-06T17:45:39.618062+00:00",
+      "excerpt": "India Digest: Fintech firm Navi eyes IPO; AscentHR acquires Malaysian firm",
+      "matched_sponsors": [],
+      "matched_terms": [
+        "acquires",
+        "ipo"
+      ],
+      "region": "Asia",
+      "signal_type": "add_on",
+      "source_name": "dealstreetasia_home",
+      "source_tier": "deal_news",
+      "source_url": "https://www.dealstreetasia.com/"
+    },
+    {
+      "company_name": null,
+      "confidence": "reported",
+      "created_at": "2026-07-06T17:45:39.618127+00:00",
+      "excerpt": "Record wave of IPO lock-up shares to hit Hong Kong market",
+      "matched_sponsors": [],
+      "matched_terms": [
+        "ipo"
+      ],
+      "region": "Asia",
+      "signal_type": "ipo_prep",
+      "source_name": "dealstreetasia_home",
+      "source_tier": "deal_news",
+      "source_url": "https://www.dealstreetasia.com/"
+    },
+    {
+      "company_name": null,
+      "confidence": "reported",
+      "created_at": "2026-07-06T17:45:39.618176+00:00",
+      "excerpt": "S Korea’s SK Hynix to launch $28b US listing to ride global AI wave",
+      "matched_sponsors": [],
+      "matched_terms": [
+        "$",
+        "listing"
+      ],
+      "region": "Asia",
+      "signal_type": "ipo_prep",
+      "source_name": "dealstreetasia_home",
+      "source_tier": "deal_news",
+      "source_url": "https://www.dealstreetasia.com/"
+    },
+    {
+      "company_name": null,
+      "confidence": "reported",
+      "created_at": "2026-07-06T17:45:39.618223+00:00",
+      "excerpt": "Deals Digest: Healthway to acquire Bridgepoint Health; CATL invests in CarbonScape",
+      "matched_sponsors": [
+        "Bridgepoint"
+      ],
+      "matched_terms": [
+        "to acquire"
+      ],
+      "region": "Asia",
+      "signal_type": "exit_completed",
+      "source_name": "dealstreetasia_home",
+      "source_tier": "deal_news",
+      "source_url": "https://www.dealstreetasia.com/"
+    },
+    {
+      "company_name": null,
+      "confidence": "reported",
+      "created_at": "2026-07-06T17:45:39.618353+00:00",
+      "excerpt": "Why Southeast Asian firms are choosing HKEX for IPOs",
+      "matched_sponsors": [],
+      "matched_terms": [
+        "ipo"
+      ],
+      "region": "Asia",
+      "signal_type": "ipo_prep",
+      "source_name": "dealstreetasia_home",
+      "source_tier": "deal_news",
+      "source_url": "https://www.dealstreetasia.com/"
+    },
+    {
+      "company_name": null,
+      "confidence": "reported",
+      "created_at": "2026-07-06T17:45:39.618568+00:00",
+      "excerpt": "Asia GP-led secondaries—capital, conviction, and the maturing market",
+      "matched_sponsors": [],
+      "matched_terms": [
+        "gp-led"
+      ],
+      "region": "Asia",
+      "signal_type": "continuation_vehicle",
+      "source_name": "dealstreetasia_home",
+      "source_tier": "deal_news",
+      "source_url": "https://www.dealstreetasia.com/"
+    },
+    {
+      "company_name": null,
+      "confidence": "reported",
+      "created_at": "2026-07-06T17:45:39.618650+00:00",
+      "excerpt": "USD.AI, BSQ Capital launch $300m AI infra financing venture in APAC",
+      "matched_sponsors": [],
+      "matched_terms": [
+        "$"
+      ],
+      "region": "Asia",
+      "signal_type": "valuation_marker",
+      "source_name": "dealstreetasia_home",
+      "source_tier": "deal_news",
+      "source_url": "https://www.dealstreetasia.com/"
+    },
+    {
+      "company_name": null,
+      "confidence": "reported",
+      "created_at": "2026-07-06T17:45:39.618742+00:00",
+      "excerpt": "MBK, Actis, Bain among bidders for KKR's Central Tank Terminal: report",
+      "matched_sponsors": [
+        "KKR",
+        "MBK Partners"
+      ],
+      "matched_terms": [
+        "bidders"
+      ],
+      "region": "Asia",
+      "signal_type": "sale_process",
+      "source_name": "dealstreetasia_home",
+      "source_tier": "deal_news",
+      "source_url": "https://www.dealstreetasia.com/"
+    },
+    {
+      "company_name": null,
+      "confidence": "reported",
+      "created_at": "2026-07-06T17:45:39.618811+00:00",
+      "excerpt": "Azalea launches its first PE evergreen fund with $350m commitments",
+      "matched_sponsors": [],
+      "matched_terms": [
+        "$",
+        "ev"
+      ],
+      "region": "Asia",
+      "signal_type": "valuation_marker",
+      "source_name": "dealstreetasia_home",
+      "source_tier": "deal_news",
+      "source_url": "https://www.dealstreetasia.com/"
+    },
+    {
+      "company_name": null,
+      "confidence": "reported",
+      "created_at": "2026-07-06T17:45:39.618915+00:00",
+      "excerpt": "Hamilton Lane raising $220m for inaugural yuan fund: Report",
+      "matched_sponsors": [],
+      "matched_terms": [
+        "$"
+      ],
+      "region": "Asia",
+      "signal_type": "valuation_marker",
+      "source_name": "dealstreetasia_home",
+      "source_tier": "deal_news",
+      "source_url": "https://www.dealstreetasia.com/"
+    },
+    {
+      "company_name": null,
+      "confidence": "reported",
+      "created_at": "2026-07-06T17:45:39.619038+00:00",
+      "excerpt": "LinqAlpha raises $22m Series A to accelerate APAC expansion",
+      "matched_sponsors": [],
+      "matched_terms": [
+        "$"
+      ],
+      "region": "Asia",
+      "signal_type": "valuation_marker",
+      "source_name": "dealstreetasia_home",
+      "source_tier": "deal_news",
+      "source_url": "https://www.dealstreetasia.com/"
+    },
+    {
+      "company_name": null,
+      "confidence": "reported",
+      "created_at": "2026-07-06T17:45:39.619111+00:00",
+      "excerpt": "The $200-million fund has deployed $130 million across 18 companies, including 12 in India.",
+      "matched_sponsors": [],
+      "matched_terms": [
+        "$",
+        "million"
+      ],
+      "region": "Asia",
+      "signal_type": "valuation_marker",
+      "source_name": "dealstreetasia_home",
+      "source_tier": "deal_news",
+      "source_url": "https://www.dealstreetasia.com/"
+    },
+    {
+      "company_name": null,
+      "confidence": "reported",
+      "created_at": "2026-07-06T17:45:39.619161+00:00",
+      "excerpt": "The startup has raised $7 million in a seed funding round comprising equity and debt.",
+      "matched_sponsors": [],
+      "matched_terms": [
+        "$",
+        "million"
+      ],
+      "region": "Asia",
+      "signal_type": "valuation_marker",
+      "source_name": "dealstreetasia_home",
+      "source_tier": "deal_news",
+      "source_url": "https://www.dealstreetasia.com/"
+    },
+    {
+      "company_name": null,
+      "confidence": "reported",
+      "created_at": "2026-07-06T17:45:39.619549+00:00",
+      "excerpt": "Silicon Box raised $5.1m in fresh funding from a mix of new and existing investors last week.",
+      "matched_sponsors": [],
+      "matched_terms": [
+        "$"
+      ],
+      "region": "Asia",
+      "signal_type": "valuation_marker",
+      "source_name": "dealstreetasia_home",
+      "source_tier": "deal_news",
+      "source_url": "https://www.dealstreetasia.com/"
+    },
+    {
+      "company_name": "Far East Consortium's student housing project",
+      "confidence": "reported",
+      "created_at": "2026-07-06T17:45:39.619598+00:00",
+      "excerpt": "JD.com buys Far East Consortium's student housing project for $95.6m",
+      "matched_sponsors": [],
+      "matched_terms": [
+        "$",
+        "buys"
+      ],
+      "region": "Asia",
+      "signal_type": "add_on",
+      "source_name": "dealstreetasia_home",
+      "source_tier": "deal_news",
+      "source_url": "https://www.dealstreetasia.com/"
+    },
+    {
+      "company_name": null,
+      "confidence": "reported",
+      "created_at": "2026-07-06T17:45:39.619853+00:00",
+      "excerpt": "Schneider Electric, Seraya Partners launch $500m infrastructure fund",
+      "matched_sponsors": [],
+      "matched_terms": [
+        "$"
+      ],
+      "region": "Asia",
+      "signal_type": "valuation_marker",
+      "source_name": "dealstreetasia_home",
+      "source_tier": "deal_news",
+      "source_url": "https://www.dealstreetasia.com/"
+    },
+    {
+      "company_name": null,
+      "confidence": "reported",
+      "created_at": "2026-07-06T17:45:39.619902+00:00",
+      "excerpt": "Green Climate Fund commits $50m to Mekong Capital's climate fund",
+      "matched_sponsors": [],
+      "matched_terms": [
+        "$"
+      ],
+      "region": "Asia",
+      "signal_type": "valuation_marker",
+      "source_name": "dealstreetasia_home",
+      "source_tier": "deal_news",
+      "source_url": "https://www.dealstreetasia.com/"
+    },
+    {
+      "company_name": null,
+      "confidence": "reported",
+      "created_at": "2026-07-06T17:45:39.619934+00:00",
+      "excerpt": "KKR, SK launch $1.3b Korea renewables platform to meet AI power demand",
+      "matched_sponsors": [
+        "KKR"
+      ],
+      "matched_terms": [
+        "$"
+      ],
+      "region": "Asia",
+      "signal_type": "valuation_marker",
+      "source_name": "dealstreetasia_home",
+      "source_tier": "deal_news",
+      "source_url": "https://www.dealstreetasia.com/"
+    },
+    {
+      "company_name": null,
+      "confidence": "reported",
+      "created_at": "2026-07-06T17:45:39.619986+00:00",
+      "excerpt": "investors sought to withdraw $4.7b from two funds in Q2, compared with $5.4b in Q1.",
+      "matched_sponsors": [],
+      "matched_terms": [
+        "$"
+      ],
+      "region": "Asia",
+      "signal_type": "valuation_marker",
+      "source_name": "dealstreetasia_home",
+      "source_tier": "deal_news",
+      "source_url": "https://www.dealstreetasia.com/"
+    },
+    {
+      "company_name": null,
+      "confidence": "reported",
+      "created_at": "2026-07-06T17:45:39.620057+00:00",
+      "excerpt": "AllianzGI hit first close of its third APAC secured lending fund at $744m.",
+      "matched_sponsors": [],
+      "matched_terms": [
+        "$"
+      ],
+      "region": "Asia",
+      "signal_type": "valuation_marker",
+      "source_name": "dealstreetasia_home",
+      "source_tier": "deal_news",
+      "source_url": "https://www.dealstreetasia.com/"
+    },
+    {
+      "company_name": null,
+      "confidence": "reported",
+      "created_at": "2026-07-06T17:45:39.620131+00:00",
+      "excerpt": "Ares caps withdrawals again at flagship $23b private credit fund",
+      "matched_sponsors": [],
+      "matched_terms": [
+        "$"
+      ],
+      "region": "Asia",
+      "signal_type": "valuation_marker",
+      "source_name": "dealstreetasia_home",
+      "source_tier": "deal_news",
+      "source_url": "https://www.dealstreetasia.com/"
+    },
+    {
+      "company_name": null,
+      "confidence": "reported",
+      "created_at": "2026-07-06T17:45:39.620189+00:00",
+      "excerpt": "India: IFC proposes $73m investment from own account in Sify Infinit",
+      "matched_sponsors": [],
+      "matched_terms": [
+        "$"
+      ],
+      "region": "Asia",
+      "signal_type": "valuation_marker",
+      "source_name": "dealstreetasia_home",
+      "source_tier": "deal_news",
+      "source_url": "https://www.dealstreetasia.com/"
+    },
+    {
+      "company_name": null,
+      "confidence": "reported",
+      "created_at": "2026-07-06T17:45:39.620283+00:00",
+      "excerpt": "Vingroup's hospitality unit secures $255m investment from SeaTown, VOI",
+      "matched_sponsors": [],
+      "matched_terms": [
+        "$"
+      ],
+      "region": "Asia",
+      "signal_type": "valuation_marker",
+      "source_name": "dealstreetasia_home",
+      "source_tier": "deal_news",
+      "source_url": "https://www.dealstreetasia.com/"
+    },
+    {
+      "company_name": null,
+      "confidence": "reported",
+      "created_at": "2026-07-06T17:45:39.620378+00:00",
+      "excerpt": "Pictet Alternative Advisors secures $1.53b for co-investments",
+      "matched_sponsors": [],
+      "matched_terms": [
+        "$"
+      ],
+      "region": "Asia",
+      "signal_type": "valuation_marker",
+      "source_name": "dealstreetasia_home",
+      "source_tier": "deal_news",
+      "source_url": "https://www.dealstreetasia.com/"
+    },
+    {
+      "company_name": null,
+      "confidence": "reported",
+      "created_at": "2026-07-06T17:45:39.620485+00:00",
+      "excerpt": "The Swiss asset manager is limiting withdrawals from two of its evergreen funds after they exceeded the 5% quarterly limit.",
+      "matched_sponsors": [],
+      "matched_terms": [
+        "ev"
+      ],
+      "region": "Asia",
+      "signal_type": "valuation_marker",
+      "source_name": "dealstreetasia_home",
+      "source_tier": "deal_news",
+      "source_url": "https://www.dealstreetasia.com/"
+    }
+  ],
+  "sectors": [
+    {
+      "asset_count": 1,
+      "avg_availability": 91.0,
+      "avg_hsg_fit": 58.0,
+      "avg_pe_suitability": 78.0,
+      "avg_total": 80.0,
+      "sector": "infrastructure services",
+      "top_assets": [
+        "H&MV Engineering"
+      ]
+    },
+    {
+      "asset_count": 2,
+      "avg_availability": 21.0,
+      "avg_hsg_fit": 89.0,
+      "avg_pe_suitability": 80.5,
+      "avg_total": 66.5,
+      "sector": "consumer",
+      "top_assets": [
+        "Marshall Group",
+        "D-Marin"
+      ]
+    },
+    {
+      "asset_count": 2,
+      "avg_availability": 34.0,
+      "avg_hsg_fit": 58.0,
+      "avg_pe_suitability": 82.0,
+      "avg_total": 63.0,
+      "sector": "financial services",
+      "top_assets": [
+        "Singular Bank",
+        "Benchmark Capital"
+      ]
+    },
+    {
+      "asset_count": 1,
+      "avg_availability": 15.0,
+      "avg_hsg_fit": 84.0,
+      "avg_pe_suitability": 70.0,
+      "avg_total": 58.0,
+      "sector": "software",
+      "top_assets": [
+        "Skello"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "PE Hub Europe",
+      "url": "https://www.pehub.com/regions_and_countries/europe/",
+      "region": "Europe",
+      "tier": "deal_news"
+    },
+    {
+      "name": "DealStreetAsia",
+      "url": "https://www.dealstreetasia.com/",
+      "region": "Asia",
+      "tier": "deal_news"
+    },
+    {
+      "name": "Bain Global PE Report",
+      "url": "https://www.bain.com/insights/outlook-gaining-traction-global-private-equity-report-2026/",
+      "region": "Global",
+      "tier": "market_context"
+    },
+    {
+      "name": "McKinsey Global Private Markets",
+      "url": "https://www.mckinsey.com/industries/private-capital/our-insights/global-private-markets-report/private-equity",
+      "region": "Global",
+      "tier": "market_context"
+    },
+    {
+      "name": "HSG",
+      "url": "https://www.hsgcap.com/about-us/",
+      "region": "Global",
+      "tier": "hsg_context"
+    }
+  ],
+  "sync": {
+    "generated_at": "2026-07-06T17:45:39.786002+00:00",
+    "new_signal_count": 35,
+    "total_signal_count": 35,
+    "fetched": [
+      {
+        "url": "https://www.pehub.com/regions_and_countries/europe/",
+        "status": "200",
+        "elapsed_ms": "2522"
+      },
+      {
+        "url": "https://www.dealstreetasia.com/",
+        "status": "200",
+        "elapsed_ms": "474"
+      }
+    ],
+    "errors": [
+      {
+        "source_name": "bain_global_pe_2026",
+        "url": "https://www.bain.com/insights/outlook-gaining-traction-global-private-equity-report-2026/",
+        "error": "Fetch failed for https://www.bain.com/insights/outlook-gaining-traction-global-private-equity-report-2026/: HTTP Error 403: Forbidden"
+      }
+    ]
+  }
+}
