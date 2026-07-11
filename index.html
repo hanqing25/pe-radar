@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Live European and Asian private equity target intelligence." />
+    <title>PE Radar | Private Markets Intelligence</title>
+    <link rel="preconnect" href="https://unpkg.com" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <div class="brand-row">
+          <span class="brand-mark"><i data-lucide="radar"></i></span>
+          <span><strong>PE Radar</strong><small>PRIVATE MARKETS</small></span>
+          <button class="icon-button mobile-only" id="close-nav" aria-label="Close navigation"><i data-lucide="x"></i></button>
+        </div>
+        <nav aria-label="Workspace">
+          <p>WORKSPACE</p>
+          <button class="active" data-view="radar"><i data-lucide="scan-search"></i><span>Radar</span><em id="signal-badge">0</em></button>
+          <button data-view="pipeline"><i data-lucide="list-filter"></i><span>Pipeline</span></button>
+          <button data-view="sectors"><i data-lucide="layout-dashboard"></i><span>Sectors</span></button>
+          <button data-view="sources"><i data-lucide="database"></i><span>Sources</span></button>
+        </nav>
+        <div class="monitor-state"><span></span><div><strong>Monitor active</strong><small>Weekdays · 08:30 CST</small></div></div>
+        <a class="github-link" href="https://github.com/hanqing25/pe-radar" target="_blank" rel="noreferrer"><i data-lucide="github"></i><span>View repository</span><i data-lucide="external-link"></i></a>
+      </aside>
+
+      <main class="workspace">
+        <header class="topbar">
+          <div class="title-row">
+            <button class="icon-button mobile-only" id="open-nav" aria-label="Open navigation"><i data-lucide="menu"></i></button>
+            <span><h1 id="view-title">Radar</h1><small>Europe + Asia · control opportunities</small></span>
+          </div>
+          <div class="topbar-actions">
+            <label class="search-box"><i data-lucide="search"></i><input id="search" type="search" placeholder="Search company, sponsor, sector" /></label>
+            <button class="refresh-button" id="refresh"><i data-lucide="refresh-cw"></i><span>Refresh data</span></button>
+          </div>
+        </header>
+        <section class="metric-strip" id="metrics" aria-label="Portfolio metrics"></section>
+        <section id="content" class="content"><div class="loading"><i data-lucide="loader-circle"></i><span>Loading target intelligence</span></div></section>
+      </main>
+      <button class="scrim" id="scrim" aria-label="Close navigation"></button>
+    </div>
+
+    <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+    <script src="./app.js" defer></script>
+  </body>
+</html>
