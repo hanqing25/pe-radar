@@ -17,6 +17,11 @@ DEAL_SOURCES = [
     {"name": "PE Hub Europe", "url": "https://www.pehub.com/regions_and_countries/europe/", "region": "Europe", "tier": "deal_news"},
     {"name": "DealStreetAsia", "url": "https://www.dealstreetasia.com/", "region": "Asia", "tier": "deal_news"},
 ]
+TARGET_SOURCES = [
+    {"name": "Golden Goose official news", "company_name": "Golden Goose", "url": "https://we.goldengoose.com/we-are-golden/media/press-releases/", "region": "Europe / Asia", "tier": "priority_target_official"},
+    {"name": "Guala Closures investor relations", "company_name": "Guala Closures", "url": "https://www.gualaclosures.com/investors", "region": "Europe", "tier": "priority_target_ir"},
+    {"name": "Mammut official press", "company_name": "Mammut", "url": "https://pr.mammut.com/en", "region": "Europe / Asia", "tier": "priority_target_official"},
+]
 FUND_SOURCES = [
     ("EQT", "Europe / Asia", "https://eqtgroup.com/about/current-portfolio", "current", "headings"),
     ("KKR", "Global", "https://www.kkr.com/invest/portfolio", "current selected", "headings"),
@@ -36,6 +41,8 @@ FUND_SOURCES = [
     ("Warburg Pincus", "Europe / Asia / Global", "https://warburgpincus.com/investments/", "selected", "headings"),
     ("BC Partners", "Europe / Global", "https://www.bcpartners.com/portfolio/", "recent flagship funds", "headings"),
     ("Ardian", "Europe / Global", "https://www.ardian.com/expertise/our-portfolio", "current and realised", "headings"),
+    ("Investindustrial", "Europe / Global", "https://www.investindustrial.com/our-business/portfolio-overview/current-portfolio.html", "current", "headings"),
+    ("Jacobs Capital", "Europe / Global", "https://telemoscapital.com/company/mammut/", "current priority asset", "headings"),
 ]
 CREDIT_SOURCES = [
     ("FINRA TRACE Corporate & Agency", "United States / 144A", "https://www.finra.org/finra-data/fixed-income/corp-and-agency", "CUSIP", "executed trade price and yield", "trade_history"),
@@ -47,6 +54,7 @@ CREDIT_SOURCES = [
     ("BME Fixed Income / MARF", "Europe", "https://www.bolsasymercados.es/en/bme-exchange/prices-and-markets/fixed-income/issues.html", "ISIN", "listing reference and venue data", "exchange_trade_directory"),
 ]
 DEAL_PATTERN = re.compile(r"\b(exit|sale|sell|acquir|buyout|stake|strategic review|continuation|valuation|portfolio|majority|minority|auction|mandate|ipo)\b", re.I)
+PRIORITY_PATTERN = re.compile(r"\b(sale|sell|auction|adviser|advisor|banker|bidder|refinanc|bond|notes|results|revenue|acquir|distribution|expan|management|ceo|ownership|investor|continuation|recap)\w*\b", re.I)
 NOISE = {
     "about", "about us", "careers", "case studies", "companies", "contact", "contact us",
     "current investments", "current portfolio", "discover", "filter", "focus portfolio", "follow us",
@@ -144,6 +152,8 @@ def infer_type(headline: str) -> str:
         return "sale_process"
     if re.search(r"ipo|listing", headline, re.I):
         return "ipo_prep"
+    if re.search(r"refinanc|bond|notes|recap", headline, re.I):
+        return "refinancing"
     if re.search(r"valuation|valued|million|billion|\$|€|£", headline, re.I):
         return "valuation_marker"
     return "exit_completed" if re.search(r"acquir|sale|sold|buyout", headline, re.I) else "portfolio_update"
@@ -155,6 +165,17 @@ def deal_job(source: dict) -> dict:
     parser.feed(html)
     headlines = [value for value in parser.links_and_headings if 28 <= len(value) <= 220 and DEAL_PATTERN.search(value)]
     return {"source": source, "status": status, "elapsed_ms": elapsed_ms, "headlines": list(dict.fromkeys(headlines))[:24]}
+
+
+def priority_job(source: dict) -> dict:
+    html, status, elapsed_ms = fetch_page(source["url"])
+    parser = PageParser()
+    parser.feed(html)
+    headlines = [
+        value for value in parser.links_and_headings
+        if 20 <= len(value) <= 220 and PRIORITY_PATTERN.search(value)
+    ]
+    return {"source": source, "status": status, "elapsed_ms": elapsed_ms, "headlines": list(dict.fromkeys(headlines))[:30]}
 
 
 def fund_job(source: tuple[str, str, str, str, str]) -> dict:
@@ -191,18 +212,21 @@ def main() -> None:
     jobs = []
     with ThreadPoolExecutor(max_workers=8) as executor:
         jobs.extend(("deal", source, executor.submit(deal_job, source)) for source in DEAL_SOURCES)
+        jobs.extend(("priority", source, executor.submit(priority_job, source)) for source in TARGET_SOURCES)
         jobs.extend(("fund", source, executor.submit(fund_job, source)) for source in FUND_SOURCES)
         jobs.extend(("credit", source, executor.submit(credit_job, source, aliases)) for source in CREDIT_SOURCES)
         for kind, source, future in jobs:
             try:
                 result = future.result()
-                if kind == "deal":
+                if kind in {"deal", "priority"}:
                     deal_health.append({"url": result["source"]["url"], "status": result["status"], "elapsed_ms": result["elapsed_ms"]})
                     for headline in result["headlines"]:
                         signal_id = "live-" + hashlib.sha256(f'{result["source"]["name"]}:{headline}'.encode()).hexdigest()[:20]
                         if signal_id in existing_signals:
                             continue
                         target = next((item for item in targets if item.get("company_name", "").lower() in headline.lower()), None)
+                        if kind == "priority":
+                            target = next((item for item in targets if item.get("company_name") == result["source"].get("company_name")), target)
                         signals.insert(0, {"id": signal_id, "company_name": target.get("company_name") if target else None, "confidence": "machine_found", "created_at": now, "excerpt": headline, "matched_sponsors": [], "matched_terms": [], "region": result["source"]["region"], "signal_type": infer_type(headline), "source_name": result["source"]["name"], "source_tier": result["source"]["tier"], "source_url": result["source"]["url"]})
                         existing_signals.add(signal_id)
                         new_count += 1
@@ -216,7 +240,7 @@ def main() -> None:
                     for company in result["matches"]:
                         directory_matches.append({"company_name": company, "issuer_name": None, "isin": None, "cusip": None, "source_name": result["name"], "source_url": result["url"], "source_type": result["source_type"], "price_capability": result["capability"], "observed_at": now, "verification_status": "directory_name_match_unverified"})
             except Exception as exc:
-                if kind == "deal":
+                if kind in {"deal", "priority"}:
                     deal_errors.append({"source_name": source["name"], "url": source["url"], "error": str(exc)})
                 elif kind == "fund":
                     fund_errors.append({"name": source[0], "sponsor": source[0], "url": source[2], "error": str(exc)})
