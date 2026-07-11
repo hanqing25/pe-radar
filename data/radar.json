@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-06T17:45:39.786002+00:00",
+  "generated_at": "2026-07-11T17:59:45.437536+00:00",
   "targets": [
     {
       "aliases": [
@@ -293,6 +293,230 @@
     }
   ],
   "signals": [
+    {
+      "id": "live-f89a4867da85970f7531",
+      "company_name": null,
+      "confidence": "machine_found",
+      "created_at": "2026-07-11T17:59:45.437536+00:00",
+      "excerpt": "Templewater builds multi-strategy alt asset platform from venture to buyout",
+      "matched_sponsors": [],
+      "matched_terms": [],
+      "region": "Asia",
+      "signal_type": "exit_completed",
+      "source_name": "DealStreetAsia",
+      "source_tier": "deal_news",
+      "source_url": "https://www.dealstreetasia.com/"
+    },
+    {
+      "id": "live-2a68ba94d08b0d07e95e",
+      "company_name": null,
+      "confidence": "machine_found",
+      "created_at": "2026-07-11T17:59:45.437536+00:00",
+      "excerpt": "Temasek steps up climate investments, energy transition for portfolio companies",
+      "matched_sponsors": [],
+      "matched_terms": [],
+      "region": "Asia",
+      "signal_type": "portfolio_update",
+      "source_name": "DealStreetAsia",
+      "source_tier": "deal_news",
+      "source_url": "https://www.dealstreetasia.com/"
+    },
+    {
+      "id": "live-b4b6e7a2157c4e7daa27",
+      "company_name": null,
+      "confidence": "machine_found",
+      "created_at": "2026-07-11T17:59:45.437536+00:00",
+      "excerpt": "Beyond the Buyout: Asia’s $54b paradox",
+      "matched_sponsors": [],
+      "matched_terms": [],
+      "region": "Asia",
+      "signal_type": "valuation_marker",
+      "source_name": "DealStreetAsia",
+      "source_tier": "deal_news",
+      "source_url": "https://www.dealstreetasia.com/"
+    },
+    {
+      "id": "live-1ba68a0b5716f73ea4aa",
+      "company_name": null,
+      "confidence": "machine_found",
+      "created_at": "2026-07-11T17:59:45.437536+00:00",
+      "excerpt": "Beyond the Buyout: Asia's top PE markets face different stress tests",
+      "matched_sponsors": [],
+      "matched_terms": [],
+      "region": "Asia",
+      "signal_type": "exit_completed",
+      "source_name": "DealStreetAsia",
+      "source_tier": "deal_news",
+      "source_url": "https://www.dealstreetasia.com/"
+    },
+    {
+      "id": "live-74f4112a87b5a6f68c8d",
+      "company_name": null,
+      "confidence": "machine_found",
+      "created_at": "2026-07-11T17:59:45.437536+00:00",
+      "excerpt": "Beyond the Buyout: Why LPs are shying away from re-ups",
+      "matched_sponsors": [],
+      "matched_terms": [],
+      "region": "Asia",
+      "signal_type": "exit_completed",
+      "source_name": "DealStreetAsia",
+      "source_tier": "deal_news",
+      "source_url": "https://www.dealstreetasia.com/"
+    },
+    {
+      "id": "live-e463ddc78fc0aa58ae83",
+      "company_name": null,
+      "confidence": "machine_found",
+      "created_at": "2026-07-11T17:59:45.437536+00:00",
+      "excerpt": "Beyond The Buyout Newsletters",
+      "matched_sponsors": [],
+      "matched_terms": [],
+      "region": "Asia",
+      "signal_type": "exit_completed",
+      "source_name": "DealStreetAsia",
+      "source_tier": "deal_news",
+      "source_url": "https://www.dealstreetasia.com/"
+    },
+    {
+      "id": "live-46fa8558412f8b33d336",
+      "company_name": null,
+      "confidence": "machine_found",
+      "created_at": "2026-07-11T17:59:45.437536+00:00",
+      "excerpt": "UAE's e& to exit Vodafone in $6b deal, French tycoon Niel to become top shareholder",
+      "matched_sponsors": [],
+      "matched_terms": [],
+      "region": "Asia",
+      "signal_type": "sale_process",
+      "source_name": "DealStreetAsia",
+      "source_tier": "deal_news",
+      "source_url": "https://www.dealstreetasia.com/"
+    },
+    {
+      "id": "live-595da3e1ab40fc12924b",
+      "company_name": null,
+      "confidence": "machine_found",
+      "created_at": "2026-07-11T17:59:45.437536+00:00",
+      "excerpt": "EQT launches new Asia mid-cap buyout fund, eyes $2.5b: report",
+      "matched_sponsors": [],
+      "matched_terms": [],
+      "region": "Asia",
+      "signal_type": "valuation_marker",
+      "source_name": "DealStreetAsia",
+      "source_tier": "deal_news",
+      "source_url": "https://www.dealstreetasia.com/"
+    },
+    {
+      "id": "live-4cf1fa06b50c3be33a72",
+      "company_name": null,
+      "confidence": "machine_found",
+      "created_at": "2026-07-11T17:59:45.437536+00:00",
+      "excerpt": "Blackstone, TPG look to sell Hologic's surgical unit for $4b: report",
+      "matched_sponsors": [],
+      "matched_terms": [],
+      "region": "Asia",
+      "signal_type": "valuation_marker",
+      "source_name": "DealStreetAsia",
+      "source_tier": "deal_news",
+      "source_url": "https://www.dealstreetasia.com/"
+    },
+    {
+      "id": "live-aa9ac50d524b0038cda4",
+      "company_name": null,
+      "confidence": "machine_found",
+      "created_at": "2026-07-11T17:59:45.437536+00:00",
+      "excerpt": "NSE to pitch IPO to 30 global investors as bet on India's financial expansion",
+      "matched_sponsors": [],
+      "matched_terms": [],
+      "region": "Asia",
+      "signal_type": "ipo_prep",
+      "source_name": "DealStreetAsia",
+      "source_tier": "deal_news",
+      "source_url": "https://www.dealstreetasia.com/"
+    },
+    {
+      "id": "live-69cbb7f21ec645eb1fe7",
+      "company_name": null,
+      "confidence": "machine_found",
+      "created_at": "2026-07-11T17:59:45.437536+00:00",
+      "excerpt": "NSE to pitch IPO to 30 global investors as bet on India’s financial expansion",
+      "matched_sponsors": [],
+      "matched_terms": [],
+      "region": "Asia",
+      "signal_type": "ipo_prep",
+      "source_name": "DealStreetAsia",
+      "source_tier": "deal_news",
+      "source_url": "https://www.dealstreetasia.com/"
+    },
+    {
+      "id": "live-4775d0947f66080b393a",
+      "company_name": null,
+      "confidence": "machine_found",
+      "created_at": "2026-07-11T17:59:45.437536+00:00",
+      "excerpt": "Beyond the Buyout: Temasek rewrites LP playbook",
+      "matched_sponsors": [],
+      "matched_terms": [],
+      "region": "Asia",
+      "signal_type": "exit_completed",
+      "source_name": "DealStreetAsia",
+      "source_tier": "deal_news",
+      "source_url": "https://www.dealstreetasia.com/"
+    },
+    {
+      "id": "live-746bd66e6be318cfdeb2",
+      "company_name": null,
+      "confidence": "machine_found",
+      "created_at": "2026-07-11T17:59:45.437536+00:00",
+      "excerpt": "Indonesia’s RANS makes blockbuster debut as IPO dream run continues",
+      "matched_sponsors": [],
+      "matched_terms": [],
+      "region": "Asia",
+      "signal_type": "ipo_prep",
+      "source_name": "DealStreetAsia",
+      "source_tier": "deal_news",
+      "source_url": "https://www.dealstreetasia.com/"
+    },
+    {
+      "id": "live-6704a6f15c806f141e9e",
+      "company_name": null,
+      "confidence": "machine_found",
+      "created_at": "2026-07-11T17:59:45.437536+00:00",
+      "excerpt": "Indonesia's RANS makes blockbuster debut as IPO dream run continues",
+      "matched_sponsors": [],
+      "matched_terms": [],
+      "region": "Asia",
+      "signal_type": "ipo_prep",
+      "source_name": "DealStreetAsia",
+      "source_tier": "deal_news",
+      "source_url": "https://www.dealstreetasia.com/"
+    },
+    {
+      "id": "live-f7f59f81fec19aa881c6",
+      "company_name": null,
+      "confidence": "machine_found",
+      "created_at": "2026-07-11T17:59:45.437536+00:00",
+      "excerpt": "GTCR-backed Corza Medical to sell its biosurgery business unit to EQT",
+      "matched_sponsors": [],
+      "matched_terms": [],
+      "region": "Europe",
+      "signal_type": "portfolio_update",
+      "source_name": "PE Hub Europe",
+      "source_tier": "deal_news",
+      "source_url": "https://www.pehub.com/regions_and_countries/europe/"
+    },
+    {
+      "id": "live-6decf0796114f2b3eced",
+      "company_name": null,
+      "confidence": "machine_found",
+      "created_at": "2026-07-11T17:59:45.437536+00:00",
+      "excerpt": "PSG Equity agrees to majority growth investment in Belgian CPM software...",
+      "matched_sponsors": [],
+      "matched_terms": [],
+      "region": "Europe",
+      "signal_type": "portfolio_update",
+      "source_name": "PE Hub Europe",
+      "source_tier": "deal_news",
+      "source_url": "https://www.pehub.com/regions_and_countries/europe/"
+    },
     {
       "company_name": "D-Marin",
       "confidence": "reported",
@@ -925,27 +1149,2273 @@
     }
   ],
   "sync": {
-    "generated_at": "2026-07-06T17:45:39.786002+00:00",
-    "new_signal_count": 35,
-    "total_signal_count": 35,
+    "generated_at": "2026-07-11T17:59:45.437536+00:00",
+    "new_signal_count": 16,
+    "total_signal_count": 51,
     "fetched": [
       {
         "url": "https://www.pehub.com/regions_and_countries/europe/",
         "status": "200",
-        "elapsed_ms": "2522"
+        "elapsed_ms": 3051
       },
       {
         "url": "https://www.dealstreetasia.com/",
         "status": "200",
-        "elapsed_ms": "474"
+        "elapsed_ms": 694
+      }
+    ],
+    "errors": []
+  },
+  "fund_sources": [
+    {
+      "name": "EQT official portfolio",
+      "sponsor": "EQT",
+      "url": "https://eqtgroup.com/about/current-portfolio",
+      "region": "Europe / Asia",
+      "scope": "current",
+      "source_type": "fund_website",
+      "kind": "fund_website"
+    },
+    {
+      "name": "KKR official portfolio",
+      "sponsor": "KKR",
+      "url": "https://www.kkr.com/invest/portfolio",
+      "region": "Global",
+      "scope": "current selected",
+      "source_type": "fund_website",
+      "kind": "fund_website"
+    },
+    {
+      "name": "CVC Capital Partners official portfolio",
+      "sponsor": "CVC Capital Partners",
+      "url": "https://www.cvc.com/portfolio/our-portfolio/",
+      "region": "Europe / Asia",
+      "scope": "selected",
+      "source_type": "fund_website",
+      "kind": "fund_website"
+    },
+    {
+      "name": "Permira official portfolio",
+      "sponsor": "Permira",
+      "url": "https://www.permira.com/portfolio/our-portfolio",
+      "region": "Europe / Asia",
+      "scope": "current and realised",
+      "source_type": "fund_website",
+      "kind": "fund_website"
+    },
+    {
+      "name": "Advent International official portfolio",
+      "sponsor": "Advent International",
+      "url": "https://www.adventinternational.com/investments/",
+      "region": "Europe / Asia / Global",
+      "scope": "current and realised",
+      "source_type": "fund_website",
+      "kind": "fund_website"
+    },
+    {
+      "name": "Cinven official portfolio",
+      "sponsor": "Cinven",
+      "url": "https://www.cinven.com/portfolio/",
+      "region": "Europe",
+      "scope": "current and realised",
+      "source_type": "fund_website",
+      "kind": "fund_website"
+    },
+    {
+      "name": "Bridgepoint official portfolio",
+      "sponsor": "Bridgepoint",
+      "url": "https://www.bridgepoint.eu/portfolio",
+      "region": "Europe",
+      "scope": "current and realised",
+      "source_type": "fund_website",
+      "kind": "fund_website"
+    },
+    {
+      "name": "PAI Partners official portfolio",
+      "sponsor": "PAI Partners",
+      "url": "https://www.paipartners.com/portfolio/",
+      "region": "Europe",
+      "scope": "current and realised",
+      "source_type": "fund_website",
+      "kind": "fund_website"
+    },
+    {
+      "name": "Hg official portfolio",
+      "sponsor": "Hg",
+      "url": "https://hgcapital.com/portfolio/",
+      "region": "Europe",
+      "scope": "current and realised",
+      "source_type": "fund_website",
+      "kind": "fund_website"
+    },
+    {
+      "name": "Triton Partners official portfolio",
+      "sponsor": "Triton Partners",
+      "url": "https://www.triton-partners.com/portfolio/",
+      "region": "Europe",
+      "scope": "current and realised",
+      "source_type": "fund_website",
+      "kind": "fund_website"
+    },
+    {
+      "name": "PAG official portfolio",
+      "sponsor": "PAG",
+      "url": "https://www.pag.com/private-equity",
+      "region": "Asia",
+      "scope": "selected active",
+      "source_type": "fund_website",
+      "kind": "fund_website"
+    },
+    {
+      "name": "Navis Capital official portfolio",
+      "sponsor": "Navis Capital",
+      "url": "https://www.naviscapital.com/portfolio-tag/current-investments/",
+      "region": "Asia",
+      "scope": "current",
+      "source_type": "fund_website",
+      "kind": "fund_website"
+    },
+    {
+      "name": "Affinity Equity Partners official portfolio",
+      "sponsor": "Affinity Equity Partners",
+      "url": "https://www.affinityequity.com/",
+      "region": "Asia",
+      "scope": "official firm site",
+      "source_type": "fund_website",
+      "kind": "fund_website"
+    },
+    {
+      "name": "Bain Capital official portfolio",
+      "sponsor": "Bain Capital",
+      "url": "https://www.baincapitalprivateequity.com/portfolio",
+      "region": "Europe / Asia / Global",
+      "scope": "current",
+      "source_type": "fund_website",
+      "kind": "fund_website"
+    },
+    {
+      "name": "TPG official portfolio",
+      "sponsor": "TPG",
+      "url": "https://www.tpg.com/portfolio",
+      "region": "Europe / Asia / Global",
+      "scope": "selected",
+      "source_type": "fund_website",
+      "kind": "fund_website"
+    },
+    {
+      "name": "Warburg Pincus official portfolio",
+      "sponsor": "Warburg Pincus",
+      "url": "https://warburgpincus.com/investments/",
+      "region": "Europe / Asia / Global",
+      "scope": "selected",
+      "source_type": "fund_website",
+      "kind": "fund_website"
+    },
+    {
+      "name": "BC Partners official portfolio",
+      "sponsor": "BC Partners",
+      "url": "https://www.bcpartners.com/portfolio/",
+      "region": "Europe / Global",
+      "scope": "recent flagship funds",
+      "source_type": "fund_website",
+      "kind": "fund_website"
+    },
+    {
+      "name": "Ardian official portfolio",
+      "sponsor": "Ardian",
+      "url": "https://www.ardian.com/expertise/our-portfolio",
+      "region": "Europe / Global",
+      "scope": "current and realised",
+      "source_type": "fund_website",
+      "kind": "fund_website"
+    }
+  ],
+  "sponsor_universe": [
+    {
+      "company_name": "Aditya Birla Housing Finance",
+      "sponsor": "Advent International",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current and realised",
+      "source_name": "Advent International official portfolio",
+      "source_url": "https://www.adventinternational.com/investments/",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Atwell",
+      "sponsor": "Advent International",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current and realised",
+      "source_name": "Advent International official portfolio",
+      "source_url": "https://www.adventinternational.com/investments/",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Iscon Balaji",
+      "sponsor": "Advent International",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current and realised",
+      "source_name": "Advent International official portfolio",
+      "source_url": "https://www.adventinternational.com/investments/",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Natura",
+      "sponsor": "Advent International",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current and realised",
+      "source_name": "Advent International official portfolio",
+      "source_url": "https://www.adventinternational.com/investments/",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "OpenAI Deployment Company",
+      "sponsor": "Advent International",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current and realised",
+      "source_name": "Advent International official portfolio",
+      "source_url": "https://www.adventinternational.com/investments/",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Salt & Stone",
+      "sponsor": "Advent International",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current and realised",
+      "source_name": "Advent International official portfolio",
+      "source_url": "https://www.adventinternational.com/investments/",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Saronic",
+      "sponsor": "Advent International",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current and realised",
+      "source_name": "Advent International official portfolio",
+      "source_url": "https://www.adventinternational.com/investments/",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Shield AI",
+      "sponsor": "Advent International",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current and realised",
+      "source_name": "Advent International official portfolio",
+      "source_url": "https://www.adventinternational.com/investments/",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "tbi bank",
+      "sponsor": "Advent International",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current and realised",
+      "source_name": "Advent International official portfolio",
+      "source_url": "https://www.adventinternational.com/investments/",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Vestacy",
+      "sponsor": "Advent International",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current and realised",
+      "source_name": "Advent International official portfolio",
+      "source_url": "https://www.adventinternational.com/investments/",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Curium",
+      "sponsor": "Ardian",
+      "region": "Europe / Global",
+      "portfolio_scope": "current and realised",
+      "source_name": "Ardian official portfolio",
+      "source_url": "https://www.ardian.com/expertise/our-portfolio",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Fermax",
+      "sponsor": "Ardian",
+      "region": "Europe / Global",
+      "portfolio_scope": "current and realised",
+      "source_name": "Ardian official portfolio",
+      "source_url": "https://www.ardian.com/expertise/our-portfolio",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Galderma",
+      "sponsor": "Ardian",
+      "region": "Europe / Global",
+      "portfolio_scope": "current and realised",
+      "source_name": "Ardian official portfolio",
+      "source_url": "https://www.ardian.com/expertise/our-portfolio",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Gutor",
+      "sponsor": "Ardian",
+      "region": "Europe / Global",
+      "portfolio_scope": "current and realised",
+      "source_name": "Ardian official portfolio",
+      "source_url": "https://www.ardian.com/expertise/our-portfolio",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Liberty",
+      "sponsor": "Ardian",
+      "region": "Europe / Global",
+      "portfolio_scope": "current and realised",
+      "source_name": "Ardian official portfolio",
+      "source_url": "https://www.ardian.com/expertise/our-portfolio",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Prosol",
+      "sponsor": "Ardian",
+      "region": "Europe / Global",
+      "portfolio_scope": "current and realised",
+      "source_name": "Ardian official portfolio",
+      "source_url": "https://www.ardian.com/expertise/our-portfolio",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "1440 Foods",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "360 ONE",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Advantage Solutions (FKA Daymon Worldwide)",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Ahlstrom Munksjö",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "American Trailer Works",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Apex Tool Group",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Apleona",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Arxada",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Asia Pacific Medical Group",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "AthenaHealth",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Aveanna Healthcare",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Avistone",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Beeline Medicines Corporation",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Berlin Brands Group",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Bob's Discount Furniture",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Bombardier Recreational Products",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "BREXA",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Brillio",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Bugaboo",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Canada Goose",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Cardurion",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "CentralSquare Technologies",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Centrient Pharmaceuticals",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Cerevel Therapeutics",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "ChinaPnR",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "ChinData Group",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "CitiusTech",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Classys",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Concert Golf Partners",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Consolis",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Dealer Tire",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Deltatre",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Dessert Holdings",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Dhoot Transmission",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Echo Marketing",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "EcoCeres",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Eleda",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Emcure",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Engineering Ingegneria Informatica S.p.A",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Enito Group",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "EnterpriseDB",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Envestnet",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Estia Health",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Evident",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "ExtraHop",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Fedrigoni",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "FineToday",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "FIS (Fabbrica Italiana Sintetici)",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Fogo de Chão",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Frontline Road Safety Group",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "FXI",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Guidehouse",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Harrington",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "HealthEdge",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "House of HR",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "HSO",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Hugel",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Imperial Brady",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Inetum",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Italmatch Chemicals",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "ITP Aero",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "JAMCO",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Kailera Therapeutics",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Kantar",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Kestra Medical Technologies",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "KIOXIA Holdings",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "LeanTaaS",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Linc'well",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Maesa",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Mash Holdings",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "MKM Building Supplies",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "MSX International",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Namirial",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Newlink",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Nexi",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Nexpublica",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Novopor",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Nutanix",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "OverIT",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "PartsSource",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "PCI Pharma Services",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "PowerSchool",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Proterial",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "QuVa Pharma",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Rocket Software",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "RSB Transmissions",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Service Logic",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Sizzling Platter",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Softway",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Solenis",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Somacis",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "STADA",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Surgery Partners",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Tanabe Pharma",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Tenacia",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "The OpenAI Deployment Company",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Trans Maldivian Airways",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "US LBM",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "US Renal Care",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Valeo Foods",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Virgin Australia",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Virgin Voyages",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Vitalink",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "VXI",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Waystar",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Works Human Intelligence",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "XTEL",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "York Holdings",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Zelis",
+      "sponsor": "Bain Capital",
+      "region": "Europe / Asia / Global",
+      "portfolio_scope": "current",
+      "source_name": "Bain Capital official portfolio",
+      "source_url": "https://www.baincapitalprivateequity.com/portfolio",
+      "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "A Bathing Ape",
+      "sponsor": "CVC Capital Partners",
+      "region": "Europe / Asia",
+      "portfolio_scope": "selected",
+      "source_name": "CVC Capital Partners official portfolio",
+      "source_url": "https://www.cvc.com/portfolio/our-portfolio/",
+      "first_seen_at": "2026-07-11T17:46:20.113093+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Aavas Financiers",
+      "sponsor": "CVC Capital Partners",
+      "region": "Europe / Asia",
+      "portfolio_scope": "selected",
+      "source_name": "CVC Capital Partners official portfolio",
+      "source_url": "https://www.cvc.com/portfolio/our-portfolio/",
+      "first_seen_at": "2026-07-11T17:46:20.113093+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Acronis",
+      "sponsor": "CVC Capital Partners",
+      "region": "Europe / Asia",
+      "portfolio_scope": "selected",
+      "source_name": "CVC Capital Partners official portfolio",
+      "source_url": "https://www.cvc.com/portfolio/our-portfolio/",
+      "first_seen_at": "2026-07-11T17:46:20.113093+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Advantage Solutions",
+      "sponsor": "CVC Capital Partners",
+      "region": "Europe / Asia",
+      "portfolio_scope": "selected",
+      "source_name": "CVC Capital Partners official portfolio",
+      "source_url": "https://www.cvc.com/portfolio/our-portfolio/",
+      "first_seen_at": "2026-07-11T17:46:20.113093+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Ahlsell",
+      "sponsor": "CVC Capital Partners",
+      "region": "Europe / Asia",
+      "portfolio_scope": "selected",
+      "source_name": "CVC Capital Partners official portfolio",
+      "source_url": "https://www.cvc.com/portfolio/our-portfolio/",
+      "first_seen_at": "2026-07-11T17:46:20.113093+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Airalo",
+      "sponsor": "CVC Capital Partners",
+      "region": "Europe / Asia",
+      "portfolio_scope": "selected",
+      "source_name": "CVC Capital Partners official portfolio",
+      "source_url": "https://www.cvc.com/portfolio/our-portfolio/",
+      "first_seen_at": "2026-07-11T17:46:20.113093+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Aleph",
+      "sponsor": "CVC Capital Partners",
+      "region": "Europe / Asia",
+      "portfolio_scope": "selected",
+      "source_name": "CVC Capital Partners official portfolio",
+      "source_url": "https://www.cvc.com/portfolio/our-portfolio/",
+      "first_seen_at": "2026-07-11T17:46:20.113093+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Alvogen",
+      "sponsor": "CVC Capital Partners",
+      "region": "Europe / Asia",
+      "portfolio_scope": "selected",
+      "source_name": "CVC Capital Partners official portfolio",
+      "source_url": "https://www.cvc.com/portfolio/our-portfolio/",
+      "first_seen_at": "2026-07-11T17:46:20.113093+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Anchor Glass",
+      "sponsor": "CVC Capital Partners",
+      "region": "Europe / Asia",
+      "portfolio_scope": "selected",
+      "source_name": "CVC Capital Partners official portfolio",
+      "source_url": "https://www.cvc.com/portfolio/our-portfolio/",
+      "first_seen_at": "2026-07-11T17:46:20.113093+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "AnQore",
+      "sponsor": "CVC Capital Partners",
+      "region": "Europe / Asia",
+      "portfolio_scope": "selected",
+      "source_name": "CVC Capital Partners official portfolio",
+      "source_url": "https://www.cvc.com/portfolio/our-portfolio/",
+      "first_seen_at": "2026-07-11T17:46:20.113093+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Asplundh",
+      "sponsor": "CVC Capital Partners",
+      "region": "Europe / Asia",
+      "portfolio_scope": "selected",
+      "source_name": "CVC Capital Partners official portfolio",
+      "source_url": "https://www.cvc.com/portfolio/our-portfolio/",
+      "first_seen_at": "2026-07-11T17:46:20.113093+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Australian Venue Co",
+      "sponsor": "CVC Capital Partners",
+      "region": "Europe / Asia",
+      "portfolio_scope": "selected",
+      "source_name": "CVC Capital Partners official portfolio",
+      "source_url": "https://www.cvc.com/portfolio/our-portfolio/",
+      "first_seen_at": "2026-07-11T17:46:20.113093+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Authentic Brands Group",
+      "sponsor": "CVC Capital Partners",
+      "region": "Europe / Asia",
+      "portfolio_scope": "selected",
+      "source_name": "CVC Capital Partners official portfolio",
+      "source_url": "https://www.cvc.com/portfolio/our-portfolio/",
+      "first_seen_at": "2026-07-11T17:46:20.113093+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Bamboo Insurance",
+      "sponsor": "CVC Capital Partners",
+      "region": "Europe / Asia",
+      "portfolio_scope": "selected",
+      "source_name": "CVC Capital Partners official portfolio",
+      "source_url": "https://www.cvc.com/portfolio/our-portfolio/",
+      "first_seen_at": "2026-07-11T17:46:20.113093+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "BIP",
+      "sponsor": "CVC Capital Partners",
+      "region": "Europe / Asia",
+      "portfolio_scope": "selected",
+      "source_name": "CVC Capital Partners official portfolio",
+      "source_url": "https://www.cvc.com/portfolio/our-portfolio/",
+      "first_seen_at": "2026-07-11T17:46:20.113093+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Breitling",
+      "sponsor": "CVC Capital Partners",
+      "region": "Europe / Asia",
+      "portfolio_scope": "selected",
+      "source_name": "CVC Capital Partners official portfolio",
+      "source_url": "https://www.cvc.com/portfolio/our-portfolio/",
+      "first_seen_at": "2026-07-11T17:46:20.113093+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Bruin Capital",
+      "sponsor": "CVC Capital Partners",
+      "region": "Europe / Asia",
+      "portfolio_scope": "selected",
+      "source_name": "CVC Capital Partners official portfolio",
+      "source_url": "https://www.cvc.com/portfolio/our-portfolio/",
+      "first_seen_at": "2026-07-11T17:46:20.113093+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "ABS",
+      "sponsor": "Permira",
+      "region": "Europe / Asia",
+      "portfolio_scope": "current and realised",
+      "source_name": "Permira official portfolio",
+      "source_url": "https://www.permira.com/portfolio/our-portfolio",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Acuity Analytics",
+      "sponsor": "Permira",
+      "region": "Europe / Asia",
+      "portfolio_scope": "current and realised",
+      "source_name": "Permira official portfolio",
+      "source_url": "https://www.permira.com/portfolio/our-portfolio",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Adevinta",
+      "sponsor": "Permira",
+      "region": "Europe / Asia",
+      "portfolio_scope": "current and realised",
+      "source_name": "Permira official portfolio",
+      "source_url": "https://www.permira.com/portfolio/our-portfolio",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Allegro Group",
+      "sponsor": "Permira",
+      "region": "Europe / Asia",
+      "portfolio_scope": "current and realised",
+      "source_name": "Permira official portfolio",
+      "source_url": "https://www.permira.com/portfolio/our-portfolio",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "AllTrails",
+      "sponsor": "Permira",
+      "region": "Europe / Asia",
+      "portfolio_scope": "current and realised",
+      "source_name": "Permira official portfolio",
+      "source_url": "https://www.permira.com/portfolio/our-portfolio",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "AltamarCAM",
+      "sponsor": "Permira",
+      "region": "Europe / Asia",
+      "portfolio_scope": "current and realised",
+      "source_name": "Permira official portfolio",
+      "source_url": "https://www.permira.com/portfolio/our-portfolio",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Alter Domus",
+      "sponsor": "Permira",
+      "region": "Europe / Asia",
+      "portfolio_scope": "current and realised",
+      "source_name": "Permira official portfolio",
+      "source_url": "https://www.permira.com/portfolio/our-portfolio",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Althea",
+      "sponsor": "Permira",
+      "region": "Europe / Asia",
+      "portfolio_scope": "current and realised",
+      "source_name": "Permira official portfolio",
+      "source_url": "https://www.permira.com/portfolio/our-portfolio",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Ancestry",
+      "sponsor": "Permira",
+      "region": "Europe / Asia",
+      "portfolio_scope": "current and realised",
+      "source_name": "Permira official portfolio",
+      "source_url": "https://www.permira.com/portfolio/our-portfolio",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Arcaplanet",
+      "sponsor": "Permira",
+      "region": "Europe / Asia",
+      "portfolio_scope": "current and realised",
+      "source_name": "Permira official portfolio",
+      "source_url": "https://www.permira.com/portfolio/our-portfolio",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Atrium",
+      "sponsor": "Permira",
+      "region": "Europe / Asia",
+      "portfolio_scope": "current and realised",
+      "source_name": "Permira official portfolio",
+      "source_url": "https://www.permira.com/portfolio/our-portfolio",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Axiom",
+      "sponsor": "Permira",
+      "region": "Europe / Asia",
+      "portfolio_scope": "current and realised",
+      "source_name": "Permira official portfolio",
+      "source_url": "https://www.permira.com/portfolio/our-portfolio",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "BESTSECRET",
+      "sponsor": "Permira",
+      "region": "Europe / Asia",
+      "portfolio_scope": "current and realised",
+      "source_name": "Permira official portfolio",
+      "source_url": "https://www.permira.com/portfolio/our-portfolio",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "BFY Brands",
+      "sponsor": "Permira",
+      "region": "Europe / Asia",
+      "portfolio_scope": "current and realised",
+      "source_name": "Permira official portfolio",
+      "source_url": "https://www.permira.com/portfolio/our-portfolio",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "BioCatch",
+      "sponsor": "Permira",
+      "region": "Europe / Asia",
+      "portfolio_scope": "current and realised",
+      "source_name": "Permira official portfolio",
+      "source_url": "https://www.permira.com/portfolio/our-portfolio",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Boats Group",
+      "sponsor": "Permira",
+      "region": "Europe / Asia",
+      "portfolio_scope": "current and realised",
+      "source_name": "Permira official portfolio",
+      "source_url": "https://www.permira.com/portfolio/our-portfolio",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "CABB",
+      "sponsor": "Permira",
+      "region": "Europe / Asia",
+      "portfolio_scope": "current and realised",
+      "source_name": "Permira official portfolio",
+      "source_url": "https://www.permira.com/portfolio/our-portfolio",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Cambrex",
+      "sponsor": "Permira",
+      "region": "Europe / Asia",
+      "portfolio_scope": "current and realised",
+      "source_name": "Permira official portfolio",
+      "source_url": "https://www.permira.com/portfolio/our-portfolio",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Carta",
+      "sponsor": "Permira",
+      "region": "Europe / Asia",
+      "portfolio_scope": "current and realised",
+      "source_name": "Permira official portfolio",
+      "source_url": "https://www.permira.com/portfolio/our-portfolio",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Catawiki",
+      "sponsor": "Permira",
+      "region": "Europe / Asia",
+      "portfolio_scope": "current and realised",
+      "source_name": "Permira official portfolio",
+      "source_url": "https://www.permira.com/portfolio/our-portfolio",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T17:59:45.437536+00:00",
+      "verification_status": "website_heading_candidate"
+    }
+  ],
+  "fund_sync": {
+    "generated_at": "2026-07-11T17:59:45.437536+00:00",
+    "source_count": 18,
+    "company_candidate_count": 162,
+    "health": [
+      {
+        "name": "EQT",
+        "sponsor": "EQT",
+        "url": "https://eqtgroup.com/about/current-portfolio",
+        "status": "200",
+        "elapsed_ms": 2135,
+        "candidate_count": 0
+      },
+      {
+        "name": "KKR",
+        "sponsor": "KKR",
+        "url": "https://www.kkr.com/invest/portfolio",
+        "status": "200",
+        "elapsed_ms": 598,
+        "candidate_count": 0
+      },
+      {
+        "name": "CVC Capital Partners",
+        "sponsor": "CVC Capital Partners",
+        "url": "https://www.cvc.com/portfolio/our-portfolio/",
+        "status": "200",
+        "elapsed_ms": 1566,
+        "candidate_count": 17
+      },
+      {
+        "name": "Permira",
+        "sponsor": "Permira",
+        "url": "https://www.permira.com/portfolio/our-portfolio",
+        "status": "200",
+        "elapsed_ms": 446,
+        "candidate_count": 20
+      },
+      {
+        "name": "Advent International",
+        "sponsor": "Advent International",
+        "url": "https://www.adventinternational.com/investments/",
+        "status": "200",
+        "elapsed_ms": 462,
+        "candidate_count": 10
+      },
+      {
+        "name": "Cinven",
+        "sponsor": "Cinven",
+        "url": "https://www.cinven.com/portfolio/",
+        "status": "200",
+        "elapsed_ms": 640,
+        "candidate_count": 0
+      },
+      {
+        "name": "PAI Partners",
+        "sponsor": "PAI Partners",
+        "url": "https://www.paipartners.com/portfolio/",
+        "status": "200",
+        "elapsed_ms": 925,
+        "candidate_count": 0
+      },
+      {
+        "name": "Hg",
+        "sponsor": "Hg",
+        "url": "https://hgcapital.com/portfolio/",
+        "status": "200",
+        "elapsed_ms": 1149,
+        "candidate_count": 0
+      },
+      {
+        "name": "Triton Partners",
+        "sponsor": "Triton Partners",
+        "url": "https://www.triton-partners.com/portfolio/",
+        "status": "200",
+        "elapsed_ms": 642,
+        "candidate_count": 0
+      },
+      {
+        "name": "PAG",
+        "sponsor": "PAG",
+        "url": "https://www.pag.com/private-equity",
+        "status": "200",
+        "elapsed_ms": 418,
+        "candidate_count": 0
+      },
+      {
+        "name": "Navis Capital",
+        "sponsor": "Navis Capital",
+        "url": "https://www.naviscapital.com/portfolio-tag/current-investments/",
+        "status": "200",
+        "elapsed_ms": 421,
+        "candidate_count": 0
+      },
+      {
+        "name": "Affinity Equity Partners",
+        "sponsor": "Affinity Equity Partners",
+        "url": "https://www.affinityequity.com/",
+        "status": "200",
+        "elapsed_ms": 470,
+        "candidate_count": 0
+      },
+      {
+        "name": "Bain Capital",
+        "sponsor": "Bain Capital",
+        "url": "https://www.baincapitalprivateequity.com/portfolio",
+        "status": "200",
+        "elapsed_ms": 1108,
+        "candidate_count": 109
+      },
+      {
+        "name": "TPG",
+        "sponsor": "TPG",
+        "url": "https://www.tpg.com/portfolio",
+        "status": "200",
+        "elapsed_ms": 439,
+        "candidate_count": 0
+      },
+      {
+        "name": "Warburg Pincus",
+        "sponsor": "Warburg Pincus",
+        "url": "https://warburgpincus.com/investments/",
+        "status": "200",
+        "elapsed_ms": 391,
+        "candidate_count": 0
+      },
+      {
+        "name": "BC Partners",
+        "sponsor": "BC Partners",
+        "url": "https://www.bcpartners.com/portfolio/",
+        "status": "200",
+        "elapsed_ms": 1270,
+        "candidate_count": 0
+      },
+      {
+        "name": "Ardian",
+        "sponsor": "Ardian",
+        "url": "https://www.ardian.com/expertise/our-portfolio",
+        "status": "200",
+        "elapsed_ms": 1945,
+        "candidate_count": 6
       }
     ],
     "errors": [
       {
-        "source_name": "bain_global_pe_2026",
-        "url": "https://www.bain.com/insights/outlook-gaining-traction-global-private-equity-report-2026/",
-        "error": "Fetch failed for https://www.bain.com/insights/outlook-gaining-traction-global-private-equity-report-2026/: HTTP Error 403: Forbidden"
+        "name": "Bridgepoint",
+        "sponsor": "Bridgepoint",
+        "url": "https://www.bridgepoint.eu/portfolio",
+        "error": "<urlopen error _ssl.c:1112: The handshake operation timed out>"
       }
     ]
+  },
+  "credit_sources": [
+    {
+      "name": "FINRA TRACE Corporate & Agency",
+      "url": "https://www.finra.org/finra-data/fixed-income/corp-and-agency",
+      "region": "United States / 144A",
+      "identifier": "CUSIP",
+      "price_capability": "executed trade price and yield",
+      "source_type": "trade_history",
+      "kind": "credit_market"
+    },
+    {
+      "name": "Euronext Bonds / Nordic ABM",
+      "url": "https://live.euronext.com/en/products/bonds/list",
+      "region": "Europe",
+      "identifier": "ISIN",
+      "price_capability": "venue dependent",
+      "source_type": "exchange_directory",
+      "kind": "credit_market"
+    },
+    {
+      "name": "Luxembourg Stock Exchange",
+      "url": "https://www.luxse.com/market-overview/official-list",
+      "region": "Europe / Global",
+      "identifier": "ISIN",
+      "price_capability": "listing and reference data",
+      "source_type": "exchange_directory",
+      "kind": "credit_market"
+    },
+    {
+      "name": "HKEX Debt Securities",
+      "url": "https://www.hkex.com.hk/products/securities/debt-securities?sc_lang=en",
+      "region": "Asia",
+      "identifier": "ISIN or stock code",
+      "price_capability": "listing and disclosure",
+      "source_type": "exchange_directory",
+      "kind": "credit_market"
+    },
+    {
+      "name": "SGX Fixed Income",
+      "url": "https://www.sgx.com/fixed-income/retail-fixed-income-securities?code=retailbonds",
+      "region": "Asia",
+      "identifier": "ISIN",
+      "price_capability": "delayed retail last price",
+      "source_type": "exchange_trade_directory",
+      "kind": "credit_market"
+    },
+    {
+      "name": "Boerse Frankfurt Bonds",
+      "url": "https://live.deutsche-boerse.com/anleihen/suche",
+      "region": "Europe",
+      "identifier": "ISIN",
+      "price_capability": "delayed exchange price",
+      "source_type": "exchange_trade_directory",
+      "kind": "credit_market"
+    },
+    {
+      "name": "BME Fixed Income / MARF",
+      "url": "https://www.bolsasymercados.es/en/bme-exchange/prices-and-markets/fixed-income/issues.html",
+      "region": "Europe",
+      "identifier": "ISIN",
+      "price_capability": "listing reference and venue data",
+      "source_type": "exchange_trade_directory",
+      "kind": "credit_market"
+    }
+  ],
+  "credit": {
+    "verified_instruments": [],
+    "directory_matches": [
+      {
+        "company_name": "Benchmark Capital",
+        "issuer_name": null,
+        "isin": null,
+        "cusip": null,
+        "source_name": "Boerse Frankfurt Bonds",
+        "source_url": "https://live.deutsche-boerse.com/anleihen/suche",
+        "source_type": "exchange_trade_directory",
+        "price_capability": "delayed exchange price",
+        "observed_at": "2026-07-11T17:59:45.437536+00:00",
+        "verification_status": "directory_name_match_unverified"
+      },
+      {
+        "company_name": "Marshall Group",
+        "issuer_name": null,
+        "isin": null,
+        "cusip": null,
+        "source_name": "Boerse Frankfurt Bonds",
+        "source_url": "https://live.deutsche-boerse.com/anleihen/suche",
+        "source_type": "exchange_trade_directory",
+        "price_capability": "delayed exchange price",
+        "observed_at": "2026-07-11T17:59:45.437536+00:00",
+        "verification_status": "directory_name_match_unverified"
+      }
+    ],
+    "generated_at": "2026-07-11T17:59:45.437536+00:00"
+  },
+  "credit_sync": {
+    "generated_at": "2026-07-11T17:59:45.437536+00:00",
+    "source_count": 7,
+    "verified_instrument_count": 0,
+    "directory_match_count": 2,
+    "health": [
+      {
+        "name": "FINRA TRACE Corporate & Agency",
+        "url": "https://www.finra.org/finra-data/fixed-income/corp-and-agency",
+        "status": "200",
+        "elapsed_ms": 1096,
+        "matched_company_count": 0
+      },
+      {
+        "name": "Euronext Bonds / Nordic ABM",
+        "url": "https://live.euronext.com/en/products/bonds/list",
+        "status": "200",
+        "elapsed_ms": 2343,
+        "matched_company_count": 0
+      },
+      {
+        "name": "Luxembourg Stock Exchange",
+        "url": "https://www.luxse.com/market-overview/official-list",
+        "status": "200",
+        "elapsed_ms": 1797,
+        "matched_company_count": 0
+      },
+      {
+        "name": "HKEX Debt Securities",
+        "url": "https://www.hkex.com.hk/products/securities/debt-securities?sc_lang=en",
+        "status": "200",
+        "elapsed_ms": 2651,
+        "matched_company_count": 0
+      },
+      {
+        "name": "SGX Fixed Income",
+        "url": "https://www.sgx.com/fixed-income/retail-fixed-income-securities?code=retailbonds",
+        "status": "200",
+        "elapsed_ms": 596,
+        "matched_company_count": 0
+      },
+      {
+        "name": "Boerse Frankfurt Bonds",
+        "url": "https://live.deutsche-boerse.com/anleihen/suche",
+        "status": "200",
+        "elapsed_ms": 4154,
+        "matched_company_count": 2
+      },
+      {
+        "name": "BME Fixed Income / MARF",
+        "url": "https://www.bolsasymercados.es/en/bme-exchange/prices-and-markets/fixed-income/issues.html",
+        "status": "200",
+        "elapsed_ms": 1532,
+        "matched_company_count": 0
+      }
+    ],
+    "errors": []
   }
 }
