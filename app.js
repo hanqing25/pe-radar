@@ -9,10 +9,16 @@ const state = {
   sectors: [],
   sources: [],
   sync: {},
+  fundSources: [],
+  sponsorUniverse: [],
+  fundSync: {},
+  creditSources: [],
+  credit: { verified_instruments: [], directory_matches: [] },
+  creditSync: {},
   generatedAt: null,
 };
 
-const viewTitles = { radar: "Radar", pipeline: "Pipeline", sectors: "Sectors", sources: "Sources" };
+const viewTitles = { radar: "Radar", pipeline: "Pipeline", universe: "Fund universe", credit: "Credit", sectors: "Sectors", sources: "Sources" };
 const statusMeta = {
   active_watch: ["Watching", "blue"], sale_signal: ["Sale signal", "red"],
   late_exit_signal: ["Late process", "amber"], hsg_precedent: ["HSG precedent", "violet"],
@@ -58,6 +64,12 @@ async function loadData() {
     sectors: payload.sectors || [],
     sources: payload.sources || [],
     sync: payload.sync || {},
+    fundSources: payload.fund_sources || [],
+    sponsorUniverse: payload.sponsor_universe || [],
+    fundSync: payload.fund_sync || {},
+    creditSources: payload.credit_sources || [],
+    credit: payload.credit || { verified_instruments: [], directory_matches: [] },
+    creditSync: payload.credit_sync || {},
     generatedAt: payload.generated_at,
   });
   state.selectedId = state.targets.find((target) => !target.exclude_from_shortlist)?.company_name || state.targets[0]?.company_name || null;
@@ -81,14 +93,17 @@ function renderMetrics() {
   const actionable = state.signals.filter((signal) => ["sale_process", "continuation_vehicle"].includes(signal.signal_type)).length;
   const healthy = state.sync.fetched?.length || 0;
   const totalSources = healthy + (state.sync.errors?.length || 0);
+  const verifiedBonds = state.credit.verified_instruments?.length || 0;
   $("#metrics").innerHTML = [
     ["ACTIVE TARGETS", active, "ranked universe"],
     ["ACTIONABLE SIGNALS", actionable, "sale + continuation"],
     ["IN SIZE BAND", inBand, "$800m-$1.2bn"],
-    ["SOURCE HEALTH", `${healthy}/${totalSources || state.sources.length}`, state.sync.errors?.length ? `${state.sync.errors.length} blocked` : "reachable"],
+    ["OFFICIAL UNIVERSE", state.sponsorUniverse.length, `${state.fundSources.length} sponsor sites`],
+    ["VERIFIED BONDS", verifiedBonds, `${state.creditSources.length} credit venues`],
     ["LAST REFRESH", timeAgo(state.generatedAt), `${state.signals.length} signals retained`],
   ].map(([label, value, note]) => `<div><span>${label}</span><strong>${value}</strong><small>${note}</small></div>`).join("");
   $("#signal-badge").textContent = actionable;
+  $("#credit-badge").textContent = verifiedBonds;
 }
 
 function renderRadar() {
@@ -164,6 +179,28 @@ function renderSectors() {
   $("#content").innerHTML = `<section class="page-view"><div class="view-heading"><span><small>CATEGORY MEMORY</small><h2>PE ownership map</h2></span><em>Control-investment suitability</em></div><div class="sector-list">${state.sectors.map((sector, index) => `<article><b>0${index + 1}</b><span><strong>${escapeHtml(sector.sector)}</strong><small>${escapeHtml((sector.top_assets || []).join(" · "))}</small></span><div><small>Composite</small><strong>${Math.round(sector.avg_total)}</strong></div><div><small>PE suitability</small><strong>${Math.round(sector.avg_pe_suitability)}</strong></div><div><small>HSG fit</small><strong>${Math.round(sector.avg_hsg_fit)}</strong></div><i><span style="width:${sector.avg_total}%"></span></i></article>`).join("")}</div></section>`;
 }
 
+function renderUniverse() {
+  const query = state.query.trim().toLowerCase();
+  const rows = state.sponsorUniverse.filter((item) => !query || [item.company_name, item.sponsor, item.region].join(" ").toLowerCase().includes(query));
+  const sponsorCount = new Set(rows.map((item) => item.sponsor)).size;
+  $("#content").innerHTML = `<section class="page-view"><div class="view-heading"><span><small>OFFICIAL PORTFOLIOS</small><h2>Sponsor-owned company universe</h2></span><em>${rows.length} candidates · ${sponsorCount} sponsors</em></div>
+    <div class="universe-wrap"><section class="universe-table"><header><span>COMPANY</span><span>SPONSOR</span><span>REGION</span><span>SCOPE</span><span>VERIFICATION</span></header>
+      ${rows.map((item) => `<a href="${escapeHtml(item.source_url)}" target="_blank" rel="noreferrer"><span><b>${escapeHtml(item.company_name)}</b><small>${escapeHtml(item.source_name || "Official portfolio")}</small></span><strong>${escapeHtml(item.sponsor)}</strong><span>${escapeHtml(item.region || "Global")}</span><span>${escapeHtml((item.portfolio_scope || "portfolio").replaceAll("_", " "))}</span><em class="source-state"><i></i>Website candidate${icon("external-link", 13)}</em></a>`).join("") || `<div class="empty">${icon("building-2", 22)}<span>No official portfolio candidates matched</span></div>`}
+    </section></div></section>`;
+}
+
+function renderCredit() {
+  const instruments = state.credit.verified_instruments || [];
+  const matches = state.credit.directory_matches || [];
+  $("#content").innerHTML = `<section class="page-view"><div class="view-heading"><span><small>CREDIT OVERLAY</small><h2>PE-backed traded debt</h2></span><em>${instruments.length} verified instruments · ${matches.length} pending matches</em></div>
+    <div class="credit-layout"><section class="credit-table"><header><span>COMPANY / ISSUER</span><span>IDENTIFIER</span><span>COUPON / MATURITY</span><span>LAST / YTW</span><span>SOURCE</span></header>
+      ${instruments.map((item) => `<a href="${escapeHtml(item.source_url)}" target="_blank" rel="noreferrer"><span><b>${escapeHtml(item.company_name)}</b><small>${escapeHtml(item.legal_issuer_name || item.issuer_name || "Issuer open")}</small></span><strong>${escapeHtml(item.isin || item.cusip || "Open")}</strong><span>${item.coupon_pct == null ? "Open" : `${item.coupon_pct}%`}<small>${dateLabel(item.maturity_date)}</small></span><span>${item.last_price == null ? "Open" : item.last_price}<small>${item.ytw_pct == null ? "YTW open" : `${item.ytw_pct}% YTW`}</small></span><em>${escapeHtml(item.source_name || "Verified record")}${icon("external-link", 13)}</em></a>`).join("") || `<div class="credit-empty">${icon("shield-check", 24)}<strong>No verified instruments yet</strong><span>Issuer and ISIN/CUSIP evidence is required before a bond enters this table.</span></div>`}
+    </section><aside class="venue-panel"><h3>Market coverage</h3>${state.creditSources.map((source) => {
+      const failed = (state.creditSync.errors || []).some((error) => error.name === source.name || error.url === source.url);
+      return `<a href="${escapeHtml(source.url)}" target="_blank" rel="noreferrer"><b>${icon(failed ? "triangle-alert" : "landmark", 15)}</b><span><strong>${escapeHtml(source.name)}</strong><small>${escapeHtml(source.identifier || "Identifier open")} · ${escapeHtml((source.price_capability || source.source_type || "directory").replaceAll("_", " "))}</small></span><em class="${failed ? "failed" : ""}">${failed ? "Blocked" : "Monitored"}</em></a>`;
+    }).join("")}</aside></div></section>`;
+}
+
 function renderSources() {
   $("#content").innerHTML = `<section class="page-view"><div class="view-heading"><span><small>INGESTION</small><h2>Source operations</h2></span><em>Last build ${timeAgo(state.generatedAt)}</em></div><div class="source-layout"><section class="source-table"><header><span>SOURCE</span><span>REGION</span><span>TIER</span><span>STATE</span></header>${state.sources.map((source) => {
     const failed = (state.sync.errors || []).some((error) => error.source_name === source.name);
@@ -175,6 +212,8 @@ function render() {
   renderMetrics();
   if (state.view === "radar") renderRadar();
   if (state.view === "pipeline") renderPipeline();
+  if (state.view === "universe") renderUniverse();
+  if (state.view === "credit") renderCredit();
   if (state.view === "sectors") renderSectors();
   if (state.view === "sources") renderSources();
   refreshIcons();
@@ -190,7 +229,13 @@ function setView(view) {
 }
 
 document.querySelectorAll("nav [data-view]").forEach((button) => button.addEventListener("click", () => setView(button.dataset.view)));
-$("#search").addEventListener("input", (event) => { state.query = event.target.value; if (state.view !== "radar") setView("radar"); else renderRadar(); refreshIcons(); });
+$("#search").addEventListener("input", (event) => {
+  state.query = event.target.value;
+  if (state.view === "universe") renderUniverse();
+  else if (state.view !== "radar") setView("radar");
+  else renderRadar();
+  refreshIcons();
+});
 $("#refresh").addEventListener("click", () => window.location.reload());
 $("#open-nav").addEventListener("click", () => { $("#sidebar").classList.add("open"); $("#scrim").classList.add("show"); });
 $("#close-nav").addEventListener("click", () => { $("#sidebar").classList.remove("open"); $("#scrim").classList.remove("show"); });
