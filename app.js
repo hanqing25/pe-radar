@@ -27,6 +27,8 @@ const statusMeta = {
 const actionabilityMeta = {
   live_process: ["Live process", "red"],
   proactive_watch: ["Priority watch", "green"],
+  special_situation: ["Diligence gate", "amber"],
+  emerging_watch: ["Generated idea", "blue"],
   precedent: ["Thesis anchor", "violet"],
 };
 const signalMeta = {
@@ -97,12 +99,13 @@ function renderMetrics() {
   const actionable = state.signals.filter((signal) => ["sale_process", "continuation_vehicle"].includes(signal.signal_type)).length;
   const priorityTargets = state.targets.filter((target) => target.user_priority && !target.exclude_from_shortlist).length;
   const liveProcesses = state.targets.filter((target) => target.actionability === "live_process" && !target.exclude_from_shortlist).length;
+  const generatedIdeas = state.targets.filter((target) => target.idea_origin === "lookalike_generated" && !target.exclude_from_shortlist).length;
   const verifiedBonds = state.credit.verified_instruments?.length || 0;
   $("#metrics").innerHTML = [
     ["ACTIVE TARGETS", active, "ranked universe"],
     ["PRIORITY TARGETS", priorityTargets, "explicit HSG interest"],
     ["LIVE PROCESSES", liveProcesses, "assess now"],
-    ["OFFICIAL UNIVERSE", state.sponsorUniverse.length, `${state.fundSources.length} sponsor sites`],
+    ["GENERATED IDEAS", generatedIdeas, "qualified lookalikes"],
     ["VERIFIED BONDS", verifiedBonds, `${state.creditSources.length} credit venues`],
     ["LAST REFRESH", timeAgo(state.generatedAt), `${state.signals.length} signals retained`],
   ].map(([label, value, note]) => `<div><span>${label}</span><strong>${value}</strong><small>${note}</small></div>`).join("");
@@ -141,7 +144,12 @@ function renderRadar() {
 
   $("#region-filter")?.addEventListener("change", (event) => { state.region = event.target.value; renderRadar(); refreshIcons(); });
   $("#size-filter")?.addEventListener("click", () => { state.sizeOnly = !state.sizeOnly; renderRadar(); refreshIcons(); });
-  document.querySelectorAll("[data-target]").forEach((button) => button.addEventListener("click", () => { state.selectedId = button.dataset.target; renderRadar(); refreshIcons(); }));
+  document.querySelectorAll("[data-target]").forEach((button) => button.addEventListener("click", () => {
+    state.selectedId = button.dataset.target;
+    renderRadar();
+    refreshIcons();
+    if (window.innerWidth <= 860) document.querySelector(".detail-panel")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }));
 }
 
 function renderDetail(target) {
@@ -169,6 +177,7 @@ function stageFor(target) {
   if (target.exclude_from_shortlist) return "precedent";
   if (target.actionability === "live_process") return "deep_dive";
   if (target.actionability === "proactive_watch") return "outreach";
+  if (target.actionability === "special_situation") return "deep_dive";
   if (target.status === "sale_signal") return "deep_dive";
   if (target.status === "active_watch") return "outreach";
   return "watching";
