@@ -24,6 +24,11 @@ const statusMeta = {
   late_exit_signal: ["Late process", "amber"], hsg_precedent: ["HSG precedent", "violet"],
   completed_transaction: ["Completed", "gray"], below_size_watch: ["Below size", "blue"],
 };
+const actionabilityMeta = {
+  live_process: ["Live process", "red"],
+  proactive_watch: ["Priority watch", "green"],
+  precedent: ["Thesis anchor", "violet"],
+};
 const signalMeta = {
   sale_process: ["Sale process", "red"], continuation_vehicle: ["Continuation", "amber"],
   valuation_marker: ["Valuation", "violet"], exit_completed: ["Exit", "gray"],
@@ -89,15 +94,14 @@ function filteredTargets() {
 
 function renderMetrics() {
   const active = state.targets.filter((target) => !target.exclude_from_shortlist).length;
-  const inBand = state.targets.filter((target) => target.estimated_ev_usd_m >= 800 && target.estimated_ev_usd_m <= 1200).length;
   const actionable = state.signals.filter((signal) => ["sale_process", "continuation_vehicle"].includes(signal.signal_type)).length;
-  const healthy = state.sync.fetched?.length || 0;
-  const totalSources = healthy + (state.sync.errors?.length || 0);
+  const priorityTargets = state.targets.filter((target) => target.user_priority && !target.exclude_from_shortlist).length;
+  const liveProcesses = state.targets.filter((target) => target.actionability === "live_process" && !target.exclude_from_shortlist).length;
   const verifiedBonds = state.credit.verified_instruments?.length || 0;
   $("#metrics").innerHTML = [
     ["ACTIVE TARGETS", active, "ranked universe"],
-    ["ACTIONABLE SIGNALS", actionable, "sale + continuation"],
-    ["IN SIZE BAND", inBand, "$800m-$1.2bn"],
+    ["PRIORITY TARGETS", priorityTargets, "explicit HSG interest"],
+    ["LIVE PROCESSES", liveProcesses, "assess now"],
     ["OFFICIAL UNIVERSE", state.sponsorUniverse.length, `${state.fundSources.length} sponsor sites`],
     ["VERIFIED BONDS", verifiedBonds, `${state.creditSources.length} credit venues`],
     ["LAST REFRESH", timeAgo(state.generatedAt), `${state.signals.length} signals retained`],
@@ -111,7 +115,7 @@ function renderRadar() {
   if (!targets.some((target) => target.company_name === state.selectedId)) state.selectedId = targets[0]?.company_name || null;
   const selected = targets.find((target) => target.company_name === state.selectedId);
   const rows = targets.map((target) => {
-    const [label, tone] = statusMeta[target.status] || ["Watching", "blue"];
+    const [label, tone] = actionabilityMeta[target.actionability] || statusMeta[target.status] || ["Watching", "blue"];
     const score = targetScore(target);
     const initials = target.company_name.split(/\s+/).slice(0, 2).map((part) => part[0]).join("");
     return `<button class="target-row ${target.company_name === state.selectedId ? "selected" : ""}" data-target="${escapeHtml(target.company_name)}">
@@ -147,11 +151,13 @@ function renderDetail(target) {
   const evidence = [...(target.evidence || [])].slice(0, 3);
   const scoreRows = [["Availability", scores.availability], ["Business quality", scores.business_quality], ["HSG fit", scores.hsg_fit], ["PE suitability", scores.pe_suitability]];
   return `<aside class="detail-panel">
-    <div class="detail-heading"><span class="detail-avatar">${escapeHtml(target.company_name.slice(0, 2).toUpperCase())}</span><span><small>SELECTED TARGET</small><h2>${escapeHtml(target.company_name)}</h2><p>${escapeHtml(target.sub_sector)}</p></span><strong>${targetScore(target)}<small>/100</small></strong></div>
+    <div class="detail-heading"><span class="detail-avatar">${escapeHtml(target.company_name.slice(0, 2).toUpperCase())}</span><span><small>${escapeHtml((target.tracking_tier || "Selected target").toUpperCase())}</small><h2>${escapeHtml(target.company_name)}</h2><p>${escapeHtml(target.sub_sector)}</p></span><strong>${targetScore(target)}<small>/100</small></strong></div>
     <div class="detail-facts"><div><span>Owner</span><strong>${escapeHtml(target.current_owner)}</strong></div><div><span>Hold</span><strong>${target.hold_years == null ? "Open" : `${Number(target.hold_years).toFixed(1)} yrs`}</strong></div><div><span>Est. EV</span><strong>${sizeLabel(target.estimated_ev_usd_m)}</strong></div></div>
     <section class="detail-section"><h3>Current read</h3><p>${escapeHtml(target.recommendation)}</p></section>
+    ${target.next_action ? `<section class="detail-section action-section"><h3>Next action</h3><p>${escapeHtml(target.next_action)}</p></section>` : ""}
     <section class="detail-section"><h3>Score anatomy</h3>${scoreRows.map(([name, value]) => `<div class="score-row"><span>${name}</span><div><i style="width:${value || 0}%"></i></div><strong>${value || 0}</strong></div>`).join("")}</section>
     <section class="detail-section"><h3>Investment markers</h3><div class="tag-row">${(target.tags || []).map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")}</div></section>
+    ${(target.watch_triggers || []).length ? `<section class="detail-section"><h3>Watch triggers</h3><div class="trigger-list">${target.watch_triggers.map((trigger) => `<span>${icon("radar", 12)}${escapeHtml(trigger)}</span>`).join("")}</div></section>` : ""}
     <section class="detail-section"><div class="section-title"><h3>Evidence</h3><span>${evidence.length + related.length} items</span></div>
       ${evidence.map((item) => `<a href="${escapeHtml(item.url)}" target="_blank" rel="noreferrer">${icon("circle-dot", 14)}<span><strong>${escapeHtml(item.note)}</strong><small>${escapeHtml(item.source)} · ${dateLabel(item.date)}</small></span>${icon("external-link", 13)}</a>`).join("")}
       ${related.map((item) => `<a href="${escapeHtml(item.source_url)}" target="_blank" rel="noreferrer">${icon("activity", 14)}<span><strong>${escapeHtml(item.excerpt)}</strong><small>${escapeHtml(item.source_name)} · ${dateLabel(item.created_at)}</small></span>${icon("external-link", 13)}</a>`).join("")}
@@ -161,6 +167,8 @@ function renderDetail(target) {
 
 function stageFor(target) {
   if (target.exclude_from_shortlist) return "precedent";
+  if (target.actionability === "live_process") return "deep_dive";
+  if (target.actionability === "proactive_watch") return "outreach";
   if (target.status === "sale_signal") return "deep_dive";
   if (target.status === "active_watch") return "outreach";
   return "watching";
@@ -193,8 +201,8 @@ function renderCredit() {
   const instruments = state.credit.verified_instruments || [];
   const matches = state.credit.directory_matches || [];
   $("#content").innerHTML = `<section class="page-view"><div class="view-heading"><span><small>CREDIT OVERLAY</small><h2>PE-backed traded debt</h2></span><em>${instruments.length} verified instruments · ${matches.length} pending matches</em></div>
-    <div class="credit-layout"><section class="credit-table"><header><span>COMPANY / ISSUER</span><span>IDENTIFIER</span><span>COUPON / MATURITY</span><span>LAST / YTW</span><span>SOURCE</span></header>
-      ${instruments.map((item) => `<a href="${escapeHtml(item.source_url)}" target="_blank" rel="noreferrer"><span><b>${escapeHtml(item.company_name)}</b><small>${escapeHtml(item.legal_issuer_name || item.issuer_name || "Issuer open")}</small></span><strong>${escapeHtml(item.isin || item.cusip || "Open")}</strong><span>${item.coupon_pct == null ? "Open" : `${item.coupon_pct}%`}<small>${dateLabel(item.maturity_date)}</small></span><span>${item.last_price == null ? "Open" : item.last_price}<small>${item.ytw_pct == null ? "YTW open" : `${item.ytw_pct}% YTW`}</small></span><em>${escapeHtml(item.source_name || "Verified record")}${icon("external-link", 13)}</em></a>`).join("") || `<div class="credit-empty">${icon("shield-check", 24)}<strong>No verified instruments yet</strong><span>Issuer and ISIN/CUSIP evidence is required before a bond enters this table.</span></div>`}
+    <div class="credit-layout"><section class="credit-table"><header><span>COMPANY / ISSUER</span><span>IDENTIFIER</span><span>COUPON / MATURITY</span><span>PRICE / YTW</span><span>SOURCE</span></header>
+      ${instruments.map((item) => { const price = item.last_price ?? item.reference_price; return `<a href="${escapeHtml(item.source_url)}" target="_blank" rel="noreferrer"><span><b>${escapeHtml(item.company_name)}</b><small>${escapeHtml(item.legal_issuer_name || item.issuer_name || "Issuer open")}</small></span><strong>${escapeHtml(item.isin || item.cusip || "Open")}</strong><span>${item.coupon_pct == null ? "Open" : `${item.coupon_pct}%`}<small>${dateLabel(item.maturity_date)} · ${escapeHtml(item.coupon_type || "")}</small></span><span>${price == null ? "Open" : Number(price).toFixed(2)}<small>${item.ytw_pct == null ? escapeHtml(item.price_type || "YTW open") : `${item.ytw_pct}% YTW`}</small></span><em>${escapeHtml(item.source_name || "Verified record")}${icon("external-link", 13)}</em></a>`; }).join("") || `<div class="credit-empty">${icon("shield-check", 24)}<strong>No verified instruments yet</strong><span>Issuer and ISIN/CUSIP evidence is required before a bond enters this table.</span></div>`}
     </section><aside class="venue-panel"><h3>Market coverage</h3>${state.creditSources.map((source) => {
       const failed = (state.creditSync.errors || []).some((error) => error.name === source.name || error.url === source.url);
       return `<a href="${escapeHtml(source.url)}" target="_blank" rel="noreferrer"><b>${icon(failed ? "triangle-alert" : "landmark", 15)}</b><span><strong>${escapeHtml(source.name)}</strong><small>${escapeHtml(source.identifier || "Identifier open")} · ${escapeHtml((source.price_capability || source.source_type || "directory").replaceAll("_", " "))}</small></span><em class="${failed ? "failed" : ""}">${failed ? "Blocked" : "Monitored"}</em></a>`;
