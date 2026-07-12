@@ -240,7 +240,9 @@ def assess_idea(row: dict, related: list[dict]) -> None:
         20 if exit_signal else 15 if mature_hold else 8 if financing_signal or building_hold else 0,
     ))
     row["outreach_readiness"] = min(100, readiness)
-    if row["promote_ready"] and exit_signal:
+    if row.get("disposition") == "above_band_reference":
+        stage = "category_reference"
+    elif row["promote_ready"] and (exit_signal or mature_hold):
         stage = "contact_now"
     elif mature_hold:
         stage = "diligence_now"
@@ -255,6 +257,8 @@ def assess_idea(row: dict, related: list[dict]) -> None:
         "exit_window": "Wait for mature hold or exit signal", "ai_evidence": "Verify AI exposure with primary evidence",
     }
     row["next_gate"] = next((labels[key] for key in ("owner", "entry", "size", "quality", "exit_window", "ai_evidence") if not gates[key]), "Promotion gates passed")
+    if stage == "category_reference":
+        row["next_gate"] = "Above target band; category reference only"
 
 
 def deal_job(source: dict) -> dict:
@@ -347,7 +351,7 @@ def refresh_idea_queue(payload: dict, signals: list[dict], new_candidates: list[
         assess_idea(row, related)
         qualified_queue.append(row)
     queue = qualified_queue
-    stage_rank = {"contact_now": 0, "diligence_now": 1, "build_relationship": 2, "monitor": 3}
+    stage_rank = {"contact_now": 0, "diligence_now": 1, "build_relationship": 2, "monitor": 3, "category_reference": 4}
     status_rank = {"research_now": 0, "monitor": 1, "new_official_addition": 2}
     queue.sort(key=lambda item: (stage_rank.get(str(item.get("actionability_stage")), 4), status_rank.get(str(item.get("status")), 3), -int(item.get("triage_score", 0)), str(item.get("company_name", ""))))
     payload["idea_queue"] = queue[:100]
@@ -363,6 +367,7 @@ def refresh_idea_queue(payload: dict, signals: list[dict], new_candidates: list[
         "contact_now_count": sum(1 for item in queue if item.get("actionability_stage") == "contact_now"),
         "diligence_now_count": sum(1 for item in queue if item.get("actionability_stage") == "diligence_now"),
         "build_relationship_count": sum(1 for item in queue if item.get("actionability_stage") == "build_relationship"),
+        "category_reference_count": sum(1 for item in queue if item.get("actionability_stage") == "category_reference"),
         "ai_theme_count": sum(1 for item in queue if item.get("themes")),
     }
 
