@@ -4,6 +4,7 @@ const state = {
   region: "All",
   sizeOnly: false,
   aiOnly: false,
+  hsgFilter: "all",
   selectedId: null,
   selectedIdea: null,
   targets: [],
@@ -16,6 +17,7 @@ const state = {
   fundSync: {},
   ideaQueue: [],
   ideaSync: {},
+  hsgProfile: {},
   creditSources: [],
   credit: { verified_instruments: [], watch_instruments: [], directory_matches: [] },
   creditSync: {},
@@ -31,10 +33,21 @@ const themeMeta = {
 };
 const ideaStageMeta = {
   contact_now: "Contact now",
+  partner_now: "Partner now",
   diligence_now: "Diligence now",
   build_relationship: "Build relationship",
   monitor: "Monitor",
   category_reference: "Category reference",
+  pass: "Pass",
+};
+const hsgDecisionMeta = {
+  pursue_solo: ["Solo control", "green"],
+  pursue_structured: ["Structured control", "green"],
+  pursue_with_partner: ["Partner route", "amber"],
+  relationship_only: ["Build relationship", "blue"],
+  diligence_only: ["Diligence gate", "red"],
+  precedent: ["HSG precedent", "violet"],
+  pass: ["Pass", "gray"],
 };
 const statusMeta = {
   active_watch: ["Watching", "blue"], sale_signal: ["Sale signal", "red"],
@@ -73,6 +86,27 @@ function ideaSize(item) {
   return { label: `${prefix}${signal.value_m}m`, note };
 }
 
+function hsgInfo(item) {
+  return item?.hsg_underwriting || { decision: "relationship_only", score: 0, gates: {}, constraints: [] };
+}
+
+function equityLabel(item) {
+  const equity = hsgInfo(item).estimated_equity_requirement;
+  if (!equity) return { label: "Open", note: "Needs capital structure" };
+  const prefix = equity.currency === "EUR" ? "€" : equity.currency === "GBP" ? "£" : "$";
+  return { label: `${prefix}${equity.low_m}-${equity.high_m}m`, note: "Modeled, not disclosed" };
+}
+
+function hsgFilterMatch(item) {
+  const decision = hsgInfo(item).decision;
+  if (state.hsgFilter === "all") return true;
+  if (state.hsgFilter === "lead") return ["pursue_solo", "pursue_structured"].includes(decision);
+  if (state.hsgFilter === "partner") return decision === "pursue_with_partner";
+  if (state.hsgFilter === "build") return decision === "relationship_only";
+  if (state.hsgFilter === "diligence") return decision === "diligence_only";
+  return true;
+}
+
 function dateLabel(value) {
   if (!value) return "Open";
   return new Intl.DateTimeFormat("en", { month: "short", day: "numeric", year: "numeric" }).format(new Date(value));
@@ -103,13 +137,14 @@ async function loadData() {
     fundSync: payload.fund_sync || {},
     ideaQueue: payload.idea_queue || [],
     ideaSync: payload.idea_sync || {},
+    hsgProfile: payload.hsg_profile || {},
     creditSources: payload.credit_sources || [],
     credit: payload.credit || { verified_instruments: [], watch_instruments: [], directory_matches: [] },
     creditSync: payload.credit_sync || {},
     generatedAt: payload.generated_at,
   });
   state.selectedId = state.targets.find((target) => !target.exclude_from_shortlist)?.company_name || state.targets[0]?.company_name || null;
-  state.selectedIdea = state.ideaQueue.find((item) => item.actionability_stage === "contact_now")?.company_name || state.ideaQueue[0]?.company_name || null;
+  state.selectedIdea = state.ideaQueue.find((item) => ["contact_now", "partner_now"].includes(item.actionability_stage))?.company_name || state.ideaQueue[0]?.company_name || null;
   render();
 }
 
@@ -130,14 +165,15 @@ function renderMetrics() {
   const actionable = state.signals.filter((signal) => ["sale_process", "continuation_vehicle"].includes(signal.signal_type)).length;
   const priorityTargets = state.targets.filter((target) => target.user_priority && !target.exclude_from_shortlist).length;
   const liveProcesses = state.targets.filter((target) => target.actionability === "live_process" && !target.exclude_from_shortlist).length;
+  const hsgExecutable = [...state.targets, ...state.ideaQueue].filter((item) => ["pursue_solo", "pursue_structured", "pursue_with_partner"].includes(hsgInfo(item).decision)).length;
   const aiNames = [...state.targets, ...state.ideaQueue].filter((target) => (target.themes || []).some((theme) => theme.startsWith("ai_"))).length;
   const verifiedBonds = state.credit.verified_instruments?.length || 0;
   const watchBonds = state.credit.watch_instruments?.length || 0;
   $("#metrics").innerHTML = [
     ["ACTIVE TARGETS", active, "ranked universe"],
-    ["PRIORITY TARGETS", priorityTargets, "explicit HSG interest"],
+    ["HSG EXECUTABLE", hsgExecutable, "lead or partner route"],
     ["LIVE PROCESSES", liveProcesses, "assess now"],
-    ["IDEA INBOX", state.ideaQueue.length, `${state.ideaSync.contact_now_count || 0} contact now`],
+    ["IDEA INBOX", state.ideaQueue.length, `${state.ideaSync.contact_now_count || 0} lead · ${state.ideaSync.partner_now_count || 0} partner`],
     ["AI THEMES", aiNames, "evidence-gated exposure"],
     ["LAST REFRESH", timeAgo(state.generatedAt), `${state.signals.length} signals retained`],
   ].map(([label, value, note]) => `<div><span>${label}</span><strong>${value}</strong><small>${note}</small></div>`).join("");
@@ -151,14 +187,14 @@ function renderRadar() {
   if (!targets.some((target) => target.company_name === state.selectedId)) state.selectedId = targets[0]?.company_name || null;
   const selected = targets.find((target) => target.company_name === state.selectedId);
   const rows = targets.map((target) => {
-    const [label, tone] = actionabilityMeta[target.actionability] || statusMeta[target.status] || ["Watching", "blue"];
+    const [label, tone] = hsgDecisionMeta[hsgInfo(target).decision] || ["Unscoped", "gray"];
     const score = targetScore(target);
     const initials = target.company_name.split(/\s+/).slice(0, 2).map((part) => part[0]).join("");
     return `<button class="target-row ${target.company_name === state.selectedId ? "selected" : ""}" data-target="${escapeHtml(target.company_name)}">
       <span class="company-cell"><b>${escapeHtml(initials)}</b><span><strong>${escapeHtml(target.company_name)}</strong><small>${escapeHtml(target.country)} · ${escapeHtml(target.sub_sector)}</small></span></span>
       <span class="owner-cell"><strong>${escapeHtml(target.current_owner)}</strong><small>${target.hold_years == null ? "Entry date open" : `${Number(target.hold_years).toFixed(1)} yrs held`}</small></span>
       <span class="size-cell"><strong>${sizeLabel(target.estimated_ev_usd_m)}</strong><small>${target.estimated_ev_usd_m == null ? "Needs work" : target.estimated_ev_usd_m >= 800 && target.estimated_ev_usd_m <= 1200 ? "In band" : "Outside band"}</small></span>
-      <span class="score-cell"><strong>${score}</strong><span><i style="width:${score}%"></i></span></span>
+      <span class="score-cell"><strong>${hsgInfo(target).score || score}</strong><span><i style="width:${hsgInfo(target).score || score}%"></i></span></span>
       <span><em class="pill ${tone}">${label}</em></span>${icon("chevron-right", 15)}
     </button>`;
   }).join("");
@@ -170,7 +206,7 @@ function renderRadar() {
         <button id="size-filter" class="${state.sizeOnly ? "active" : ""}">${icon("filter", 15)}$800m-$1.2bn</button>
         <button id="ai-filter" class="${state.aiOnly ? "active" : ""}">${icon("cpu", 15)}AI theme</button>
       </div></div>
-      <div class="table-head"><span>COMPANY</span><span>OWNER / HOLD</span><span>SIZE</span><span>SCORE</span><span>STATUS</span><span></span></div>
+      <div class="table-head"><span>COMPANY</span><span>OWNER / HOLD</span><span>SIZE</span><span>HSG</span><span>HSG ROUTE</span><span></span></div>
       <div class="target-list">${rows || `<div class="empty">${icon("search", 20)}<span>No matching targets</span></div>`}</div>
     </section>
     ${renderDetail(selected)}
@@ -193,9 +229,14 @@ function renderDetail(target) {
   const related = state.signals.filter((signal) => signal.company_name === target.company_name).slice(0, 4);
   const evidence = [...(target.evidence || [])].slice(0, 3);
   const scoreRows = [["Availability", scores.availability], ["Business quality", scores.business_quality], ["HSG fit", scores.hsg_fit], ["PE suitability", scores.pe_suitability]];
+  const hsg = hsgInfo(target);
+  const [routeLabel, routeTone] = hsgDecisionMeta[hsg.decision] || ["Unscoped", "gray"];
+  const equity = equityLabel(target);
+  const hsgGates = Object.entries(hsg.gates || {});
   return `<aside class="detail-panel">
     <div class="detail-heading"><span class="detail-avatar">${escapeHtml(target.company_name.slice(0, 2).toUpperCase())}</span><span><small>${escapeHtml((target.tracking_tier || "Selected target").toUpperCase())}</small><h2>${escapeHtml(target.company_name)}</h2><p>${escapeHtml(target.sub_sector)}</p></span><strong>${targetScore(target)}<small>/100</small></strong></div>
     <div class="detail-facts"><div><span>Owner</span><strong>${escapeHtml(target.current_owner)}</strong></div><div><span>Hold</span><strong>${target.hold_years == null ? "Open" : `${Number(target.hold_years).toFixed(1)} yrs`}</strong></div><div><span>Est. EV</span><strong>${sizeLabel(target.estimated_ev_usd_m)}</strong></div></div>
+    <section class="detail-section hsg-route-section"><div class="section-title"><h3>HSG execution route</h3><em class="pill ${routeTone}">${escapeHtml(routeLabel)}</em></div><strong>${escapeHtml(equity.label)} modeled equity</strong><p>${escapeHtml(hsg.structure || "Transaction structure remains open.")}</p><small>${escapeHtml(hsg.value_creation_edge || "HSG edge remains open.")}</small><div class="hsg-gates">${hsgGates.map(([name, passed]) => `<span class="${passed ? "passed" : "open"}">${icon(passed ? "check" : "circle-dashed", 11)}${escapeHtml(name.replaceAll("_", " "))}</span>`).join("")}</div>${(hsg.constraints || []).length ? `<ul>${hsg.constraints.map((constraint) => `<li>${escapeHtml(constraint)}</li>`).join("")}</ul>` : ""}</section>
     <section class="detail-section"><h3>Current read</h3><p>${escapeHtml(target.recommendation)}</p></section>
     ${target.next_action ? `<section class="detail-section action-section"><h3>Next action</h3><p>${escapeHtml(target.next_action)}</p></section>` : ""}
     ${target.ai_thesis ? `<section class="detail-section ai-section"><h3>${icon("cpu", 14)}AI transmission path</h3><p>${escapeHtml(target.ai_thesis)}</p><div class="tag-row">${(target.themes || []).map((theme) => `<span>${escapeHtml(themeMeta[theme] || theme)}</span>`).join("")}</div></section>` : ""}
@@ -214,15 +255,19 @@ function renderIdeaBrief(item) {
   const size = ideaSize(item);
   const stage = ideaStageMeta[item.actionability_stage] || "Qualification pending";
   const effectiveHold = item.effective_hold_years ?? item.hold_years;
-  const gates = Object.entries(item.promotion_gates || {});
+  const hsg = hsgInfo(item);
+  const [routeLabel, routeTone] = hsgDecisionMeta[hsg.decision] || ["Unscoped", "gray"];
+  const equity = equityLabel(item);
+  const gates = Object.entries(hsg.gates || {});
   const contacts = item.sponsor_contacts || [];
   const events = item.event_signals || [];
   const evidence = [...(item.evidence || []), ...(item.ai_evidence || [])].slice(0, 4);
   return `<aside class="idea-brief">
-    <div class="idea-brief-heading"><span><small>${escapeHtml(stage.toUpperCase())}</small><h2>${escapeHtml(item.company_name)}</h2><p>${escapeHtml(item.sponsor || "Owner open")}</p></span><strong>${item.outreach_readiness || 0}<small>/100</small></strong></div>
-    <div class="idea-brief-facts"><div><span>Size signal</span><strong>${escapeHtml(size.label)}</strong><small>${escapeHtml(size.note)}</small></div><div><span>Exit clock</span><strong>${effectiveHold == null ? "Open" : `${Number(effectiveHold).toFixed(1)} yrs`}</strong><small>${item.exit_clock_reset ? "Since capital reset" : "Since sponsor entry"}</small></div></div>
+    <div class="idea-brief-heading"><span><small>${escapeHtml(stage.toUpperCase())}</small><h2>${escapeHtml(item.company_name)}</h2><p>${escapeHtml(item.sponsor || "Owner open")}</p></span><strong>${hsg.score || 0}<small> HSG</small></strong></div>
+    <div class="idea-brief-facts"><div><span>Size signal</span><strong>${escapeHtml(size.label)}</strong><small>${escapeHtml(size.note)}</small></div><div><span>Modeled equity</span><strong>${escapeHtml(equity.label)}</strong><small>${escapeHtml(equity.note)}</small></div><div><span>Exit clock</span><strong>${effectiveHold == null ? "Open" : `${Number(effectiveHold).toFixed(1)} yrs`}</strong><small>${item.exit_clock_reset ? "Since capital reset" : "Since sponsor entry"}</small></div></div>
+    <section class="hsg-route-section"><div class="section-title"><h3>HSG execution route</h3><em class="pill ${routeTone}">${escapeHtml(routeLabel)}</em></div><strong>${escapeHtml(hsg.structure || "Transaction structure remains open.")}</strong><p>${escapeHtml(hsg.value_creation_edge || "HSG edge remains open.")}</p>${(hsg.constraints || []).length ? `<ul>${hsg.constraints.map((constraint) => `<li>${escapeHtml(constraint)}</li>`).join("")}</ul>` : ""}</section>
     <section><h3>Origination thesis</h3><p>${escapeHtml(item.why_now || item.business_model)}</p></section>
-    <section class="idea-gates"><h3>Promotion gates</h3><div>${gates.map(([name, passed]) => `<span class="${passed ? "passed" : "open"}">${icon(passed ? "check" : "circle-dashed", 12)}${escapeHtml(name.replaceAll("_", " "))}</span>`).join("")}</div></section>
+    <section class="idea-gates"><h3>HSG feasibility gates</h3><div>${gates.map(([name, passed]) => `<span class="${passed ? "passed" : "open"}">${icon(passed ? "check" : "circle-dashed", 12)}${escapeHtml(name.replaceAll("_", " "))}</span>`).join("")}</div></section>
     <section class="contact-ask"><h3>First contact ask</h3><p>${escapeHtml(item.first_contact_ask || item.next_action || "Confirm ownership, size and exit timing.")}</p></section>
     <section><div class="section-title"><h3>Sponsor route</h3><span>${contacts.length} contacts</span></div><div class="contact-list">${contacts.map((contact) => `<a href="${escapeHtml(contact.url)}" target="_blank" rel="noreferrer"><span><strong>${escapeHtml(contact.name)}</strong><small>${escapeHtml(contact.role)}</small></span><em>${escapeHtml((contact.priority || "contact").replaceAll("_", " "))}${icon("external-link", 12)}</em></a>`).join("") || `<p class="brief-open">Sponsor contact mapping remains open.</p>`}</div></section>
     ${events.length ? `<section><div class="section-title"><h3>Transaction signals</h3><span>${events.length} events</span></div><div class="event-list">${events.map((event) => `<a href="${escapeHtml(event.url)}" target="_blank" rel="noreferrer"><b>${dateLabel(event.date)}</b><span><strong>${escapeHtml((event.signal_type || "event").replaceAll("_", " "))}</strong><small>${escapeHtml(event.note || "")}</small></span>${icon("external-link", 12)}</a>`).join("")}</div></section>` : ""}
@@ -234,24 +279,30 @@ function renderIdeas() {
   const query = state.query.trim().toLowerCase();
   const rows = state.ideaQueue.filter((item) => {
     const text = [item.company_name, item.sponsor, item.country, item.business_model, ...(item.themes || [])].join(" ").toLowerCase();
-    return (!query || text.includes(query)) && (!state.aiOnly || (item.themes || []).some((theme) => theme.startsWith("ai_")));
+    return (!query || text.includes(query)) && (!state.aiOnly || (item.themes || []).some((theme) => theme.startsWith("ai_"))) && hsgFilterMatch(item);
   });
   if (!rows.some((item) => item.company_name === state.selectedIdea)) state.selectedIdea = rows[0]?.company_name || null;
   const selected = rows.find((item) => item.company_name === state.selectedIdea);
   const contactCount = rows.filter((item) => item.actionability_stage === "contact_now").length;
+  const partnerCount = rows.filter((item) => item.actionability_stage === "partner_now").length;
   const diligenceCount = rows.filter((item) => item.actionability_stage === "diligence_now").length;
-  $("#content").innerHTML = `<section class="page-view"><div class="view-heading"><span><small>EVIDENCE-GATED DISCOVERY</small><h2>Idea research inbox</h2></span><div class="idea-heading-actions"><em>${rows.length} candidates · ${contactCount} contact now · ${diligenceCount} diligence</em><button id="idea-ai-filter" class="theme-filter ${state.aiOnly ? "active" : ""}">${icon("cpu", 15)}AI theme</button></div></div>
-    <div class="idea-layout"><div class="idea-wrap"><section class="idea-table"><header><span>COMPANY / THESIS</span><span>OWNER / EXIT CLOCK</span><span>SIZE SIGNAL</span><span>READINESS</span><span>NEXT GATE</span></header>
+  const routeFilters = [["all", "All"], ["lead", "HSG lead"], ["partner", "Partner"], ["build", "Build"], ["diligence", "Diligence"]];
+  $("#content").innerHTML = `<section class="page-view"><div class="view-heading"><span><small>HSG-FEASIBILITY GATED</small><h2>Idea research inbox</h2></span><div class="idea-heading-actions"><em>${rows.length} shown · ${contactCount} lead · ${partnerCount} partner · ${diligenceCount} diligence</em><div class="hsg-filter-group">${routeFilters.map(([id, label]) => `<button data-hsg-filter="${id}" class="theme-filter ${state.hsgFilter === id ? "active" : ""}">${escapeHtml(label)}</button>`).join("")}</div><button id="idea-ai-filter" class="theme-filter ${state.aiOnly ? "active" : ""}">${icon("cpu", 15)}AI</button></div></div>
+    <div class="idea-layout"><div class="idea-wrap"><section class="idea-table"><header><span>COMPANY / THESIS</span><span>OWNER / EXIT CLOCK</span><span>SIZE SIGNAL</span><span>HSG ROUTE</span><span>NEXT GATE</span></header>
       ${rows.map((item) => {
         const evidence = item.evidence?.[0] || item.ai_evidence?.[0];
         const size = ideaSize(item);
         const effectiveHold = item.effective_hold_years ?? item.hold_years;
         const holdNote = effectiveHold == null ? "Entry date open" : item.exit_clock_reset ? `${Number(effectiveHold).toFixed(1)} yrs since reset` : `${Number(effectiveHold).toFixed(1)} yrs held`;
         const stage = ideaStageMeta[item.actionability_stage] || "Qualification pending";
-        return `<button type="button" class="idea-row ${item.company_name === state.selectedIdea ? "selected" : ""}" data-idea="${escapeHtml(item.company_name)}"><span class="idea-company"><strong>${escapeHtml(item.company_name)}</strong><small>${escapeHtml(item.business_model || "Business model classification pending")}</small><span class="theme-tags">${(item.themes || []).map((theme) => `<b>${escapeHtml(themeMeta[theme] || theme)}</b>`).join("")}</span></span><span><strong>${escapeHtml(item.sponsor || "Owner open")}</strong><small>${escapeHtml(holdNote)}</small></span><span><strong>${escapeHtml(size.label)}</strong><small>${escapeHtml(size.note)}</small></span><span class="idea-score"><strong>${item.outreach_readiness || 0}</strong><small>${escapeHtml(stage)} · T${item.triage_score || 0}</small></span><span class="idea-action"><strong>${escapeHtml(item.next_gate || "Review promotion gates")}</strong><small>${escapeHtml(item.next_action || "Review evidence")}</small>${evidence?.url ? `<em>Evidence ${icon("external-link", 12)}</em>` : ""}</span></button>`;
+        const hsg = hsgInfo(item);
+        const [routeLabel, routeTone] = hsgDecisionMeta[hsg.decision] || ["Unscoped", "gray"];
+        const equity = equityLabel(item);
+        return `<button type="button" class="idea-row ${item.company_name === state.selectedIdea ? "selected" : ""}" data-idea="${escapeHtml(item.company_name)}"><span class="idea-company"><strong>${escapeHtml(item.company_name)}</strong><small>${escapeHtml(item.business_model || "Business model classification pending")}</small><span class="theme-tags">${(item.themes || []).map((theme) => `<b>${escapeHtml(themeMeta[theme] || theme)}</b>`).join("")}</span></span><span><strong>${escapeHtml(item.sponsor || "Owner open")}</strong><small>${escapeHtml(holdNote)}</small></span><span><strong>${escapeHtml(size.label)}</strong><small>${escapeHtml(size.note)}</small></span><span class="idea-score"><strong>${hsg.score || 0}</strong><small><em class="pill ${routeTone}">${escapeHtml(routeLabel)}</em></small><small>${escapeHtml(equity.label)} equity</small></span><span class="idea-action"><strong>${escapeHtml(item.next_gate || "Review HSG gates")}</strong><small>${escapeHtml(stage)} · ${escapeHtml(item.next_action || "Review evidence")}</small>${evidence?.url ? `<em>Evidence ${icon("external-link", 12)}</em>` : ""}</span></button>`;
       }).join("") || `<div class="empty">${icon("lightbulb", 22)}<span>No matching ideas</span></div>`}
     </section></div>${renderIdeaBrief(selected)}</div></section>`;
   $("#idea-ai-filter")?.addEventListener("click", () => { state.aiOnly = !state.aiOnly; renderIdeas(); refreshIcons(); });
+  document.querySelectorAll("[data-hsg-filter]").forEach((button) => button.addEventListener("click", () => { state.hsgFilter = button.dataset.hsgFilter; renderIdeas(); refreshIcons(); }));
   document.querySelectorAll("[data-idea]").forEach((button) => button.addEventListener("click", () => {
     state.selectedIdea = button.dataset.idea;
     renderIdeas();
@@ -261,22 +312,25 @@ function renderIdeas() {
 }
 
 function stageFor(target) {
-  if (target.exclude_from_shortlist) return "precedent";
-  if (target.actionability === "live_process") return "deep_dive";
-  if (target.actionability === "proactive_watch") return "outreach";
-  if (target.actionability === "special_situation") return "deep_dive";
-  if (target.status === "sale_signal") return "deep_dive";
-  if (target.status === "active_watch") return "outreach";
-  return "watching";
+  const decision = hsgInfo(target).decision;
+  if (["pursue_solo", "pursue_structured"].includes(decision)) return "lead";
+  if (decision === "pursue_with_partner") return "partner";
+  if (decision === "diligence_only") return "diligence";
+  if (decision === "relationship_only") return "build";
+  return "pass";
 }
 
 function renderPipeline() {
-  const stages = [["watching", "Watching", "blue"], ["deep_dive", "Deep dive", "green"], ["outreach", "Outreach", "amber"], ["precedent", "Precedents", "violet"]];
-  $("#content").innerHTML = `<section class="page-view"><div class="view-heading"><span><small>WORKFLOW</small><h2>Investment pipeline</h2></span><em>${state.targets.length} tracked decisions</em></div><div class="pipeline-grid">${stages.map(([id, label, tone]) => {
-    const items = state.targets.filter((target) => stageFor(target) === id);
-    return `<section class="pipeline-column"><header><i class="dot ${tone}"></i><strong>${label}</strong><em>${items.length}</em></header><div>${items.map((target) => `<button data-pipeline-target="${escapeHtml(target.company_name)}"><span><strong>${escapeHtml(target.company_name)}</strong><small>${escapeHtml(target.current_owner)} · ${escapeHtml(target.sector)}</small></span><b>${targetScore(target)}</b>${icon("chevron-right", 14)}</button>`).join("")}</div></section>`;
+  const stages = [["lead", "HSG lead", "green"], ["partner", "Partner route", "amber"], ["diligence", "Diligence", "red"], ["build", "Build access", "blue"], ["pass", "Pass / precedent", "violet"]];
+  const allItems = [...state.targets.map((item) => ({ ...item, pipelineKind: "target" })), ...state.ideaQueue.map((item) => ({ ...item, pipelineKind: "idea" }))];
+  $("#content").innerHTML = `<section class="page-view"><div class="view-heading"><span><small>HSG EXECUTION WORKFLOW</small><h2>Investment pipeline</h2></span><em>${allItems.length} underwritten decisions</em></div><div class="pipeline-grid hsg-pipeline">${stages.map(([id, label, tone]) => {
+    const items = allItems.filter((target) => stageFor(target) === id);
+    return `<section class="pipeline-column"><header><i class="dot ${tone}"></i><strong>${label}</strong><em>${items.length}</em></header><div>${items.map((target) => `<button data-pipeline-target="${escapeHtml(target.company_name)}" data-pipeline-kind="${target.pipelineKind}"><span><strong>${escapeHtml(target.company_name)}</strong><small>${escapeHtml(target.current_owner || target.sponsor || "Owner open")} · ${escapeHtml(target.sector || target.thesis_cluster || "Research idea")}</small></span><b>${hsgInfo(target).score || 0}</b>${icon("chevron-right", 14)}</button>`).join("")}</div></section>`;
   }).join("")}</div></section>`;
-  document.querySelectorAll("[data-pipeline-target]").forEach((button) => button.addEventListener("click", () => { state.selectedId = button.dataset.pipelineTarget; setView("radar"); }));
+  document.querySelectorAll("[data-pipeline-target]").forEach((button) => button.addEventListener("click", () => {
+    if (button.dataset.pipelineKind === "idea") { state.selectedIdea = button.dataset.pipelineTarget; state.hsgFilter = "all"; setView("ideas"); }
+    else { state.selectedId = button.dataset.pipelineTarget; setView("radar"); }
+  }));
 }
 
 function renderSectors() {
