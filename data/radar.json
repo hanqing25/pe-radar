@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-11T18:47:30.779771+00:00",
+  "generated_at": "2026-07-12T01:40:42.847417+00:00",
   "targets": [
     {
       "actionability": "live_process",
@@ -905,6 +905,16 @@
       ]
     },
     {
+      "ai_evidence": [
+        {
+          "date": "2026-07-04",
+          "note": "The reported valuation process identifies data-center and grid electrical engineering as the core growth exposure; direct customer concentration and AI-related backlog still require diligence.",
+          "source": "The Times / company positioning",
+          "url": "https://www.thetimes.com/world/ireland-world/article/hmv-engineering-limerick-exponent-shareholder-restructuring-billion-valuation-business-ireland-dskjnj20x"
+        }
+      ],
+      "ai_exposure": "direct_enabler",
+      "ai_thesis": "Hyperscale and colocation data-center build-outs require high-voltage design, grid connections and mission-critical electrical delivery; H&MV sells the physical capacity layer rather than speculative AI software.",
       "aliases": [
         "H&MV",
         "H&MV Engineering"
@@ -929,19 +939,23 @@
       "scores": {
         "availability": 91,
         "business_quality": 90,
-        "hsg_fit": 58,
+        "hsg_fit": 66,
         "pe_suitability": 78,
-        "total": 80
+        "total": 82
       },
       "sector": "infrastructure services",
       "status": "active_watch",
       "sub_sector": "data-center and grid electrical engineering",
       "tags": [
+        "AI infrastructure",
         "international expansion",
         "mission-critical",
         "profitable growth",
         "data centers",
         "energy transition"
+      ],
+      "themes": [
+        "ai_infrastructure"
       ]
     },
     {
@@ -1001,63 +1015,6 @@
     },
     {
       "aliases": [
-        "D-Marin",
-        "D Marin"
-      ],
-      "company_name": "D-Marin",
-      "country": "Europe",
-      "current_owner": "CVC Capital Partners",
-      "entry_date": null,
-      "estimated_ev_usd_m": null,
-      "evidence": [
-        {
-          "date": "2026-07-06",
-          "note": "PE Hub Europe headline reported CVC agreed sale of D-Marin to InfraVia. Treat as completed/late-stage exit signal pending full article verification.",
-          "source": "PE Hub Europe",
-          "url": "https://www.pehub.com/regions_and_countries/europe/"
-        }
-      ],
-      "hold_years": null,
-      "recommendation": "Watch closely",
-      "region": "Europe",
-      "related_signals": [
-        {
-          "company_name": "D-Marin",
-          "confidence": "reported",
-          "created_at": "2026-07-06T17:45:39.117028+00:00",
-          "excerpt": "CVC agrees sale of D-Marin to InfraVia",
-          "matched_sponsors": [
-            "CVC Capital Partners"
-          ],
-          "matched_terms": [
-            "agrees sale"
-          ],
-          "region": "Europe",
-          "signal_type": "exit_completed",
-          "source_name": "pehub_europe",
-          "source_tier": "deal_news",
-          "source_url": "https://www.pehub.com/regions_and_countries/europe/"
-        }
-      ],
-      "scores": {
-        "availability": 27,
-        "business_quality": 82,
-        "hsg_fit": 86,
-        "pe_suitability": 82,
-        "total": 66
-      },
-      "sector": "consumer",
-      "status": "late_exit_signal",
-      "sub_sector": "premium marina operator",
-      "tags": [
-        "brand",
-        "real assets",
-        "tourism",
-        "fragmented market"
-      ]
-    },
-    {
-      "aliases": [
         "Marshall",
         "Marshall Group"
       ],
@@ -1096,6 +1053,64 @@
         "international expansion",
         "repeat purchase",
         "supply chain optimization"
+      ]
+    },
+    {
+      "aliases": [
+        "D-Marin",
+        "D Marin"
+      ],
+      "company_name": "D-Marin",
+      "country": "Europe",
+      "current_owner": "CVC Capital Partners",
+      "entry_date": null,
+      "estimated_ev_usd_m": null,
+      "evidence": [
+        {
+          "date": "2026-07-06",
+          "note": "PE Hub Europe headline reported CVC agreed sale of D-Marin to InfraVia. Treat as completed/late-stage exit signal pending full article verification.",
+          "source": "PE Hub Europe",
+          "url": "https://www.pehub.com/regions_and_countries/europe/"
+        }
+      ],
+      "exclude_from_shortlist": true,
+      "hold_years": null,
+      "recommendation": "Precedent only",
+      "region": "Europe",
+      "related_signals": [
+        {
+          "company_name": "D-Marin",
+          "confidence": "reported",
+          "created_at": "2026-07-06T17:45:39.117028+00:00",
+          "excerpt": "CVC agrees sale of D-Marin to InfraVia",
+          "matched_sponsors": [
+            "CVC Capital Partners"
+          ],
+          "matched_terms": [
+            "agrees sale"
+          ],
+          "region": "Europe",
+          "signal_type": "exit_completed",
+          "source_name": "pehub_europe",
+          "source_tier": "deal_news",
+          "source_url": "https://www.pehub.com/regions_and_countries/europe/"
+        }
+      ],
+      "scores": {
+        "availability": 15,
+        "business_quality": 82,
+        "hsg_fit": 86,
+        "pe_suitability": 82,
+        "total": 63
+      },
+      "sector": "consumer",
+      "status": "completed_transaction",
+      "sub_sector": "premium marina operator",
+      "tags": [
+        "brand",
+        "real assets",
+        "tourism",
+        "fragmented market"
       ]
     },
     {
@@ -1267,10 +1282,66 @@
   ],
   "signals": [
     {
+      "id": "live-9b3cb9893dc8bc0518c8",
+      "company_name": "nLighten",
+      "confidence": "machine_found",
+      "created_at": "2026-07-12T01:40:42.847417+00:00",
+      "excerpt": "THIS SITE AND THE MATERIALS HEREIN ARE DIRECTED ONLY TO FINANCIAL ADVISORS OR OTHER INVESTMENT PROFESSIONALS AND ARE NOT INTENDED TO BE SHOWN TO THE GENERAL PUBLIC.",
+      "matched_sponsors": [],
+      "matched_terms": [],
+      "region": "Europe",
+      "signal_type": "portfolio_update",
+      "source_name": "nLighten official portfolio",
+      "source_tier": "ai_infrastructure_official",
+      "source_url": "https://isquaredcapital.com/cpt_invest/nlighten/"
+    },
+    {
+      "id": "live-c88d5918abb8302a4a0d",
+      "company_name": "Engel & Völkers",
+      "confidence": "machine_found",
+      "created_at": "2026-07-12T01:40:42.847417+00:00",
+      "excerpt": "Permira funds to acquire majority stake in leading property brokerage platform Engel & Völkers",
+      "matched_sponsors": [],
+      "matched_terms": [],
+      "region": "Europe",
+      "signal_type": "exit_completed",
+      "source_name": "Engel & Volkers official portfolio",
+      "source_tier": "candidate_official",
+      "source_url": "https://www.permira.com/portfolio/our-portfolio/engels-voelkers"
+    },
+    {
+      "id": "live-b6d1e3326b2483e509d8",
+      "company_name": "Engel & Völkers",
+      "confidence": "machine_found",
+      "created_at": "2026-07-12T01:40:42.847417+00:00",
+      "excerpt": "Jawed Barna appointed new Group CEO of Engel & Völkers",
+      "matched_sponsors": [],
+      "matched_terms": [],
+      "region": "Europe",
+      "signal_type": "portfolio_update",
+      "source_name": "Engel & Volkers official portfolio",
+      "source_tier": "candidate_official",
+      "source_url": "https://www.permira.com/portfolio/our-portfolio/engels-voelkers"
+    },
+    {
+      "id": "live-bc8a222bbcb6783683a5",
+      "company_name": "AMMEGA",
+      "confidence": "machine_found",
+      "created_at": "2026-07-12T01:40:42.847417+00:00",
+      "excerpt": "Institutional Investors",
+      "matched_sponsors": [],
+      "matched_terms": [],
+      "region": "Europe / Asia",
+      "signal_type": "portfolio_update",
+      "source_name": "AMMEGA official portfolio",
+      "source_tier": "candidate_official",
+      "source_url": "https://www.partnersgroup.com/en/our-investments/private-equity/ammega"
+    },
+    {
       "id": "live-d1897903a5b9f7b23d8b",
       "company_name": "Nemera",
       "confidence": "machine_found",
-      "created_at": "2026-07-11T18:47:30.779771+00:00",
+      "created_at": "2026-07-12T01:40:42.847417+00:00",
       "excerpt": "Nemera expands production capacity in Szczecin to strengthen leadership in GLP-1 drug market",
       "matched_sponsors": [],
       "matched_terms": [],
@@ -1284,7 +1355,7 @@
       "id": "live-353cc614a1c4e4ec97b9",
       "company_name": "Kersia",
       "confidence": "machine_found",
-      "created_at": "2026-07-11T18:47:30.779771+00:00",
+      "created_at": "2026-07-12T01:40:42.847417+00:00",
       "excerpt": "Kersia strengthens its presence in Eastern Europe by acquiring the Food & Beverage business of the Polish company Radex",
       "matched_sponsors": [],
       "matched_terms": [],
@@ -1298,7 +1369,7 @@
       "id": "live-a654607a5e72c7a87ec3",
       "company_name": "Kersia",
       "confidence": "machine_found",
-      "created_at": "2026-07-11T18:47:30.779771+00:00",
+      "created_at": "2026-07-12T01:40:42.847417+00:00",
       "excerpt": "Kersia Expands Its Portfolio with new Enzymatic Products to Optimize Membrane Cleaning",
       "matched_sponsors": [],
       "matched_terms": [],
@@ -1312,7 +1383,7 @@
       "id": "live-76688b793d418fd0e3d0",
       "company_name": "Dainese",
       "confidence": "machine_found",
-      "created_at": "2026-07-11T18:47:30.779771+00:00",
+      "created_at": "2026-07-12T01:40:42.847417+00:00",
       "excerpt": "SALE BIS ZU 50 % – JETZT SHOPPEN",
       "matched_sponsors": [],
       "matched_terms": [],
@@ -1326,7 +1397,7 @@
       "id": "live-da4817bfcab13dde0af4",
       "company_name": "Mammut",
       "confidence": "machine_found",
-      "created_at": "2026-07-11T18:47:30.779771+00:00",
+      "created_at": "2026-07-12T01:40:42.847417+00:00",
       "excerpt": "Mammut Sports Group Expands Global Distribution Network in NAM, EMEA and APAC",
       "matched_sponsors": [],
       "matched_terms": [],
@@ -1340,7 +1411,7 @@
       "id": "live-4dee708cea9d63dba8ba",
       "company_name": "Guala Closures",
       "confidence": "machine_found",
-      "created_at": "2026-07-11T18:47:30.779771+00:00",
+      "created_at": "2026-07-12T01:40:42.847417+00:00",
       "excerpt": "1Q - 2026 Investor presentation",
       "matched_sponsors": [],
       "matched_terms": [],
@@ -1354,7 +1425,7 @@
       "id": "live-f9b9b7655ee91f7dc5b1",
       "company_name": "Guala Closures",
       "confidence": "machine_found",
-      "created_at": "2026-07-11T18:47:30.779771+00:00",
+      "created_at": "2026-07-12T01:40:42.847417+00:00",
       "excerpt": "Guala Closures Expands Manufacturing Footprint in Mexico to Support U.S. Wine and Spirits Market",
       "matched_sponsors": [],
       "matched_terms": [],
@@ -1368,7 +1439,7 @@
       "id": "live-d9cae835f5bb38bbe4a2",
       "company_name": "Golden Goose",
       "confidence": "machine_found",
-      "created_at": "2026-07-11T18:47:30.779771+00:00",
+      "created_at": "2026-07-12T01:40:42.847417+00:00",
       "excerpt": "Golden Goose FY 2025 Financial Results",
       "matched_sponsors": [],
       "matched_terms": [],
@@ -1382,7 +1453,7 @@
       "id": "live-22d13b543f8dd059c81e",
       "company_name": "Golden Goose",
       "confidence": "machine_found",
-      "created_at": "2026-07-11T18:47:30.779771+00:00",
+      "created_at": "2026-07-12T01:40:42.847417+00:00",
       "excerpt": "Golden Goose Q1 2026 Financial Results",
       "matched_sponsors": [],
       "matched_terms": [],
@@ -1396,7 +1467,7 @@
       "id": "live-e38338642202dd3a2c4a",
       "company_name": "Golden Goose",
       "confidence": "machine_found",
-      "created_at": "2026-07-11T18:47:30.779771+00:00",
+      "created_at": "2026-07-12T01:40:42.847417+00:00",
       "excerpt": "Golden Goose officially welcomes HSG as majority investor and Temasek as minority shareholder",
       "matched_sponsors": [],
       "matched_terms": [],
@@ -1410,7 +1481,7 @@
       "id": "live-f89a4867da85970f7531",
       "company_name": null,
       "confidence": "machine_found",
-      "created_at": "2026-07-11T18:47:30.779771+00:00",
+      "created_at": "2026-07-12T01:40:42.847417+00:00",
       "excerpt": "Templewater builds multi-strategy alt asset platform from venture to buyout",
       "matched_sponsors": [],
       "matched_terms": [],
@@ -1424,7 +1495,7 @@
       "id": "live-2a68ba94d08b0d07e95e",
       "company_name": null,
       "confidence": "machine_found",
-      "created_at": "2026-07-11T18:47:30.779771+00:00",
+      "created_at": "2026-07-12T01:40:42.847417+00:00",
       "excerpt": "Temasek steps up climate investments, energy transition for portfolio companies",
       "matched_sponsors": [],
       "matched_terms": [],
@@ -1438,7 +1509,7 @@
       "id": "live-b4b6e7a2157c4e7daa27",
       "company_name": null,
       "confidence": "machine_found",
-      "created_at": "2026-07-11T18:47:30.779771+00:00",
+      "created_at": "2026-07-12T01:40:42.847417+00:00",
       "excerpt": "Beyond the Buyout: Asia’s $54b paradox",
       "matched_sponsors": [],
       "matched_terms": [],
@@ -1452,7 +1523,7 @@
       "id": "live-1ba68a0b5716f73ea4aa",
       "company_name": null,
       "confidence": "machine_found",
-      "created_at": "2026-07-11T18:47:30.779771+00:00",
+      "created_at": "2026-07-12T01:40:42.847417+00:00",
       "excerpt": "Beyond the Buyout: Asia's top PE markets face different stress tests",
       "matched_sponsors": [],
       "matched_terms": [],
@@ -1466,7 +1537,7 @@
       "id": "live-74f4112a87b5a6f68c8d",
       "company_name": null,
       "confidence": "machine_found",
-      "created_at": "2026-07-11T18:47:30.779771+00:00",
+      "created_at": "2026-07-12T01:40:42.847417+00:00",
       "excerpt": "Beyond the Buyout: Why LPs are shying away from re-ups",
       "matched_sponsors": [],
       "matched_terms": [],
@@ -1480,7 +1551,7 @@
       "id": "live-e463ddc78fc0aa58ae83",
       "company_name": null,
       "confidence": "machine_found",
-      "created_at": "2026-07-11T18:47:30.779771+00:00",
+      "created_at": "2026-07-12T01:40:42.847417+00:00",
       "excerpt": "Beyond The Buyout Newsletters",
       "matched_sponsors": [],
       "matched_terms": [],
@@ -1494,7 +1565,7 @@
       "id": "live-46fa8558412f8b33d336",
       "company_name": null,
       "confidence": "machine_found",
-      "created_at": "2026-07-11T18:47:30.779771+00:00",
+      "created_at": "2026-07-12T01:40:42.847417+00:00",
       "excerpt": "UAE's e& to exit Vodafone in $6b deal, French tycoon Niel to become top shareholder",
       "matched_sponsors": [],
       "matched_terms": [],
@@ -1508,7 +1579,7 @@
       "id": "live-595da3e1ab40fc12924b",
       "company_name": null,
       "confidence": "machine_found",
-      "created_at": "2026-07-11T18:47:30.779771+00:00",
+      "created_at": "2026-07-12T01:40:42.847417+00:00",
       "excerpt": "EQT launches new Asia mid-cap buyout fund, eyes $2.5b: report",
       "matched_sponsors": [],
       "matched_terms": [],
@@ -1522,7 +1593,7 @@
       "id": "live-4cf1fa06b50c3be33a72",
       "company_name": null,
       "confidence": "machine_found",
-      "created_at": "2026-07-11T18:47:30.779771+00:00",
+      "created_at": "2026-07-12T01:40:42.847417+00:00",
       "excerpt": "Blackstone, TPG look to sell Hologic's surgical unit for $4b: report",
       "matched_sponsors": [],
       "matched_terms": [],
@@ -1533,24 +1604,10 @@
       "source_url": "https://www.dealstreetasia.com/"
     },
     {
-      "id": "live-aa9ac50d524b0038cda4",
-      "company_name": null,
-      "confidence": "machine_found",
-      "created_at": "2026-07-11T18:47:30.779771+00:00",
-      "excerpt": "NSE to pitch IPO to 30 global investors as bet on India's financial expansion",
-      "matched_sponsors": [],
-      "matched_terms": [],
-      "region": "Asia",
-      "signal_type": "ipo_prep",
-      "source_name": "DealStreetAsia",
-      "source_tier": "deal_news",
-      "source_url": "https://www.dealstreetasia.com/"
-    },
-    {
       "id": "live-69cbb7f21ec645eb1fe7",
       "company_name": null,
       "confidence": "machine_found",
-      "created_at": "2026-07-11T18:47:30.779771+00:00",
+      "created_at": "2026-07-12T01:40:42.847417+00:00",
       "excerpt": "NSE to pitch IPO to 30 global investors as bet on India’s financial expansion",
       "matched_sponsors": [],
       "matched_terms": [],
@@ -1564,7 +1621,7 @@
       "id": "live-4775d0947f66080b393a",
       "company_name": null,
       "confidence": "machine_found",
-      "created_at": "2026-07-11T18:47:30.779771+00:00",
+      "created_at": "2026-07-12T01:40:42.847417+00:00",
       "excerpt": "Beyond the Buyout: Temasek rewrites LP playbook",
       "matched_sponsors": [],
       "matched_terms": [],
@@ -1578,8 +1635,22 @@
       "id": "live-746bd66e6be318cfdeb2",
       "company_name": null,
       "confidence": "machine_found",
-      "created_at": "2026-07-11T18:47:30.779771+00:00",
+      "created_at": "2026-07-12T01:40:42.847417+00:00",
       "excerpt": "Indonesia’s RANS makes blockbuster debut as IPO dream run continues",
+      "matched_sponsors": [],
+      "matched_terms": [],
+      "region": "Asia",
+      "signal_type": "ipo_prep",
+      "source_name": "DealStreetAsia",
+      "source_tier": "deal_news",
+      "source_url": "https://www.dealstreetasia.com/"
+    },
+    {
+      "id": "live-a201823850fdfe18b82d",
+      "company_name": null,
+      "confidence": "machine_found",
+      "created_at": "2026-07-12T01:40:42.847417+00:00",
+      "excerpt": "The stock rose 34.12% from its IPO price shortly after trading opened.",
       "matched_sponsors": [],
       "matched_terms": [],
       "region": "Asia",
@@ -1592,7 +1663,7 @@
       "id": "live-6704a6f15c806f141e9e",
       "company_name": null,
       "confidence": "machine_found",
-      "created_at": "2026-07-11T18:47:30.779771+00:00",
+      "created_at": "2026-07-12T01:40:42.847417+00:00",
       "excerpt": "Indonesia's RANS makes blockbuster debut as IPO dream run continues",
       "matched_sponsors": [],
       "matched_terms": [],
@@ -1606,7 +1677,7 @@
       "id": "live-f7f59f81fec19aa881c6",
       "company_name": null,
       "confidence": "machine_found",
-      "created_at": "2026-07-11T18:47:30.779771+00:00",
+      "created_at": "2026-07-12T01:40:42.847417+00:00",
       "excerpt": "GTCR-backed Corza Medical to sell its biosurgery business unit to EQT",
       "matched_sponsors": [],
       "matched_terms": [],
@@ -1620,7 +1691,7 @@
       "id": "live-6decf0796114f2b3eced",
       "company_name": null,
       "confidence": "machine_found",
-      "created_at": "2026-07-11T18:47:30.779771+00:00",
+      "created_at": "2026-07-12T01:40:42.847417+00:00",
       "excerpt": "PSG Equity agrees to majority growth investment in Belgian CPM software...",
       "matched_sponsors": [],
       "matched_terms": [],
@@ -2555,9 +2626,9 @@
     {
       "asset_count": 1,
       "avg_availability": 91.0,
-      "avg_hsg_fit": 58.0,
+      "avg_hsg_fit": 66.0,
       "avg_pe_suitability": 78.0,
-      "avg_total": 80.0,
+      "avg_total": 82.0,
       "sector": "infrastructure services",
       "top_assets": [
         "H&MV Engineering"
@@ -2565,10 +2636,10 @@
     },
     {
       "asset_count": 9,
-      "avg_availability": 60.8,
+      "avg_availability": 59.4,
       "avg_hsg_fit": 92.9,
       "avg_pe_suitability": 74.0,
-      "avg_total": 78.3,
+      "avg_total": 78.0,
       "sector": "consumer",
       "top_assets": [
         "Gong Cha",
@@ -2677,57 +2748,83 @@
     }
   ],
   "sync": {
-    "generated_at": "2026-07-11T18:47:30.779771+00:00",
-    "new_signal_count": 26,
-    "total_signal_count": 83,
+    "generated_at": "2026-07-12T01:40:42.847417+00:00",
+    "new_signal_count": 30,
+    "total_signal_count": 87,
     "fetched": [
       {
         "url": "https://www.pehub.com/regions_and_countries/europe/",
         "status": "200",
-        "elapsed_ms": 7284
+        "elapsed_ms": 3331
       },
       {
         "url": "https://www.dealstreetasia.com/",
         "status": "200",
-        "elapsed_ms": 678
+        "elapsed_ms": 866
       },
       {
         "url": "https://we.goldengoose.com/we-are-golden/media/press-releases/",
         "status": "200",
-        "elapsed_ms": 1444
+        "elapsed_ms": 1600
       },
       {
         "url": "https://www.gualaclosures.com/investors",
         "status": "200",
-        "elapsed_ms": 492
+        "elapsed_ms": 631
       },
       {
         "url": "https://pr.mammut.com/en",
         "status": "200",
-        "elapsed_ms": 1379
+        "elapsed_ms": 1363
       },
       {
         "url": "https://www.dainese.com/li/de/legal/investors-relation.html",
         "status": "200",
-        "elapsed_ms": 908
+        "elapsed_ms": 1707
       },
       {
         "url": "https://www.kersia-group.com/newsroom/",
         "status": "200",
-        "elapsed_ms": 2660
+        "elapsed_ms": 2509
       },
       {
         "url": "https://www.nemera.net/news/",
         "status": "200",
-        "elapsed_ms": 3345
+        "elapsed_ms": 3484
       },
       {
         "url": "https://www.mynewsdesk.com/schleich/pressreleases",
         "status": "200",
-        "elapsed_ms": 387
+        "elapsed_ms": 489
+      },
+      {
+        "url": "https://www.partnersgroup.com/en/our-investments/private-equity/ammega",
+        "status": "200",
+        "elapsed_ms": 1586
+      },
+      {
+        "url": "https://www.permira.com/portfolio/our-portfolio/engels-voelkers",
+        "status": "200",
+        "elapsed_ms": 1709
+      },
+      {
+        "url": "https://isquaredcapital.com/cpt_invest/nlighten/",
+        "status": "200",
+        "elapsed_ms": 3239
+      },
+      {
+        "url": "https://www.triton-partners.com/portfolio/trench-group",
+        "status": "200",
+        "elapsed_ms": 500
       }
     ],
-    "errors": []
+    "errors": [
+      {
+        "source_name": "ADB SAFEGATE official portfolio",
+        "url": "https://www.carlyle.com/our-business/portfolio-of-investments/adb-safegate",
+        "error": "HTTP Error 403: Forbidden"
+      }
+    ]
   },
   "fund_sources": [
     {
@@ -2956,7 +3053,7 @@
       "source_name": "Advent International official portfolio",
       "source_url": "https://www.adventinternational.com/investments/",
       "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -2967,7 +3064,7 @@
       "source_name": "Advent International official portfolio",
       "source_url": "https://www.adventinternational.com/investments/",
       "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -2978,7 +3075,7 @@
       "source_name": "Advent International official portfolio",
       "source_url": "https://www.adventinternational.com/investments/",
       "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -2989,7 +3086,7 @@
       "source_name": "Advent International official portfolio",
       "source_url": "https://www.adventinternational.com/investments/",
       "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3000,7 +3097,7 @@
       "source_name": "Advent International official portfolio",
       "source_url": "https://www.adventinternational.com/investments/",
       "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3011,7 +3108,7 @@
       "source_name": "Advent International official portfolio",
       "source_url": "https://www.adventinternational.com/investments/",
       "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3022,7 +3119,7 @@
       "source_name": "Advent International official portfolio",
       "source_url": "https://www.adventinternational.com/investments/",
       "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3033,7 +3130,7 @@
       "source_name": "Advent International official portfolio",
       "source_url": "https://www.adventinternational.com/investments/",
       "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3044,7 +3141,7 @@
       "source_name": "Advent International official portfolio",
       "source_url": "https://www.adventinternational.com/investments/",
       "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3055,7 +3152,7 @@
       "source_name": "Advent International official portfolio",
       "source_url": "https://www.adventinternational.com/investments/",
       "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3066,7 +3163,7 @@
       "source_name": "Ardian official portfolio",
       "source_url": "https://www.ardian.com/expertise/our-portfolio",
       "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3077,7 +3174,7 @@
       "source_name": "Ardian official portfolio",
       "source_url": "https://www.ardian.com/expertise/our-portfolio",
       "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3088,7 +3185,7 @@
       "source_name": "Ardian official portfolio",
       "source_url": "https://www.ardian.com/expertise/our-portfolio",
       "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3099,7 +3196,7 @@
       "source_name": "Ardian official portfolio",
       "source_url": "https://www.ardian.com/expertise/our-portfolio",
       "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3110,7 +3207,7 @@
       "source_name": "Ardian official portfolio",
       "source_url": "https://www.ardian.com/expertise/our-portfolio",
       "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3121,7 +3218,7 @@
       "source_name": "Ardian official portfolio",
       "source_url": "https://www.ardian.com/expertise/our-portfolio",
       "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3132,7 +3229,7 @@
       "source_name": "Astorg official portfolio",
       "source_url": "https://www.astorg.com/investments",
       "first_seen_at": "2026-07-11T18:43:08.217122+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3143,7 +3240,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3154,7 +3251,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3165,7 +3262,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3176,7 +3273,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3187,7 +3284,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3198,7 +3295,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3209,7 +3306,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3220,7 +3317,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3231,7 +3328,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3242,7 +3339,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3253,7 +3350,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3264,7 +3361,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3275,7 +3372,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3286,7 +3383,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3297,7 +3394,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3308,7 +3405,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3319,7 +3416,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3330,7 +3427,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3341,7 +3438,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3352,7 +3449,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3363,7 +3460,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3374,7 +3471,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3385,7 +3482,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3396,7 +3493,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3407,7 +3504,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3418,7 +3515,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3429,7 +3526,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3440,7 +3537,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3451,7 +3548,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3462,7 +3559,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3473,7 +3570,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3484,7 +3581,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3495,7 +3592,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3506,7 +3603,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3517,7 +3614,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3528,7 +3625,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3539,7 +3636,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3550,7 +3647,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3561,7 +3658,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3572,7 +3669,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3583,7 +3680,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3594,7 +3691,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3605,7 +3702,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3616,7 +3713,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3627,7 +3724,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3638,7 +3735,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3649,7 +3746,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3660,7 +3757,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3671,7 +3768,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3682,7 +3779,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3693,7 +3790,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3704,7 +3801,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3715,7 +3812,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3726,7 +3823,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3737,7 +3834,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3748,7 +3845,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3759,7 +3856,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3770,7 +3867,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3781,7 +3878,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3792,7 +3889,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3803,7 +3900,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3814,7 +3911,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3825,7 +3922,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3836,7 +3933,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3847,7 +3944,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3858,7 +3955,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3869,7 +3966,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3880,7 +3977,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3891,7 +3988,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3902,7 +3999,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3913,7 +4010,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3924,7 +4021,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3935,7 +4032,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3946,7 +4043,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3957,7 +4054,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3968,7 +4065,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3979,7 +4076,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -3990,7 +4087,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4001,7 +4098,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4012,7 +4109,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4023,7 +4120,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4034,7 +4131,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4045,7 +4142,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4056,7 +4153,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4067,7 +4164,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4078,7 +4175,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4089,7 +4186,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4100,7 +4197,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4111,7 +4208,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4122,7 +4219,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4133,7 +4230,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4144,7 +4241,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4155,7 +4252,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4166,7 +4263,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4177,7 +4274,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4188,7 +4285,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4199,7 +4296,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4210,7 +4307,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4221,7 +4318,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4232,7 +4329,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4243,7 +4340,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4254,7 +4351,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4265,7 +4362,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4276,7 +4373,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4287,7 +4384,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4298,7 +4395,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4309,7 +4406,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4320,7 +4417,7 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4331,7 +4428,139 @@
       "source_name": "Bain Capital official portfolio",
       "source_url": "https://www.baincapitalprivateequity.com/portfolio",
       "first_seen_at": "2026-07-11T17:56:48.457981+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Acuris (IX)",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T18:45:35.792854+00:00",
+      "portfolio_scope": "recent_flagship_funds",
+      "region": "Europe / Global",
+      "source_name": "bc_partners_portfolio",
+      "source_url": "https://www.bcpartners.com/portfolio/",
+      "sponsor": "BC Partners",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Acuris (X)",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T18:45:35.792854+00:00",
+      "portfolio_scope": "recent_flagship_funds",
+      "region": "Europe / Global",
+      "source_name": "bc_partners_portfolio",
+      "source_url": "https://www.bcpartners.com/portfolio/",
+      "sponsor": "BC Partners",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Aenova",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T18:45:35.792854+00:00",
+      "portfolio_scope": "recent_flagship_funds",
+      "region": "Europe / Global",
+      "source_name": "bc_partners_portfolio",
+      "source_url": "https://www.bcpartners.com/portfolio/",
+      "sponsor": "BC Partners",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Altice USA (Cablevision – Suddenlink)",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T18:45:35.792854+00:00",
+      "portfolio_scope": "recent_flagship_funds",
+      "region": "Europe / Global",
+      "source_name": "bc_partners_portfolio",
+      "source_url": "https://www.bcpartners.com/portfolio/",
+      "sponsor": "BC Partners",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Antelliq",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T18:45:35.792854+00:00",
+      "portfolio_scope": "recent_flagship_funds",
+      "region": "Europe / Global",
+      "source_name": "bc_partners_portfolio",
+      "source_url": "https://www.bcpartners.com/portfolio/",
+      "sponsor": "BC Partners",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Biogaran",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T18:45:35.792854+00:00",
+      "portfolio_scope": "recent_flagship_funds",
+      "region": "Europe / Global",
+      "source_name": "bc_partners_portfolio",
+      "source_url": "https://www.bcpartners.com/portfolio/",
+      "sponsor": "BC Partners",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "CeramTec (X)",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T18:45:35.792854+00:00",
+      "portfolio_scope": "recent_flagship_funds",
+      "region": "Europe / Global",
+      "source_name": "bc_partners_portfolio",
+      "source_url": "https://www.bcpartners.com/portfolio/",
+      "sponsor": "BC Partners",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "CeramTec (XI)",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T18:45:35.792854+00:00",
+      "portfolio_scope": "recent_flagship_funds",
+      "region": "Europe / Global",
+      "source_name": "bc_partners_portfolio",
+      "source_url": "https://www.bcpartners.com/portfolio/",
+      "sponsor": "BC Partners",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Cigierre",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T18:45:35.792854+00:00",
+      "portfolio_scope": "recent_flagship_funds",
+      "region": "Europe / Global",
+      "source_name": "bc_partners_portfolio",
+      "source_url": "https://www.bcpartners.com/portfolio/",
+      "sponsor": "BC Partners",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Davies",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T18:45:35.792854+00:00",
+      "portfolio_scope": "recent_flagship_funds",
+      "region": "Europe / Global",
+      "source_name": "bc_partners_portfolio",
+      "source_url": "https://www.bcpartners.com/portfolio/",
+      "sponsor": "BC Partners",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "DentalPro",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T18:45:35.792854+00:00",
+      "portfolio_scope": "recent_flagship_funds",
+      "region": "Europe / Global",
+      "source_name": "bc_partners_portfolio",
+      "source_url": "https://www.bcpartners.com/portfolio/",
+      "sponsor": "BC Partners",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "EAB",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T18:45:35.792854+00:00",
+      "portfolio_scope": "recent_flagship_funds",
+      "region": "Europe / Global",
+      "source_name": "bc_partners_portfolio",
+      "source_url": "https://www.bcpartners.com/portfolio/",
+      "sponsor": "BC Partners",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4342,7 +4571,7 @@
       "source_name": "CVC Capital Partners official portfolio",
       "source_url": "https://www.cvc.com/portfolio/our-portfolio/",
       "first_seen_at": "2026-07-11T17:46:20.113093+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4353,7 +4582,7 @@
       "source_name": "CVC Capital Partners official portfolio",
       "source_url": "https://www.cvc.com/portfolio/our-portfolio/",
       "first_seen_at": "2026-07-11T17:46:20.113093+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4364,7 +4593,7 @@
       "source_name": "CVC Capital Partners official portfolio",
       "source_url": "https://www.cvc.com/portfolio/our-portfolio/",
       "first_seen_at": "2026-07-11T17:46:20.113093+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4375,7 +4604,7 @@
       "source_name": "CVC Capital Partners official portfolio",
       "source_url": "https://www.cvc.com/portfolio/our-portfolio/",
       "first_seen_at": "2026-07-11T17:46:20.113093+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4386,7 +4615,7 @@
       "source_name": "CVC Capital Partners official portfolio",
       "source_url": "https://www.cvc.com/portfolio/our-portfolio/",
       "first_seen_at": "2026-07-11T17:46:20.113093+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4397,7 +4626,7 @@
       "source_name": "CVC Capital Partners official portfolio",
       "source_url": "https://www.cvc.com/portfolio/our-portfolio/",
       "first_seen_at": "2026-07-11T17:46:20.113093+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4408,7 +4637,7 @@
       "source_name": "CVC Capital Partners official portfolio",
       "source_url": "https://www.cvc.com/portfolio/our-portfolio/",
       "first_seen_at": "2026-07-11T17:46:20.113093+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4419,7 +4648,7 @@
       "source_name": "CVC Capital Partners official portfolio",
       "source_url": "https://www.cvc.com/portfolio/our-portfolio/",
       "first_seen_at": "2026-07-11T17:46:20.113093+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4430,7 +4659,7 @@
       "source_name": "CVC Capital Partners official portfolio",
       "source_url": "https://www.cvc.com/portfolio/our-portfolio/",
       "first_seen_at": "2026-07-11T17:46:20.113093+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4441,7 +4670,7 @@
       "source_name": "CVC Capital Partners official portfolio",
       "source_url": "https://www.cvc.com/portfolio/our-portfolio/",
       "first_seen_at": "2026-07-11T17:46:20.113093+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4452,7 +4681,7 @@
       "source_name": "CVC Capital Partners official portfolio",
       "source_url": "https://www.cvc.com/portfolio/our-portfolio/",
       "first_seen_at": "2026-07-11T17:46:20.113093+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4463,7 +4692,7 @@
       "source_name": "CVC Capital Partners official portfolio",
       "source_url": "https://www.cvc.com/portfolio/our-portfolio/",
       "first_seen_at": "2026-07-11T17:46:20.113093+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4474,7 +4703,7 @@
       "source_name": "CVC Capital Partners official portfolio",
       "source_url": "https://www.cvc.com/portfolio/our-portfolio/",
       "first_seen_at": "2026-07-11T17:46:20.113093+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4485,7 +4714,7 @@
       "source_name": "CVC Capital Partners official portfolio",
       "source_url": "https://www.cvc.com/portfolio/our-portfolio/",
       "first_seen_at": "2026-07-11T17:46:20.113093+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4496,7 +4725,7 @@
       "source_name": "CVC Capital Partners official portfolio",
       "source_url": "https://www.cvc.com/portfolio/our-portfolio/",
       "first_seen_at": "2026-07-11T17:46:20.113093+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4507,7 +4736,7 @@
       "source_name": "CVC Capital Partners official portfolio",
       "source_url": "https://www.cvc.com/portfolio/our-portfolio/",
       "first_seen_at": "2026-07-11T17:46:20.113093+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4518,7 +4747,117 @@
       "source_name": "CVC Capital Partners official portfolio",
       "source_url": "https://www.cvc.com/portfolio/our-portfolio/",
       "first_seen_at": "2026-07-11T17:46:20.113093+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Ambassador Education Group",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T18:45:35.792854+00:00",
+      "portfolio_scope": "current",
+      "region": "Asia",
+      "source_name": "navis_current_investments",
+      "source_url": "https://www.naviscapital.com/portfolio-tag/current-investments/",
+      "sponsor": "Navis Capital",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Carbay",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T18:45:35.792854+00:00",
+      "portfolio_scope": "current",
+      "region": "Asia",
+      "source_name": "navis_current_investments",
+      "source_url": "https://www.naviscapital.com/portfolio-tag/current-investments/",
+      "sponsor": "Navis Capital",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Caring Group",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T18:45:35.792854+00:00",
+      "portfolio_scope": "current",
+      "region": "Asia",
+      "source_name": "navis_current_investments",
+      "source_url": "https://www.naviscapital.com/portfolio-tag/current-investments/",
+      "sponsor": "Navis Capital",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Dan-D Foods Group",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T18:45:35.792854+00:00",
+      "portfolio_scope": "current",
+      "region": "Asia",
+      "source_name": "navis_current_investments",
+      "source_url": "https://www.naviscapital.com/portfolio-tag/current-investments/",
+      "sponsor": "Navis Capital",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Eton Solutions",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T18:45:35.792854+00:00",
+      "portfolio_scope": "current",
+      "region": "Asia",
+      "source_name": "navis_current_investments",
+      "source_url": "https://www.naviscapital.com/portfolio-tag/current-investments/",
+      "sponsor": "Navis Capital",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Orchid",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T18:45:35.792854+00:00",
+      "portfolio_scope": "current",
+      "region": "Asia",
+      "source_name": "navis_current_investments",
+      "source_url": "https://www.naviscapital.com/portfolio-tag/current-investments/",
+      "sponsor": "Navis Capital",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Orienda",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T18:45:35.792854+00:00",
+      "portfolio_scope": "current",
+      "region": "Asia",
+      "source_name": "navis_current_investments",
+      "source_url": "https://www.naviscapital.com/portfolio-tag/current-investments/",
+      "sponsor": "Navis Capital",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "S-Spine and Nerve Hospital",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T18:45:35.792854+00:00",
+      "portfolio_scope": "current",
+      "region": "Asia",
+      "source_name": "navis_current_investments",
+      "source_url": "https://www.naviscapital.com/portfolio-tag/current-investments/",
+      "sponsor": "Navis Capital",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Sindiyan",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T18:45:35.792854+00:00",
+      "portfolio_scope": "current",
+      "region": "Asia",
+      "source_name": "navis_current_investments",
+      "source_url": "https://www.naviscapital.com/portfolio-tag/current-investments/",
+      "sponsor": "Navis Capital",
+      "verification_status": "website_heading_candidate"
+    },
+    {
+      "company_name": "Y11 Sport & Media",
+      "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
+      "last_seen_at": "2026-07-11T18:45:35.792854+00:00",
+      "portfolio_scope": "current",
+      "region": "Asia",
+      "source_name": "navis_current_investments",
+      "source_url": "https://www.naviscapital.com/portfolio-tag/current-investments/",
+      "sponsor": "Navis Capital",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4529,7 +4868,7 @@
       "source_name": "Partners Group official portfolio",
       "source_url": "https://www.partnersgroup.com/en/our-investments/private-equity",
       "first_seen_at": "2026-07-11T18:45:35.792854+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4540,7 +4879,7 @@
       "source_name": "Partners Group official portfolio",
       "source_url": "https://www.partnersgroup.com/en/our-investments/private-equity",
       "first_seen_at": "2026-07-11T18:45:35.792854+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4551,7 +4890,7 @@
       "source_name": "Partners Group official portfolio",
       "source_url": "https://www.partnersgroup.com/en/our-investments/private-equity",
       "first_seen_at": "2026-07-11T18:45:35.792854+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4562,7 +4901,7 @@
       "source_name": "Partners Group official portfolio",
       "source_url": "https://www.partnersgroup.com/en/our-investments/private-equity",
       "first_seen_at": "2026-07-11T18:45:35.792854+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4573,7 +4912,7 @@
       "source_name": "Partners Group official portfolio",
       "source_url": "https://www.partnersgroup.com/en/our-investments/private-equity",
       "first_seen_at": "2026-07-11T18:45:35.792854+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4584,7 +4923,7 @@
       "source_name": "Partners Group official portfolio",
       "source_url": "https://www.partnersgroup.com/en/our-investments/private-equity",
       "first_seen_at": "2026-07-11T18:45:35.792854+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4595,7 +4934,7 @@
       "source_name": "Partners Group official portfolio",
       "source_url": "https://www.partnersgroup.com/en/our-investments/private-equity",
       "first_seen_at": "2026-07-11T18:45:35.792854+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4606,7 +4945,7 @@
       "source_name": "Partners Group official portfolio",
       "source_url": "https://www.partnersgroup.com/en/our-investments/private-equity",
       "first_seen_at": "2026-07-11T18:45:35.792854+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4617,7 +4956,7 @@
       "source_name": "Partners Group official portfolio",
       "source_url": "https://www.partnersgroup.com/en/our-investments/private-equity",
       "first_seen_at": "2026-07-11T18:45:35.792854+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4628,7 +4967,7 @@
       "source_name": "Partners Group official portfolio",
       "source_url": "https://www.partnersgroup.com/en/our-investments/private-equity",
       "first_seen_at": "2026-07-11T18:45:35.792854+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4639,7 +4978,7 @@
       "source_name": "Partners Group official portfolio",
       "source_url": "https://www.partnersgroup.com/en/our-investments/private-equity",
       "first_seen_at": "2026-07-11T18:45:35.792854+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4650,7 +4989,7 @@
       "source_name": "Partners Group official portfolio",
       "source_url": "https://www.partnersgroup.com/en/our-investments/private-equity",
       "first_seen_at": "2026-07-11T18:45:35.792854+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4661,7 +5000,7 @@
       "source_name": "Partners Group official portfolio",
       "source_url": "https://www.partnersgroup.com/en/our-investments/private-equity",
       "first_seen_at": "2026-07-11T18:45:35.792854+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4672,7 +5011,7 @@
       "source_name": "Partners Group official portfolio",
       "source_url": "https://www.partnersgroup.com/en/our-investments/private-equity",
       "first_seen_at": "2026-07-11T18:45:35.792854+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4683,7 +5022,7 @@
       "source_name": "Partners Group official portfolio",
       "source_url": "https://www.partnersgroup.com/en/our-investments/private-equity",
       "first_seen_at": "2026-07-11T18:45:35.792854+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4694,7 +5033,7 @@
       "source_name": "Permira official portfolio",
       "source_url": "https://www.permira.com/portfolio/our-portfolio",
       "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4705,7 +5044,7 @@
       "source_name": "Permira official portfolio",
       "source_url": "https://www.permira.com/portfolio/our-portfolio",
       "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4716,7 +5055,7 @@
       "source_name": "Permira official portfolio",
       "source_url": "https://www.permira.com/portfolio/our-portfolio",
       "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4727,7 +5066,7 @@
       "source_name": "Permira official portfolio",
       "source_url": "https://www.permira.com/portfolio/our-portfolio",
       "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4738,7 +5077,7 @@
       "source_name": "Permira official portfolio",
       "source_url": "https://www.permira.com/portfolio/our-portfolio",
       "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4749,7 +5088,7 @@
       "source_name": "Permira official portfolio",
       "source_url": "https://www.permira.com/portfolio/our-portfolio",
       "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4760,7 +5099,7 @@
       "source_name": "Permira official portfolio",
       "source_url": "https://www.permira.com/portfolio/our-portfolio",
       "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4771,7 +5110,7 @@
       "source_name": "Permira official portfolio",
       "source_url": "https://www.permira.com/portfolio/our-portfolio",
       "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4782,7 +5121,7 @@
       "source_name": "Permira official portfolio",
       "source_url": "https://www.permira.com/portfolio/our-portfolio",
       "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4793,7 +5132,7 @@
       "source_name": "Permira official portfolio",
       "source_url": "https://www.permira.com/portfolio/our-portfolio",
       "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4804,7 +5143,7 @@
       "source_name": "Permira official portfolio",
       "source_url": "https://www.permira.com/portfolio/our-portfolio",
       "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4815,7 +5154,7 @@
       "source_name": "Permira official portfolio",
       "source_url": "https://www.permira.com/portfolio/our-portfolio",
       "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4826,7 +5165,7 @@
       "source_name": "Permira official portfolio",
       "source_url": "https://www.permira.com/portfolio/our-portfolio",
       "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4837,7 +5176,7 @@
       "source_name": "Permira official portfolio",
       "source_url": "https://www.permira.com/portfolio/our-portfolio",
       "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4848,7 +5187,7 @@
       "source_name": "Permira official portfolio",
       "source_url": "https://www.permira.com/portfolio/our-portfolio",
       "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4859,7 +5198,7 @@
       "source_name": "Permira official portfolio",
       "source_url": "https://www.permira.com/portfolio/our-portfolio",
       "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4870,7 +5209,7 @@
       "source_name": "Permira official portfolio",
       "source_url": "https://www.permira.com/portfolio/our-portfolio",
       "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4881,7 +5220,7 @@
       "source_name": "Permira official portfolio",
       "source_url": "https://www.permira.com/portfolio/our-portfolio",
       "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4892,7 +5231,7 @@
       "source_name": "Permira official portfolio",
       "source_url": "https://www.permira.com/portfolio/our-portfolio",
       "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4903,7 +5242,7 @@
       "source_name": "Permira official portfolio",
       "source_url": "https://www.permira.com/portfolio/our-portfolio",
       "first_seen_at": "2026-07-11T17:54:03.014491+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4914,7 +5253,7 @@
       "source_name": "TA Associates official portfolio",
       "source_url": "https://www.ta.com/portfolio/",
       "first_seen_at": "2026-07-11T18:43:08.217122+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4925,7 +5264,7 @@
       "source_name": "TA Associates official portfolio",
       "source_url": "https://www.ta.com/portfolio/",
       "first_seen_at": "2026-07-11T18:43:08.217122+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4936,7 +5275,7 @@
       "source_name": "TA Associates official portfolio",
       "source_url": "https://www.ta.com/portfolio/",
       "first_seen_at": "2026-07-11T18:43:08.217122+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4947,7 +5286,7 @@
       "source_name": "TA Associates official portfolio",
       "source_url": "https://www.ta.com/portfolio/",
       "first_seen_at": "2026-07-11T18:43:08.217122+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4958,7 +5297,7 @@
       "source_name": "TA Associates official portfolio",
       "source_url": "https://www.ta.com/portfolio/",
       "first_seen_at": "2026-07-11T18:43:08.217122+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     },
     {
@@ -4969,198 +5308,223 @@
       "source_name": "TA Associates official portfolio",
       "source_url": "https://www.ta.com/portfolio/",
       "first_seen_at": "2026-07-11T18:43:08.217122+00:00",
-      "last_seen_at": "2026-07-11T18:47:30.779771+00:00",
+      "last_seen_at": "2026-07-12T01:40:42.847417+00:00",
       "verification_status": "website_heading_candidate"
     }
   ],
   "fund_sync": {
-    "generated_at": "2026-07-11T18:47:30.779771+00:00",
+    "generated_at": "2026-07-12T01:40:42.847417+00:00",
     "source_count": 24,
-    "company_candidate_count": 184,
+    "company_candidate_count": 206,
+    "new_candidate_count": 0,
+    "new_candidates": [],
     "health": [
       {
         "name": "EQT",
         "sponsor": "EQT",
         "url": "https://eqtgroup.com/about/current-portfolio",
         "status": "200",
-        "elapsed_ms": 2100,
-        "candidate_count": 0
+        "elapsed_ms": 1629,
+        "candidate_count": 0,
+        "preserved_previous": true
       },
       {
         "name": "KKR",
         "sponsor": "KKR",
         "url": "https://www.kkr.com/invest/portfolio",
         "status": "200",
-        "elapsed_ms": 466,
-        "candidate_count": 0
+        "elapsed_ms": 1557,
+        "candidate_count": 0,
+        "preserved_previous": true
       },
       {
         "name": "CVC Capital Partners",
         "sponsor": "CVC Capital Partners",
         "url": "https://www.cvc.com/portfolio/our-portfolio/",
         "status": "200",
-        "elapsed_ms": 1540,
-        "candidate_count": 17
+        "elapsed_ms": 1699,
+        "candidate_count": 17,
+        "preserved_previous": false
       },
       {
         "name": "Permira",
         "sponsor": "Permira",
         "url": "https://www.permira.com/portfolio/our-portfolio",
         "status": "200",
-        "elapsed_ms": 405,
-        "candidate_count": 20
+        "elapsed_ms": 354,
+        "candidate_count": 20,
+        "preserved_previous": false
       },
       {
         "name": "Advent International",
         "sponsor": "Advent International",
         "url": "https://www.adventinternational.com/investments/",
         "status": "200",
-        "elapsed_ms": 499,
-        "candidate_count": 10
+        "elapsed_ms": 810,
+        "candidate_count": 10,
+        "preserved_previous": false
       },
       {
         "name": "Cinven",
         "sponsor": "Cinven",
         "url": "https://www.cinven.com/portfolio/",
         "status": "200",
-        "elapsed_ms": 653,
-        "candidate_count": 0
+        "elapsed_ms": 826,
+        "candidate_count": 0,
+        "preserved_previous": true
       },
       {
         "name": "PAI Partners",
         "sponsor": "PAI Partners",
         "url": "https://www.paipartners.com/portfolio/",
         "status": "200",
-        "elapsed_ms": 905,
-        "candidate_count": 0
+        "elapsed_ms": 2411,
+        "candidate_count": 0,
+        "preserved_previous": true
       },
       {
         "name": "Hg",
         "sponsor": "Hg",
         "url": "https://hgcapital.com/portfolio/",
         "status": "200",
-        "elapsed_ms": 1656,
-        "candidate_count": 0
+        "elapsed_ms": 1129,
+        "candidate_count": 0,
+        "preserved_previous": true
       },
       {
         "name": "Triton Partners",
         "sponsor": "Triton Partners",
         "url": "https://www.triton-partners.com/portfolio/",
         "status": "200",
-        "elapsed_ms": 684,
-        "candidate_count": 0
+        "elapsed_ms": 997,
+        "candidate_count": 0,
+        "preserved_previous": true
       },
       {
         "name": "PAG",
         "sponsor": "PAG",
         "url": "https://www.pag.com/private-equity",
         "status": "200",
-        "elapsed_ms": 483,
-        "candidate_count": 0
+        "elapsed_ms": 697,
+        "candidate_count": 0,
+        "preserved_previous": true
       },
       {
         "name": "Navis Capital",
         "sponsor": "Navis Capital",
         "url": "https://www.naviscapital.com/portfolio-tag/current-investments/",
         "status": "200",
-        "elapsed_ms": 477,
-        "candidate_count": 0
+        "elapsed_ms": 1142,
+        "candidate_count": 0,
+        "preserved_previous": true
       },
       {
         "name": "Affinity Equity Partners",
         "sponsor": "Affinity Equity Partners",
         "url": "https://www.affinityequity.com/",
         "status": "200",
-        "elapsed_ms": 456,
-        "candidate_count": 0
+        "elapsed_ms": 573,
+        "candidate_count": 0,
+        "preserved_previous": true
       },
       {
         "name": "Bain Capital",
         "sponsor": "Bain Capital",
         "url": "https://www.baincapitalprivateequity.com/portfolio",
         "status": "200",
-        "elapsed_ms": 1172,
-        "candidate_count": 109
+        "elapsed_ms": 1333,
+        "candidate_count": 109,
+        "preserved_previous": false
       },
       {
         "name": "TPG",
         "sponsor": "TPG",
         "url": "https://www.tpg.com/portfolio",
         "status": "200",
-        "elapsed_ms": 473,
-        "candidate_count": 0
+        "elapsed_ms": 629,
+        "candidate_count": 0,
+        "preserved_previous": true
       },
       {
         "name": "Warburg Pincus",
         "sponsor": "Warburg Pincus",
         "url": "https://warburgpincus.com/investments/",
         "status": "200",
-        "elapsed_ms": 365,
-        "candidate_count": 0
+        "elapsed_ms": 493,
+        "candidate_count": 0,
+        "preserved_previous": true
       },
       {
         "name": "BC Partners",
         "sponsor": "BC Partners",
         "url": "https://www.bcpartners.com/portfolio/",
         "status": "200",
-        "elapsed_ms": 1874,
-        "candidate_count": 0
+        "elapsed_ms": 1995,
+        "candidate_count": 0,
+        "preserved_previous": true
       },
       {
         "name": "Ardian",
         "sponsor": "Ardian",
         "url": "https://www.ardian.com/expertise/our-portfolio",
         "status": "200",
-        "elapsed_ms": 1962,
-        "candidate_count": 6
+        "elapsed_ms": 2095,
+        "candidate_count": 6,
+        "preserved_previous": false
       },
       {
         "name": "Investindustrial",
         "sponsor": "Investindustrial",
         "url": "https://www.investindustrial.com/our-business/portfolio-overview/current-portfolio.html",
         "status": "200",
-        "elapsed_ms": 1372,
-        "candidate_count": 0
+        "elapsed_ms": 1480,
+        "candidate_count": 0,
+        "preserved_previous": true
       },
       {
         "name": "Jacobs Capital",
         "sponsor": "Jacobs Capital",
         "url": "https://telemoscapital.com/company/mammut/",
         "status": "200",
-        "elapsed_ms": 1574,
-        "candidate_count": 0
+        "elapsed_ms": 1744,
+        "candidate_count": 0,
+        "preserved_previous": true
       },
       {
         "name": "TA Associates",
         "sponsor": "TA Associates",
         "url": "https://www.ta.com/portfolio/",
         "status": "200",
-        "elapsed_ms": 605,
-        "candidate_count": 6
+        "elapsed_ms": 680,
+        "candidate_count": 6,
+        "preserved_previous": false
       },
       {
         "name": "Astorg",
         "sponsor": "Astorg",
         "url": "https://www.astorg.com/investments",
         "status": "200",
-        "elapsed_ms": 1698,
-        "candidate_count": 1
+        "elapsed_ms": 1853,
+        "candidate_count": 1,
+        "preserved_previous": false
       },
       {
         "name": "IK Partners",
         "sponsor": "IK Partners",
         "url": "https://ikpartners.com/investments/",
         "status": "200",
-        "elapsed_ms": 630,
-        "candidate_count": 0
+        "elapsed_ms": 1061,
+        "candidate_count": 0,
+        "preserved_previous": true
       },
       {
         "name": "Partners Group",
         "sponsor": "Partners Group",
         "url": "https://www.partnersgroup.com/en/our-investments/private-equity",
         "status": "200",
-        "elapsed_ms": 1505,
-        "candidate_count": 15
+        "elapsed_ms": 1530,
+        "candidate_count": 15,
+        "preserved_previous": false
       }
     ],
     "errors": [
@@ -5313,7 +5677,7 @@
         "source_url": "https://live.euronext.com/en/products/bonds/list",
         "source_type": "exchange_directory",
         "price_capability": "venue dependent",
-        "observed_at": "2026-07-11T18:47:30.779771+00:00",
+        "observed_at": "2026-07-12T01:40:42.847417+00:00",
         "verification_status": "directory_name_match_unverified"
       },
       {
@@ -5325,7 +5689,7 @@
         "source_url": "https://live.euronext.com/en/products/bonds/list",
         "source_type": "exchange_directory",
         "price_capability": "venue dependent",
-        "observed_at": "2026-07-11T18:47:30.779771+00:00",
+        "observed_at": "2026-07-12T01:40:42.847417+00:00",
         "verification_status": "directory_name_match_unverified"
       },
       {
@@ -5337,7 +5701,7 @@
         "source_url": "https://live.deutsche-boerse.com/anleihen/suche",
         "source_type": "exchange_trade_directory",
         "price_capability": "delayed exchange price",
-        "observed_at": "2026-07-11T18:47:30.779771+00:00",
+        "observed_at": "2026-07-12T01:40:42.847417+00:00",
         "verification_status": "directory_name_match_unverified"
       },
       {
@@ -5349,7 +5713,7 @@
         "source_url": "https://live.deutsche-boerse.com/anleihen/suche",
         "source_type": "exchange_trade_directory",
         "price_capability": "delayed exchange price",
-        "observed_at": "2026-07-11T18:47:30.779771+00:00",
+        "observed_at": "2026-07-12T01:40:42.847417+00:00",
         "verification_status": "directory_name_match_unverified"
       },
       {
@@ -5361,14 +5725,14 @@
         "source_url": "https://live.deutsche-boerse.com/anleihen/suche",
         "source_type": "exchange_trade_directory",
         "price_capability": "delayed exchange price",
-        "observed_at": "2026-07-11T18:47:30.779771+00:00",
+        "observed_at": "2026-07-12T01:40:42.847417+00:00",
         "verification_status": "directory_name_match_unverified"
       }
     ],
-    "generated_at": "2026-07-11T18:47:30.779771+00:00"
+    "generated_at": "2026-07-12T01:40:42.847417+00:00"
   },
   "credit_sync": {
-    "generated_at": "2026-07-11T18:47:30.779771+00:00",
+    "generated_at": "2026-07-12T01:40:42.847417+00:00",
     "source_count": 7,
     "verified_instrument_count": 3,
     "directory_match_count": 5,
@@ -5377,52 +5741,626 @@
         "name": "FINRA TRACE Corporate & Agency",
         "url": "https://www.finra.org/finra-data/fixed-income/corp-and-agency",
         "status": "200",
-        "elapsed_ms": 1220,
+        "elapsed_ms": 1274,
         "matched_company_count": 0
       },
       {
         "name": "Euronext Bonds / Nordic ABM",
         "url": "https://live.euronext.com/en/products/bonds/list",
         "status": "200",
-        "elapsed_ms": 2208,
+        "elapsed_ms": 2628,
         "matched_company_count": 2
       },
       {
         "name": "Luxembourg Stock Exchange",
         "url": "https://www.luxse.com/market-overview/official-list",
         "status": "200",
-        "elapsed_ms": 1981,
+        "elapsed_ms": 1932,
         "matched_company_count": 0
       },
       {
         "name": "HKEX Debt Securities",
         "url": "https://www.hkex.com.hk/products/securities/debt-securities?sc_lang=en",
         "status": "200",
-        "elapsed_ms": 2506,
+        "elapsed_ms": 4511,
         "matched_company_count": 0
       },
       {
         "name": "SGX Fixed Income",
         "url": "https://www.sgx.com/fixed-income/retail-fixed-income-securities?code=retailbonds",
         "status": "200",
-        "elapsed_ms": 422,
+        "elapsed_ms": 460,
         "matched_company_count": 0
       },
       {
         "name": "Boerse Frankfurt Bonds",
         "url": "https://live.deutsche-boerse.com/anleihen/suche",
         "status": "200",
-        "elapsed_ms": 4172,
+        "elapsed_ms": 4084,
         "matched_company_count": 3
       },
       {
         "name": "BME Fixed Income / MARF",
         "url": "https://www.bolsasymercados.es/en/bme-exchange/prices-and-markets/fixed-income/issues.html",
         "status": "200",
-        "elapsed_ms": 1593,
+        "elapsed_ms": 1674,
         "matched_company_count": 0
       }
     ],
     "errors": []
+  },
+  "idea_queue": [
+    {
+      "ai_evidence": [
+        {
+          "date": "2026-07-12",
+          "note": "Official materials support exposure to logistics, automation and a recurring installed base; the incremental revenue attributable to AI-led automation remains an explicit diligence gap.",
+          "source": "Partners Group",
+          "url": "https://www.partnersgroup.com/en/our-investments/private-equity/ammega"
+        }
+      ],
+      "ai_exposure": "demand_beneficiary",
+      "ai_thesis": "Warehouse automation, robotics and higher-throughput logistics increase belt density and replacement demand across AMMEGA's installed base; this is an indirect industrial-automation beneficiary, not an AI premium by itself.",
+      "aliases": [
+        "Ammega",
+        "AMMEGA Group"
+      ],
+      "base_triage_score": 91,
+      "business_model": "Recurring small-ticket conveyor and power-transmission belts sold into a large installed base across food, pharma and logistics.",
+      "company_name": "AMMEGA",
+      "country": "Netherlands / Global",
+      "entry_date": "2018-01-01",
+      "estimated_ev_usd_m": null,
+      "evidence": [
+        {
+          "date": "2026-07-12",
+          "note": "Partners Group identifies AMMEGA as a current 2018 investment with recurring sales of mission-critical, small-ticket consumables to approximately 50,000 customers in more than 50 countries.",
+          "source": "Partners Group",
+          "url": "https://www.partnersgroup.com/en/our-investments/private-equity/ammega"
+        }
+      ],
+      "evidence_gaps": [
+        "current enterprise value",
+        "debt stack and bond identifiers",
+        "exit mandate",
+        "Asia revenue and manufacturing mix"
+      ],
+      "first_seen_at": "2026-07-12T01:40:21.257133+00:00",
+      "hold_years": 8.5,
+      "last_reviewed_at": "2026-07-12T01:40:42.847417+00:00",
+      "next_action": "Establish current EBITDA, leverage and EV, map Partners Group decision makers, and identify any refinancing, continuation or adviser activity.",
+      "official_portfolio_match": true,
+      "origin": "evidence_backed_seed",
+      "promote_ready": false,
+      "promotion_gates": {
+        "ai_evidence": true,
+        "entry": true,
+        "exit_signal": false,
+        "owner": true,
+        "quality": true,
+        "size": false
+      },
+      "region": "Europe",
+      "related_signals": [
+        {
+          "id": "live-bc8a222bbcb6783683a5",
+          "company_name": "AMMEGA",
+          "confidence": "machine_found",
+          "created_at": "2026-07-12T01:40:42.847417+00:00",
+          "excerpt": "Institutional Investors",
+          "matched_sponsors": [],
+          "matched_terms": [],
+          "region": "Europe / Asia",
+          "signal_type": "portfolio_update",
+          "source_name": "AMMEGA official portfolio",
+          "source_tier": "candidate_official",
+          "source_url": "https://www.partnersgroup.com/en/our-investments/private-equity/ammega"
+        }
+      ],
+      "signal_count": 1,
+      "sponsor": "Partners Group",
+      "status": "research_now",
+      "themes": [
+        "ai_beneficiary"
+      ],
+      "thesis_cluster": "Guala / mission-critical consumables",
+      "triage_score": 93,
+      "why_now": "Partners Group still lists AMMEGA as current after an eight-year hold; the business has unusually strong PE-control characteristics and a credible Asia operating angle."
+    },
+    {
+      "aliases": [
+        "Engel & Voelkers",
+        "E&V"
+      ],
+      "base_triage_score": 88,
+      "business_model": "Premium property brokerage brand and software-services platform used by independent agents in more than 35 countries.",
+      "company_name": "Engel & Völkers",
+      "country": "Germany",
+      "entry_date": "2021-08-09",
+      "estimated_ev_usd_m": null,
+      "evidence": [
+        {
+          "date": "2026-07-12",
+          "note": "Permira lists Engel & Völkers as a current 2021 investment and describes a global premium real-estate software, services and brokerage-brand platform.",
+          "source": "Permira",
+          "url": "https://www.permira.com/portfolio/our-portfolio/engels-voelkers"
+        }
+      ],
+      "evidence_gaps": [
+        "current enterprise value",
+        "EBITDA through the property cycle",
+        "recurring revenue share",
+        "formal exit preparation"
+      ],
+      "first_seen_at": "2026-07-12T01:40:21.257133+00:00",
+      "hold_years": 4.9,
+      "last_reviewed_at": "2026-07-12T01:40:42.847417+00:00",
+      "next_action": "Verify current valuation and recurring platform economics, split transaction-linked commissions from software and service revenue, and map Permira and family governance.",
+      "official_portfolio_match": false,
+      "origin": "evidence_backed_seed",
+      "promote_ready": false,
+      "promotion_gates": {
+        "ai_evidence": true,
+        "entry": true,
+        "exit_signal": false,
+        "owner": true,
+        "quality": true,
+        "size": false
+      },
+      "region": "Europe",
+      "related_signals": [
+        {
+          "id": "live-c88d5918abb8302a4a0d",
+          "company_name": "Engel & Völkers",
+          "confidence": "machine_found",
+          "created_at": "2026-07-12T01:40:42.847417+00:00",
+          "excerpt": "Permira funds to acquire majority stake in leading property brokerage platform Engel & Völkers",
+          "matched_sponsors": [],
+          "matched_terms": [],
+          "region": "Europe",
+          "signal_type": "exit_completed",
+          "source_name": "Engel & Volkers official portfolio",
+          "source_tier": "candidate_official",
+          "source_url": "https://www.permira.com/portfolio/our-portfolio/engels-voelkers"
+        },
+        {
+          "id": "live-b6d1e3326b2483e509d8",
+          "company_name": "Engel & Völkers",
+          "confidence": "machine_found",
+          "created_at": "2026-07-12T01:40:42.847417+00:00",
+          "excerpt": "Jawed Barna appointed new Group CEO of Engel & Völkers",
+          "matched_sponsors": [],
+          "matched_terms": [],
+          "region": "Europe",
+          "signal_type": "portfolio_update",
+          "source_name": "Engel & Volkers official portfolio",
+          "source_tier": "candidate_official",
+          "source_url": "https://www.permira.com/portfolio/our-portfolio/engels-voelkers"
+        }
+      ],
+      "signal_count": 2,
+      "sponsor": "Permira",
+      "status": "research_now",
+      "thesis_cluster": "Golden Goose / premium brand platform",
+      "triage_score": 92,
+      "why_now": "Permira confirms current ownership and a near-five-year hold; the brand, independent-agent model and digital platform create a differentiated asset-light control thesis."
+    },
+    {
+      "aliases": [
+        "ADB Safegate",
+        "ADB"
+      ],
+      "base_triage_score": 87,
+      "business_model": "Integrated airfield, gate and tower systems that improve airport capacity and safety, supported by a mission-critical installed base.",
+      "company_name": "ADB SAFEGATE",
+      "country": "Belgium",
+      "entry_date": "2017-10-05",
+      "estimated_ev_usd_m": null,
+      "evidence": [
+        {
+          "date": "2026-07-12",
+          "note": "Carlyle's official portfolio records an October 2017 investment and current status for the integrated airfield-guidance leader.",
+          "source": "Carlyle",
+          "url": "https://www.carlyle.com/our-business/portfolio-of-investments/adb-safegate"
+        }
+      ],
+      "evidence_gaps": [
+        "current enterprise value",
+        "aftermarket and service revenue",
+        "debt stack",
+        "exit mandate"
+      ],
+      "first_seen_at": "2026-07-12T01:40:21.257133+00:00",
+      "hold_years": 8.8,
+      "last_reviewed_at": "2026-07-12T01:40:42.847417+00:00",
+      "next_action": "Confirm revenue and service mix, current leverage and EV, and whether Carlyle is considering a sale, continuation vehicle or refinancing.",
+      "official_portfolio_match": false,
+      "origin": "evidence_backed_seed",
+      "promote_ready": false,
+      "promotion_gates": {
+        "ai_evidence": true,
+        "entry": true,
+        "exit_signal": false,
+        "owner": true,
+        "quality": true,
+        "size": false
+      },
+      "region": "Europe",
+      "related_signals": [],
+      "signal_count": 0,
+      "sponsor": "Carlyle",
+      "status": "research_now",
+      "thesis_cluster": "Guala / mission-critical installed base",
+      "triage_score": 87,
+      "why_now": "Carlyle still marks the asset current after almost nine years, making ownership duration itself a high-priority exit signal."
+    },
+    {
+      "aliases": [
+        "Mediq Group"
+      ],
+      "base_triage_score": 84,
+      "business_model": "Distribution and care solutions for chronic-care patients and healthcare professionals, with recurring medical-device consumption and home delivery.",
+      "company_name": "Mediq",
+      "country": "Netherlands",
+      "entry_date": "2013-02-13",
+      "estimated_ev_usd_m": null,
+      "evidence": [
+        {
+          "date": "2026-07-12",
+          "note": "Mediq's official corporate-governance page states that Advent has owned the business since 2013 and repositioned it around outpatient medical devices and care solutions.",
+          "source": "Mediq",
+          "url": "https://mediq.com/about-us"
+        }
+      ],
+      "evidence_gaps": [
+        "current enterprise value",
+        "ownership vehicle and co-investors",
+        "segment profitability",
+        "regulatory reimbursement exposure"
+      ],
+      "first_seen_at": "2026-07-12T01:40:21.257133+00:00",
+      "hold_years": 13.4,
+      "last_reviewed_at": "2026-07-12T01:40:42.847417+00:00",
+      "next_action": "Map Advent's current ownership vehicle, size the retained medical-device business, and test whether a divisional or sponsor-to-sponsor transaction is feasible.",
+      "official_portfolio_match": false,
+      "origin": "evidence_backed_seed",
+      "promote_ready": false,
+      "promotion_gates": {
+        "ai_evidence": true,
+        "entry": true,
+        "exit_signal": false,
+        "owner": true,
+        "quality": true,
+        "size": false
+      },
+      "region": "Europe",
+      "related_signals": [],
+      "signal_count": 0,
+      "sponsor": "Advent International",
+      "status": "research_now",
+      "thesis_cluster": "Guala / recurring healthcare supplies",
+      "triage_score": 84,
+      "why_now": "The company still identifies Advent as its investor after a thirteen-year hold; this is an unusually mature sponsor asset but size, leverage and carve-out complexity are unresolved."
+    },
+    {
+      "aliases": [
+        "Ethypharm Group"
+      ],
+      "base_triage_score": 83,
+      "business_model": "Profitable specialty-pharma platform focused on pain, addiction, critical care and hospital injectables, with direct sales across major European markets.",
+      "company_name": "Ethypharm",
+      "country": "France",
+      "entry_date": "2016-07-01",
+      "estimated_ev_usd_m": null,
+      "evidence": [
+        {
+          "date": "2026-07-12",
+          "note": "PAI lists Ethypharm as a current July 2016 investment; company materials describe profitable growth and a direct commercial presence across Europe's five largest markets.",
+          "source": "PAI Partners",
+          "url": "https://www.paipartners.com/investment/ethypharm/"
+        }
+      ],
+      "evidence_gaps": [
+        "current enterprise value",
+        "product concentration",
+        "debt stack",
+        "exit mandate"
+      ],
+      "first_seen_at": "2026-07-12T01:40:21.257133+00:00",
+      "hold_years": 10.0,
+      "last_reviewed_at": "2026-07-12T01:40:42.847417+00:00",
+      "next_action": "Establish current product-level EBITDA, patent and generic exposure, EV and leverage, then map PAI's intended exit route.",
+      "official_portfolio_match": false,
+      "origin": "evidence_backed_seed",
+      "promote_ready": false,
+      "promotion_gates": {
+        "ai_evidence": true,
+        "entry": true,
+        "exit_signal": false,
+        "owner": true,
+        "quality": true,
+        "size": false
+      },
+      "region": "Europe",
+      "related_signals": [],
+      "signal_count": 0,
+      "sponsor": "PAI Partners",
+      "status": "research_now",
+      "thesis_cluster": "Regulated specialty healthcare",
+      "triage_score": 83,
+      "why_now": "PAI's official portfolio still lists the 2016 investment; the ten-year hold and expansion into direct commercialization make it a credible exit-window candidate."
+    },
+    {
+      "ai_evidence": [
+        {
+          "date": "2026-01-30",
+          "note": "I Squared describes nLighten as its European edge data-center platform and directly links the build-out to AI-driven compute demand.",
+          "source": "I Squared Capital / Bloomberg reprint",
+          "url": "https://isquaredcapital.com/cpt_news/qa-with-bloomberg-mohamed-el-gazzar-on-ai-adjacent-bets/"
+        }
+      ],
+      "ai_exposure": "direct_enabler",
+      "ai_thesis": "AI inference shifts part of compute demand toward lower-latency regional capacity; nLighten owns the physical data-center layer and has diversified city-level customers rather than a generic software claim.",
+      "aliases": [
+        "nLighten edge data centers"
+      ],
+      "base_triage_score": 80,
+      "business_model": "Pan-European edge data-center platform supplying low-latency capacity to enterprise and hyperscale customers in regional markets.",
+      "company_name": "nLighten",
+      "country": "Pan-European",
+      "entry_date": "2023-01-01",
+      "estimated_ev_usd_m": null,
+      "evidence": [
+        {
+          "date": "2024-07-01",
+          "note": "I Squared disclosed more than USD 500m of committed equity for nLighten's expansion and positioned the platform as regional European edge infrastructure.",
+          "source": "I Squared Capital / IPE Real Assets reprint",
+          "url": "https://isquaredcapital.com/wp-content/uploads/2024/07/IPE-REAL-ASSETS-Power-and-Connectivity.pdf"
+        }
+      ],
+      "evidence_gaps": [
+        "current enterprise value",
+        "contracted and live MW",
+        "customer concentration",
+        "current leverage",
+        "exit timing"
+      ],
+      "first_seen_at": "2026-07-12T01:40:21.257133+00:00",
+      "hold_years": 3.5,
+      "last_reviewed_at": "2026-07-12T01:40:42.847417+00:00",
+      "next_action": "Establish current invested capital, contracted MW, utilization, customer concentration and EV; track follow-on acquisitions and any capital-partner or refinancing event.",
+      "official_portfolio_match": false,
+      "origin": "evidence_backed_seed",
+      "promote_ready": false,
+      "promotion_gates": {
+        "ai_evidence": true,
+        "entry": true,
+        "exit_signal": false,
+        "owner": true,
+        "quality": true,
+        "size": false
+      },
+      "region": "Europe",
+      "related_signals": [
+        {
+          "id": "live-9b3cb9893dc8bc0518c8",
+          "company_name": "nLighten",
+          "confidence": "machine_found",
+          "created_at": "2026-07-12T01:40:42.847417+00:00",
+          "excerpt": "THIS SITE AND THE MATERIALS HEREIN ARE DIRECTED ONLY TO FINANCIAL ADVISORS OR OTHER INVESTMENT PROFESSIONALS AND ARE NOT INTENDED TO BE SHOWN TO THE GENERAL PUBLIC.",
+          "matched_sponsors": [],
+          "matched_terms": [],
+          "region": "Europe",
+          "signal_type": "portfolio_update",
+          "source_name": "nLighten official portfolio",
+          "source_tier": "ai_infrastructure_official",
+          "source_url": "https://isquaredcapital.com/cpt_invest/nlighten/"
+        }
+      ],
+      "signal_count": 1,
+      "sponsor": "I Squared Capital",
+      "status": "monitor",
+      "themes": [
+        "ai_infrastructure"
+      ],
+      "thesis_cluster": "AI infrastructure / edge data centers",
+      "triage_score": 82,
+      "why_now": "I Squared still identifies nLighten as a current platform and disclosed more than USD 500m of committed expansion equity; the platform could approach HSG's target band as it scales, but a 2023 formation makes an imminent exit unlikely."
+    },
+    {
+      "aliases": [
+        "Trimco",
+        "Trimco International"
+      ],
+      "base_triage_score": 81,
+      "business_model": "Garment labels, tags, packaging, RFID and supply-chain traceability solutions for global apparel and footwear brands.",
+      "company_name": "Trimco Group",
+      "country": "Hong Kong",
+      "entry_date": "2022-11-22",
+      "estimated_ev_usd_m": 850,
+      "evidence": [
+        {
+          "date": "2022-11-22",
+          "note": "Affinity reported its sale of Trimco to Brookfield at an enterprise value of USD 850m; Trimco's own materials confirm Brookfield ownership and a global brand-identity and traceability platform.",
+          "source": "Affinity Equity Partners",
+          "url": "https://www.affinityequity.com/news?page=2"
+        }
+      ],
+      "evidence_gaps": [
+        "current EBITDA and leverage",
+        "Brookfield fund and control structure",
+        "customer concentration",
+        "exit preparation"
+      ],
+      "first_seen_at": "2026-07-12T01:40:21.257133+00:00",
+      "hold_years": 3.6,
+      "last_reviewed_at": "2026-07-12T01:40:42.847417+00:00",
+      "next_action": "Track hold duration, RFID and ProductDNA adoption, customer concentration and any Brookfield refinancing while building an Asia supply-chain thesis.",
+      "official_portfolio_match": false,
+      "origin": "evidence_backed_seed",
+      "promote_ready": false,
+      "promotion_gates": {
+        "ai_evidence": true,
+        "entry": true,
+        "exit_signal": false,
+        "owner": true,
+        "quality": true,
+        "size": true
+      },
+      "region": "Asia",
+      "related_signals": [],
+      "signal_count": 0,
+      "sponsor": "Brookfield",
+      "status": "monitor",
+      "thesis_cluster": "Guala / brand-identity consumables",
+      "triage_score": 81,
+      "why_now": "The USD 850m Brookfield acquisition sits directly in the target size band and the business resembles Guala, but the four-year hold is not yet enough to assume an exit."
+    },
+    {
+      "aliases": [
+        "Bushu Pharma",
+        "Bushu Pharmaceuticals Ltd."
+      ],
+      "base_triage_score": 78,
+      "business_model": "Japanese pure-play pharmaceutical contract manufacturing, packaging and clinical-trial materials platform.",
+      "company_name": "Bushu Pharmaceuticals",
+      "country": "Japan",
+      "entry_date": "2023-02-01",
+      "estimated_ev_usd_m": null,
+      "evidence": [
+        {
+          "date": "2026-07-12",
+          "note": "KKR's current portfolio materials state that Bushu joined KKR in February 2023 and is being expanded across capacity, quality control and organic and inorganic growth.",
+          "source": "KKR / Bushu Pharma",
+          "url": "https://www.kkr.com/approach/shared-success/bushu-pharma"
+        }
+      ],
+      "evidence_gaps": [
+        "current enterprise value",
+        "capacity utilization",
+        "customer concentration",
+        "debt stack"
+      ],
+      "first_seen_at": "2026-07-12T01:40:21.257133+00:00",
+      "hold_years": 3.4,
+      "last_reviewed_at": "2026-07-12T01:40:42.847417+00:00",
+      "next_action": "Track capacity additions, quality record, customer concentration and add-ons; begin sponsor mapping once the hold passes four years or a financing signal appears.",
+      "official_portfolio_match": false,
+      "origin": "evidence_backed_seed",
+      "promote_ready": false,
+      "promotion_gates": {
+        "ai_evidence": true,
+        "entry": true,
+        "exit_signal": false,
+        "owner": true,
+        "quality": true,
+        "size": false
+      },
+      "region": "Asia",
+      "related_signals": [],
+      "signal_count": 0,
+      "sponsor": "KKR",
+      "status": "monitor",
+      "thesis_cluster": "Regulated CDMO",
+      "triage_score": 78,
+      "why_now": "KKR confirms current ownership and operating investment, but the 2023 entry is too recent for an assumed exit and should be developed as an early thesis."
+    },
+    {
+      "ai_evidence": [
+        {
+          "date": "2026-07-12",
+          "note": "Official portfolio materials confirm current ownership and mission-critical high-voltage products; the AI linkage is an inference from incremental grid demand and must be quantified before promotion.",
+          "source": "Triton Partners",
+          "url": "https://www.triton-partners.com/portfolio/trench-group"
+        }
+      ],
+      "ai_exposure": "critical_power_component",
+      "ai_thesis": "AI data-center load growth increases grid reinforcement and high-voltage interconnection requirements; Trench supplies difficult-to-substitute components, though AI is one demand driver among broader electrification themes.",
+      "aliases": [
+        "Trench",
+        "Trench High Voltage"
+      ],
+      "base_triage_score": 76,
+      "business_model": "Global manufacturer of mission-critical high-voltage bushings, instrument transformers and coils used to keep transmission grids stable and connected.",
+      "company_name": "Trench Group",
+      "country": "Germany / Global",
+      "entry_date": "2024-04-02",
+      "estimated_ev_usd_m": null,
+      "evidence": [
+        {
+          "date": "2024-04-02",
+          "note": "Triton completed the Siemens Energy carve-out in April 2024 and identifies Trench as a current portfolio company with 2,400 employees and factories across Europe, North America and China.",
+          "source": "Triton Partners",
+          "url": "https://www.triton-partners.com/news/triton-completes-acquisition-of-trench"
+        }
+      ],
+      "evidence_gaps": [
+        "current enterprise value",
+        "AI/data-center-related backlog",
+        "customer concentration",
+        "carve-out leverage",
+        "exit timing"
+      ],
+      "first_seen_at": "2026-07-12T01:40:21.257133+00:00",
+      "hold_years": 2.3,
+      "last_reviewed_at": "2026-07-12T01:40:42.847417+00:00",
+      "next_action": "Use as an AI-power-infrastructure comp, estimate current EV and EBITDA, map data-center/grid backlog, and revisit when hold duration or refinancing indicates an exit window.",
+      "official_portfolio_match": false,
+      "origin": "evidence_backed_seed",
+      "promote_ready": false,
+      "promotion_gates": {
+        "ai_evidence": true,
+        "entry": true,
+        "exit_signal": false,
+        "owner": true,
+        "quality": true,
+        "size": false
+      },
+      "region": "Europe",
+      "related_signals": [],
+      "signal_count": 0,
+      "sponsor": "Triton Partners",
+      "status": "monitor",
+      "themes": [
+        "ai_infrastructure",
+        "ai_picks_and_shovels"
+      ],
+      "thesis_cluster": "AI infrastructure / grid components",
+      "triage_score": 76,
+      "why_now": "This is a strong category-learning asset with current Triton ownership and China manufacturing exposure, but the 2024 carve-out is too young to be an exit-window target."
+    }
+  ],
+  "idea_sync": {
+    "ai_infrastructure_count": 2,
+    "ai_theme_count": 3,
+    "candidate_count": 9,
+    "generated_at": "2026-07-12T01:40:42.847417+00:00",
+    "new_official_addition_count": 0,
+    "promote_ready_count": 0,
+    "rejected_memory": [
+      {
+        "checked_at": "2026-07-12",
+        "company_name": "Goodpack",
+        "disposition": "not_pe_owned",
+        "reason": "The company states it returned to full ownership by the Lam family after KKR, so it is not a current sponsor-held acquisition target.",
+        "url": "https://www.goodpack.com/about"
+      },
+      {
+        "checked_at": "2026-07-12",
+        "company_name": "Kelvion",
+        "disposition": "completed_transaction",
+        "reason": "Apollo completed its acquisition of a majority stake in January 2026; the prior Triton exit window is closed.",
+        "url": "https://media.triton-partners.com/portfolio/kelvion/"
+      },
+      {
+        "checked_at": "2026-07-12",
+        "company_name": "Straive",
+        "disposition": "stale_owner",
+        "reason": "Partners Group sold Straive to BPEA in 2021; it cannot be treated as a current Partners Group asset.",
+        "url": "https://www.partnersgroup.com/news-and-views/press-releases/investment-news/detail?news_id=200b58b1-f9ff-4f45-b7bd-a6fca5c0ad53"
+      }
+    ],
+    "rejected_memory_count": 3,
+    "research_now_count": 5
   }
 }
