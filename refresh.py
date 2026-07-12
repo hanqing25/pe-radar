@@ -25,6 +25,11 @@ TARGET_SOURCES = [
     {"name": "Kersia official news", "company_name": "Kersia", "url": "https://www.kersia-group.com/newsroom/", "region": "Europe / Asia", "tier": "generated_target_official"},
     {"name": "Nemera official news", "company_name": "Nemera", "url": "https://www.nemera.net/news/", "region": "Europe / Asia", "tier": "generated_target_official"},
     {"name": "Schleich official press", "company_name": "Schleich", "url": "https://www.mynewsdesk.com/schleich/pressreleases", "region": "Europe", "tier": "generated_target_official"},
+    {"name": "AMMEGA official portfolio", "company_name": "AMMEGA", "url": "https://www.partnersgroup.com/en/our-investments/private-equity/ammega", "region": "Europe / Asia", "tier": "candidate_official"},
+    {"name": "Engel & Volkers official portfolio", "company_name": "Engel & Völkers", "url": "https://www.permira.com/portfolio/our-portfolio/engels-voelkers", "region": "Europe", "tier": "candidate_official"},
+    {"name": "ADB SAFEGATE official portfolio", "company_name": "ADB SAFEGATE", "url": "https://www.carlyle.com/our-business/portfolio-of-investments/adb-safegate", "region": "Europe", "tier": "candidate_official"},
+    {"name": "nLighten official portfolio", "company_name": "nLighten", "url": "https://isquaredcapital.com/cpt_invest/nlighten/", "region": "Europe", "tier": "ai_infrastructure_official"},
+    {"name": "Trench Group official portfolio", "company_name": "Trench Group", "url": "https://www.triton-partners.com/portfolio/trench-group", "region": "Europe / Asia", "tier": "ai_infrastructure_official"},
 ]
 FUND_SOURCES = [
     ("EQT", "Europe / Asia", "https://eqtgroup.com/about/current-portfolio", "current", "headings"),
@@ -200,6 +205,59 @@ def credit_job(source: tuple[str, str, str, str, str, str], aliases: dict[str, s
     return {"name": name, "region": region, "url": url, "identifier": identifier, "capability": capability, "source_type": source_type, "status": status, "elapsed_ms": elapsed_ms, "matches": matches}
 
 
+def refresh_idea_queue(payload: dict, signals: list[dict], new_candidates: list[dict], now: str) -> None:
+    queue = payload.get("idea_queue", [])
+    rejected = {re.sub(r"[^a-z0-9]+", "", str(item.get("company_name", "")).casefold()) for item in payload.get("idea_sync", {}).get("rejected_memory", [])}
+    target_names = {re.sub(r"[^a-z0-9]+", "", str(item.get("company_name", "")).casefold()) for item in payload.get("targets", [])}
+    by_name = {re.sub(r"[^a-z0-9]+", "", str(item.get("company_name", "")).casefold()): item for item in queue}
+    for candidate in new_candidates:
+        key = re.sub(r"[^a-z0-9]+", "", str(candidate.get("company_name", "")).casefold())
+        if not key or key in by_name or key in target_names or key in rejected:
+            continue
+        row = dict(candidate)
+        row.update({
+            "origin": "official_portfolio_delta",
+            "status": "new_official_addition",
+            "first_seen_at": now,
+            "last_reviewed_at": now,
+            "estimated_ev_usd_m": None,
+            "entry_date": None,
+            "themes": [],
+            "business_model": "Official portfolio addition; business model not yet classified.",
+            "why_now": "Newly observed on a monitored sponsor website and awaiting qualification.",
+            "next_action": "Verify current ownership, entry date, enterprise value, business quality and exit signals.",
+            "evidence_gaps": ["entry date", "enterprise value", "business quality", "exit signal"],
+            "base_triage_score": 55,
+            "triage_score": 55,
+            "promote_ready": False,
+        })
+        queue.append(row)
+        by_name[key] = row
+    for row in queue:
+        names = [str(row.get("company_name", "")).casefold(), *[str(alias).casefold() for alias in row.get("aliases", []) or []]]
+        related = [signal for signal in signals if str(signal.get("company_name", "")).casefold() in names or any(name and name in str(signal.get("excerpt", "")).casefold() for name in names)]
+        row["related_signals"] = related[:8]
+        row["signal_count"] = len(related)
+        row["last_reviewed_at"] = now
+        base = int(row.get("base_triage_score", row.get("triage_score", 55)))
+        row["base_triage_score"] = base
+        row["triage_score"] = min(100, base + min(8, len(related) * 2))
+        if related and row.get("status") == "new_official_addition":
+            row["status"] = "research_now"
+    status_rank = {"research_now": 0, "monitor": 1, "new_official_addition": 2}
+    queue.sort(key=lambda item: (status_rank.get(str(item.get("status")), 3), -int(item.get("triage_score", 0)), str(item.get("company_name", ""))))
+    payload["idea_queue"] = queue[:100]
+    payload["idea_sync"] = {
+        **payload.get("idea_sync", {}),
+        "generated_at": now,
+        "candidate_count": len(queue),
+        "research_now_count": sum(1 for item in queue if item.get("status") == "research_now"),
+        "new_official_addition_count": sum(1 for item in queue if item.get("status") == "new_official_addition"),
+        "promote_ready_count": sum(1 for item in queue if item.get("promote_ready")),
+        "ai_theme_count": sum(1 for item in queue if item.get("themes")),
+    }
+
+
 def main() -> None:
     payload = json.loads(DATA_PATH.read_text(encoding="utf-8"))
     now = datetime.now(timezone.utc).isoformat()
@@ -207,14 +265,21 @@ def main() -> None:
     existing_signals = {signal.get("id") or signal.get("excerpt", "").lower() for signal in signals}
     targets = payload.get("targets", [])
     existing_universe = {(item.get("sponsor", "").casefold(), item.get("company_name", "").casefold()): item for item in payload.get("sponsor_universe", [])}
+    universe_by_key = dict(existing_universe)
     aliases = {item.get("company_name", "").casefold(): item.get("company_name") for item in targets if len(item.get("company_name", "")) >= 4}
     for item in targets:
         for alias in item.get("aliases", []) or []:
             if len(alias) >= 4:
                 aliases[alias.casefold()] = item.get("company_name")
+    for item in payload.get("idea_queue", []):
+        if len(item.get("company_name", "")) >= 4:
+            aliases[item.get("company_name", "").casefold()] = item.get("company_name")
+        for alias in item.get("aliases", []) or []:
+            if len(alias) >= 4:
+                aliases[alias.casefold()] = item.get("company_name")
 
     deal_health, deal_errors, new_count = [], [], 0
-    fund_health, fund_errors, universe = [], [], []
+    fund_health, fund_errors, new_candidates = [], [], []
     credit_health, credit_errors, directory_matches = [], [], []
 
     jobs = []
@@ -235,14 +300,21 @@ def main() -> None:
                         target = next((item for item in targets if item.get("company_name", "").lower() in headline.lower()), None)
                         if kind == "priority":
                             target = next((item for item in targets if item.get("company_name") == result["source"].get("company_name")), target)
-                        signals.insert(0, {"id": signal_id, "company_name": target.get("company_name") if target else None, "confidence": "machine_found", "created_at": now, "excerpt": headline, "matched_sponsors": [], "matched_terms": [], "region": result["source"]["region"], "signal_type": infer_type(headline), "source_name": result["source"]["name"], "source_tier": result["source"]["tier"], "source_url": result["source"]["url"]})
+                        company_name = target.get("company_name") if target else (result["source"].get("company_name") if kind == "priority" else None)
+                        signals.insert(0, {"id": signal_id, "company_name": company_name, "confidence": "machine_found", "created_at": now, "excerpt": headline, "matched_sponsors": [], "matched_terms": [], "region": result["source"]["region"], "signal_type": infer_type(headline), "source_name": result["source"]["name"], "source_tier": result["source"]["tier"], "source_url": result["source"]["url"]})
                         existing_signals.add(signal_id)
                         new_count += 1
                 elif kind == "fund":
-                    fund_health.append({"name": result["sponsor"], "sponsor": result["sponsor"], "url": result["url"], "status": result["status"], "elapsed_ms": result["elapsed_ms"], "candidate_count": len(result["names"])})
+                    fund_health.append({"name": result["sponsor"], "sponsor": result["sponsor"], "url": result["url"], "status": result["status"], "elapsed_ms": result["elapsed_ms"], "candidate_count": len(result["names"]), "preserved_previous": not bool(result["names"])})
+                    if result["names"]:
+                        universe_by_key = {key: item for key, item in universe_by_key.items() if item.get("source_url") != result["url"]}
                     for company in result["names"]:
-                        previous = existing_universe.get((result["sponsor"].casefold(), company.casefold()), {})
-                        universe.append({"company_name": company, "sponsor": result["sponsor"], "region": result["region"], "portfolio_scope": result["scope"], "source_name": f'{result["sponsor"]} official portfolio', "source_url": result["url"], "first_seen_at": previous.get("first_seen_at", now), "last_seen_at": now, "verification_status": "website_heading_candidate"})
+                        key = (result["sponsor"].casefold(), company.casefold())
+                        previous = existing_universe.get(key, {})
+                        row = {"company_name": company, "sponsor": result["sponsor"], "region": result["region"], "portfolio_scope": result["scope"], "source_name": f'{result["sponsor"]} official portfolio', "source_url": result["url"], "first_seen_at": previous.get("first_seen_at", now), "last_seen_at": now, "verification_status": "website_heading_candidate"}
+                        universe_by_key[key] = row
+                        if key not in existing_universe:
+                            new_candidates.append(row)
                 else:
                     credit_health.append({"name": result["name"], "url": result["url"], "status": result["status"], "elapsed_ms": result["elapsed_ms"], "matched_company_count": len(result["matches"])})
                     for company in result["matches"]:
@@ -255,13 +327,14 @@ def main() -> None:
                 else:
                     credit_errors.append({"name": source[0], "url": source[2], "error": str(exc)})
 
-    universe.sort(key=lambda item: (item["sponsor"].casefold(), item["company_name"].casefold()))
+    universe = sorted(universe_by_key.values(), key=lambda item: (item["sponsor"].casefold(), item["company_name"].casefold()))
+    refresh_idea_queue(payload, signals, new_candidates, now)
     payload["generated_at"] = now
     payload["signals"] = signals[:150]
     payload["sync"] = {"generated_at": now, "new_signal_count": new_count, "total_signal_count": len(payload["signals"]), "fetched": deal_health, "errors": deal_errors}
     payload["fund_sources"] = [{"name": f"{sponsor} official portfolio", "sponsor": sponsor, "url": url, "region": region, "scope": scope, "source_type": "fund_website", "kind": "fund_website"} for sponsor, region, url, scope, _ in FUND_SOURCES]
     payload["sponsor_universe"] = universe
-    payload["fund_sync"] = {"generated_at": now, "source_count": len(FUND_SOURCES), "company_candidate_count": len(universe), "health": fund_health, "errors": fund_errors}
+    payload["fund_sync"] = {"generated_at": now, "source_count": len(FUND_SOURCES), "company_candidate_count": len(universe), "new_candidate_count": len(new_candidates), "new_candidates": new_candidates, "health": fund_health, "errors": fund_errors}
     payload["credit_sources"] = [{"name": name, "url": url, "region": region, "identifier": identifier, "price_capability": capability, "source_type": source_type, "kind": "credit_market"} for name, region, url, identifier, capability, source_type in CREDIT_SOURCES]
     payload["credit"] = {"verified_instruments": payload.get("credit", {}).get("verified_instruments", []), "directory_matches": directory_matches, "generated_at": now}
     payload["credit_sync"] = {"generated_at": now, "source_count": len(CREDIT_SOURCES), "verified_instrument_count": len(payload["credit"]["verified_instruments"]), "directory_match_count": len(directory_matches), "health": credit_health, "errors": credit_errors}
