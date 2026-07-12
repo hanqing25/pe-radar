@@ -94,6 +94,18 @@
   font-style: normal;
 }
 
+.credit-table > a.credit-watch-row {
+  background: #fffbf2;
+}
+
+.credit-table > a.credit-watch-row em {
+  color: #9a6a10;
+}
+
+.credit-table > a.credit-watch-row > strong {
+  color: #9a6a10;
+}
+
 .credit-empty {
   min-height: 260px;
   display: flex;
