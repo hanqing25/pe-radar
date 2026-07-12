@@ -3,6 +3,7 @@ const state = {
   query: "",
   region: "All",
   sizeOnly: false,
+  aiOnly: false,
   selectedId: null,
   targets: [],
   signals: [],
@@ -12,13 +13,20 @@ const state = {
   fundSources: [],
   sponsorUniverse: [],
   fundSync: {},
+  ideaQueue: [],
+  ideaSync: {},
   creditSources: [],
   credit: { verified_instruments: [], directory_matches: [] },
   creditSync: {},
   generatedAt: null,
 };
 
-const viewTitles = { radar: "Radar", pipeline: "Pipeline", universe: "Fund universe", credit: "Credit", sectors: "Sectors", sources: "Sources" };
+const viewTitles = { radar: "Radar", ideas: "Idea inbox", pipeline: "Pipeline", universe: "Fund universe", credit: "Credit", sectors: "Sectors", sources: "Sources" };
+const themeMeta = {
+  ai_infrastructure: "AI infrastructure",
+  ai_picks_and_shovels: "AI picks & shovels",
+  ai_beneficiary: "AI beneficiary",
+};
 const statusMeta = {
   active_watch: ["Watching", "blue"], sale_signal: ["Sale signal", "red"],
   late_exit_signal: ["Late process", "amber"], hsg_precedent: ["HSG precedent", "violet"],
@@ -74,6 +82,8 @@ async function loadData() {
     fundSources: payload.fund_sources || [],
     sponsorUniverse: payload.sponsor_universe || [],
     fundSync: payload.fund_sync || {},
+    ideaQueue: payload.idea_queue || [],
+    ideaSync: payload.idea_sync || {},
     creditSources: payload.credit_sources || [],
     credit: payload.credit || { verified_instruments: [], directory_matches: [] },
     creditSync: payload.credit_sync || {},
@@ -87,10 +97,11 @@ function targetScore(target) { return target.scores?.total ?? 0; }
 function filteredTargets() {
   const query = state.query.trim().toLowerCase();
   return state.targets.filter((target) => {
-    const text = [target.company_name, target.current_owner, target.country, target.sector, target.sub_sector].join(" ").toLowerCase();
+    const text = [target.company_name, target.current_owner, target.country, target.sector, target.sub_sector, ...(target.themes || [])].join(" ").toLowerCase();
     const regionMatch = state.region === "All" || target.region === state.region;
     const sizeMatch = !state.sizeOnly || (target.estimated_ev_usd_m >= 800 && target.estimated_ev_usd_m <= 1200);
-    return (!query || text.includes(query)) && regionMatch && sizeMatch;
+    const aiMatch = !state.aiOnly || (target.themes || []).some((theme) => theme.startsWith("ai_"));
+    return (!query || text.includes(query)) && regionMatch && sizeMatch && aiMatch;
   });
 }
 
@@ -99,18 +110,19 @@ function renderMetrics() {
   const actionable = state.signals.filter((signal) => ["sale_process", "continuation_vehicle"].includes(signal.signal_type)).length;
   const priorityTargets = state.targets.filter((target) => target.user_priority && !target.exclude_from_shortlist).length;
   const liveProcesses = state.targets.filter((target) => target.actionability === "live_process" && !target.exclude_from_shortlist).length;
-  const generatedIdeas = state.targets.filter((target) => target.idea_origin === "lookalike_generated" && !target.exclude_from_shortlist).length;
+  const aiNames = [...state.targets, ...state.ideaQueue].filter((target) => (target.themes || []).some((theme) => theme.startsWith("ai_"))).length;
   const verifiedBonds = state.credit.verified_instruments?.length || 0;
   $("#metrics").innerHTML = [
     ["ACTIVE TARGETS", active, "ranked universe"],
     ["PRIORITY TARGETS", priorityTargets, "explicit HSG interest"],
     ["LIVE PROCESSES", liveProcesses, "assess now"],
-    ["GENERATED IDEAS", generatedIdeas, "qualified lookalikes"],
-    ["VERIFIED BONDS", verifiedBonds, `${state.creditSources.length} credit venues`],
+    ["IDEA INBOX", state.ideaQueue.length, `${state.ideaSync.research_now_count || 0} research now`],
+    ["AI THEMES", aiNames, "evidence-gated exposure"],
     ["LAST REFRESH", timeAgo(state.generatedAt), `${state.signals.length} signals retained`],
   ].map(([label, value, note]) => `<div><span>${label}</span><strong>${value}</strong><small>${note}</small></div>`).join("");
   $("#signal-badge").textContent = actionable;
   $("#credit-badge").textContent = verifiedBonds;
+  $("#idea-badge").textContent = state.ideaQueue.length;
 }
 
 function renderRadar() {
@@ -135,6 +147,7 @@ function renderRadar() {
       <div class="panel-toolbar"><div><h2>Target universe</h2><small>${targets.length} companies</small></div><div class="filters">
         <label>${icon("globe-2", 15)}<select id="region-filter"><option value="All">All regions</option><option value="Europe" ${state.region === "Europe" ? "selected" : ""}>Europe</option><option value="Asia" ${state.region === "Asia" ? "selected" : ""}>Asia</option></select></label>
         <button id="size-filter" class="${state.sizeOnly ? "active" : ""}">${icon("filter", 15)}$800m-$1.2bn</button>
+        <button id="ai-filter" class="${state.aiOnly ? "active" : ""}">${icon("cpu", 15)}AI theme</button>
       </div></div>
       <div class="table-head"><span>COMPANY</span><span>OWNER / HOLD</span><span>SIZE</span><span>SCORE</span><span>STATUS</span><span></span></div>
       <div class="target-list">${rows || `<div class="empty">${icon("search", 20)}<span>No matching targets</span></div>`}</div>
@@ -144,6 +157,7 @@ function renderRadar() {
 
   $("#region-filter")?.addEventListener("change", (event) => { state.region = event.target.value; renderRadar(); refreshIcons(); });
   $("#size-filter")?.addEventListener("click", () => { state.sizeOnly = !state.sizeOnly; renderRadar(); refreshIcons(); });
+  $("#ai-filter")?.addEventListener("click", () => { state.aiOnly = !state.aiOnly; renderRadar(); refreshIcons(); });
   document.querySelectorAll("[data-target]").forEach((button) => button.addEventListener("click", () => {
     state.selectedId = button.dataset.target;
     renderRadar();
@@ -163,6 +177,7 @@ function renderDetail(target) {
     <div class="detail-facts"><div><span>Owner</span><strong>${escapeHtml(target.current_owner)}</strong></div><div><span>Hold</span><strong>${target.hold_years == null ? "Open" : `${Number(target.hold_years).toFixed(1)} yrs`}</strong></div><div><span>Est. EV</span><strong>${sizeLabel(target.estimated_ev_usd_m)}</strong></div></div>
     <section class="detail-section"><h3>Current read</h3><p>${escapeHtml(target.recommendation)}</p></section>
     ${target.next_action ? `<section class="detail-section action-section"><h3>Next action</h3><p>${escapeHtml(target.next_action)}</p></section>` : ""}
+    ${target.ai_thesis ? `<section class="detail-section ai-section"><h3>${icon("cpu", 14)}AI transmission path</h3><p>${escapeHtml(target.ai_thesis)}</p><div class="tag-row">${(target.themes || []).map((theme) => `<span>${escapeHtml(themeMeta[theme] || theme)}</span>`).join("")}</div></section>` : ""}
     <section class="detail-section"><h3>Score anatomy</h3>${scoreRows.map(([name, value]) => `<div class="score-row"><span>${name}</span><div><i style="width:${value || 0}%"></i></div><strong>${value || 0}</strong></div>`).join("")}</section>
     <section class="detail-section"><h3>Investment markers</h3><div class="tag-row">${(target.tags || []).map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")}</div></section>
     ${(target.watch_triggers || []).length ? `<section class="detail-section"><h3>Watch triggers</h3><div class="trigger-list">${target.watch_triggers.map((trigger) => `<span>${icon("radar", 12)}${escapeHtml(trigger)}</span>`).join("")}</div></section>` : ""}
@@ -171,6 +186,23 @@ function renderDetail(target) {
       ${related.map((item) => `<a href="${escapeHtml(item.source_url)}" target="_blank" rel="noreferrer">${icon("activity", 14)}<span><strong>${escapeHtml(item.excerpt)}</strong><small>${escapeHtml(item.source_name)} · ${dateLabel(item.created_at)}</small></span>${icon("external-link", 13)}</a>`).join("")}
     </section>
   </aside>`;
+}
+
+function renderIdeas() {
+  const query = state.query.trim().toLowerCase();
+  const rows = state.ideaQueue.filter((item) => {
+    const text = [item.company_name, item.sponsor, item.country, item.business_model, ...(item.themes || [])].join(" ").toLowerCase();
+    return (!query || text.includes(query)) && (!state.aiOnly || (item.themes || []).some((theme) => theme.startsWith("ai_")));
+  });
+  $("#content").innerHTML = `<section class="page-view"><div class="view-heading"><span><small>EVIDENCE-GATED DISCOVERY</small><h2>Idea research inbox</h2></span><div class="idea-heading-actions"><em>${rows.length} candidates · ${state.ideaSync.promote_ready_count || 0} promotion ready</em><button id="idea-ai-filter" class="theme-filter ${state.aiOnly ? "active" : ""}">${icon("cpu", 15)}AI theme</button></div></div>
+    <div class="idea-wrap"><section class="idea-table"><header><span>COMPANY / THESIS</span><span>OWNER / HOLD</span><span>SIZE</span><span>TRIAGE</span><span>NEXT GATE</span></header>
+      ${rows.map((item) => {
+        const evidence = item.evidence?.[0] || item.ai_evidence?.[0];
+        const gaps = item.evidence_gaps || [];
+        return `<article><span class="idea-company"><strong>${escapeHtml(item.company_name)}</strong><small>${escapeHtml(item.business_model || "Business model classification pending")}</small><span class="theme-tags">${(item.themes || []).map((theme) => `<b>${escapeHtml(themeMeta[theme] || theme)}</b>`).join("")}</span></span><span><strong>${escapeHtml(item.sponsor || "Owner open")}</strong><small>${item.hold_years == null ? "Entry date open" : `${Number(item.hold_years).toFixed(1)} yrs held`}</small></span><span><strong>${sizeLabel(item.estimated_ev_usd_m)}</strong><small>${item.estimated_ev_usd_m >= 800 && item.estimated_ev_usd_m <= 1200 ? "In target band" : "Needs verification"}</small></span><span class="idea-score"><strong>${item.triage_score || 0}</strong><small>${escapeHtml((item.status || "monitor").replaceAll("_", " "))}</small></span><span class="idea-action"><strong>${escapeHtml(gaps[0] || "Promotion gates passed")}</strong><small>${escapeHtml(item.next_action || "Review evidence")}</small>${evidence?.url ? `<a href="${escapeHtml(evidence.url)}" target="_blank" rel="noreferrer">Evidence ${icon("external-link", 12)}</a>` : ""}</span></article>`;
+      }).join("") || `<div class="empty">${icon("lightbulb", 22)}<span>No matching ideas</span></div>`}
+    </section></div></section>`;
+  $("#idea-ai-filter")?.addEventListener("click", () => { state.aiOnly = !state.aiOnly; renderIdeas(); refreshIcons(); });
 }
 
 function stageFor(target) {
@@ -228,6 +260,7 @@ function renderSources() {
 function render() {
   renderMetrics();
   if (state.view === "radar") renderRadar();
+  if (state.view === "ideas") renderIdeas();
   if (state.view === "pipeline") renderPipeline();
   if (state.view === "universe") renderUniverse();
   if (state.view === "credit") renderCredit();
@@ -249,6 +282,7 @@ document.querySelectorAll("nav [data-view]").forEach((button) => button.addEvent
 $("#search").addEventListener("input", (event) => {
   state.query = event.target.value;
   if (state.view === "universe") renderUniverse();
+  else if (state.view === "ideas") renderIdeas();
   else if (state.view !== "radar") setView("radar");
   else renderRadar();
   refreshIcons();
