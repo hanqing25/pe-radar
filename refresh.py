@@ -30,6 +30,11 @@ TARGET_SOURCES = [
     {"name": "ADB SAFEGATE official portfolio", "company_name": "ADB SAFEGATE", "url": "https://www.carlyle.com/our-business/portfolio-of-investments/adb-safegate", "region": "Europe", "tier": "candidate_official"},
     {"name": "nLighten official portfolio", "company_name": "nLighten", "url": "https://isquaredcapital.com/cpt_invest/nlighten/", "region": "Europe", "tier": "ai_infrastructure_official"},
     {"name": "Trench Group official portfolio", "company_name": "Trench Group", "url": "https://www.triton-partners.com/portfolio/trench-group", "region": "Europe / Asia", "tier": "ai_infrastructure_official"},
+    {"name": "atNorth official investment", "company_name": "atNorth", "url": "https://www.partnersgroup.com/en/news-and-views/press-releases/investment-news/detail?news_id=5176cfb1-1d85-47a8-887c-2c2e9179be12", "region": "Europe", "tier": "ai_infrastructure_official"},
+    {"name": "Winthrop official ownership", "company_name": "Winthrop Technologies", "url": "https://winthrop.ie/winthrop-technologies-and-blackstone-announce-strategic-partnership/", "region": "Europe", "tier": "ai_infrastructure_official"},
+    {"name": "Verne official investment", "company_name": "Verne", "url": "https://www.ardian.com/news-insights/press-releases/ardian-completes-acquisition-leading-green-data-center-platform-verne", "region": "Europe", "tier": "ai_infrastructure_official"},
+    {"name": "Empyrion official capital update", "company_name": "Empyrion Digital", "url": "https://www.serayapartners.com/news/seraya-partners-commits-us%24-828-million-of-equity-to-accelerate-growth-of-empyrion-digital%E2%80%99s-green-asia-data-centre-platform", "region": "Asia", "tier": "ai_infrastructure_official"},
+    {"name": "PolarDC official bond update", "company_name": "PolarDC", "url": "https://hig.com/news/polar-an-h-i-g-capital-portfolio-company-completes-record-breaking-eur-800-million-nordic-bond-issue/", "region": "Europe", "tier": "ai_infrastructure_credit_official"},
 ]
 FUND_SOURCES = [
     ("EQT", "Europe / Asia", "https://eqtgroup.com/about/current-portfolio", "current", "headings"),
@@ -56,6 +61,8 @@ FUND_SOURCES = [
     ("Astorg", "Europe / Global", "https://www.astorg.com/investments", "current and realised", "headings"),
     ("IK Partners", "Europe", "https://ikpartners.com/investments/", "current and realised", "headings"),
     ("Partners Group", "Europe / Asia / Global", "https://www.partnersgroup.com/en/our-investments/private-equity", "selected current", "headings"),
+    ("H.I.G. Capital", "Europe / Global", "https://hig.com/portfolio/", "current and realised", "headings"),
+    ("Seraya Partners", "Asia", "https://www.serayapartners.com/portfolio", "current", "headings"),
 ]
 CREDIT_SOURCES = [
     ("FINRA TRACE Corporate & Agency", "United States / 144A", "https://www.finra.org/finra-data/fixed-income/corp-and-agency", "CUSIP", "executed trade price and yield", "trade_history"),
@@ -68,6 +75,9 @@ CREDIT_SOURCES = [
 ]
 DEAL_PATTERN = re.compile(r"\b(exit|sale|sell|acquir|buyout|stake|strategic review|continuation|valuation|portfolio|majority|minority|auction|mandate|ipo)\b", re.I)
 PRIORITY_PATTERN = re.compile(r"\b(sale|sell|auction|adviser|advisor|banker|bidder|refinanc|bond|notes|results|revenue|acquir|distribution|expan|management|ceo|ownership|investor|continuation|recap)\w*\b", re.I)
+EXIT_SIGNAL_TYPES = {"sale_process", "continuation_vehicle", "ipo_prep"}
+FINANCING_SIGNAL_TYPES = {"refinancing"}
+SIZE_GATE_TYPES = {"enterprise_value", "transaction_value", "equity_value"}
 NOISE = {
     "about", "about us", "careers", "case studies", "companies", "contact", "contact us",
     "current investments", "current portfolio", "discover", "filter", "focus portfolio", "follow us",
@@ -172,6 +182,81 @@ def infer_type(headline: str) -> str:
     return "exit_completed" if re.search(r"acquir|sale|sold|buyout", headline, re.I) else "portfolio_update"
 
 
+def years_since(value: object) -> float | None:
+    if not value:
+        return None
+    try:
+        entry = datetime.fromisoformat(str(value)).date()
+    except ValueError:
+        return None
+    return round((datetime.now(timezone.utc).date() - entry).days / 365.25, 1)
+
+
+def assess_idea(row: dict, related: list[dict]) -> None:
+    hold_years = years_since(row.get("entry_date"))
+    reset_years = years_since(row.get("ownership_reset_date"))
+    effective_hold_years = reset_years if reset_years is not None else hold_years
+    row["hold_years"] = hold_years
+    row["effective_hold_years"] = effective_hold_years
+    row["exit_clock_reset"] = reset_years is not None
+
+    ev = row.get("estimated_ev_usd_m")
+    if isinstance(ev, (int, float)):
+        size = {"value_m": ev, "currency": "USD", "kind": "enterprise_value", "confidence": row.get("size_confidence", "medium")}
+    else:
+        size = dict(row.get("size_signal", {}) or {})
+    value = size.get("value_m")
+    kind = str(size.get("kind", "unknown"))
+    size["is_target_band"] = isinstance(value, (int, float)) and kind in SIZE_GATE_TYPES and 650 <= value <= 1350
+    size["is_capital_scale"] = isinstance(value, (int, float)) and 650 <= value <= 1500
+    row["normalized_size_signal"] = size
+
+    event_signals = row.get("event_signals", []) or []
+    all_signals = [*related, *event_signals]
+    exit_signal = any(signal.get("signal_type") in EXIT_SIGNAL_TYPES for signal in all_signals)
+    financing_signal = any(signal.get("signal_type") in FINANCING_SIGNAL_TYPES for signal in all_signals)
+    mature_hold = effective_hold_years is not None and effective_hold_years >= 4.5
+    building_hold = effective_hold_years is not None and 2.5 <= effective_hold_years < 4.5
+    themes = row.get("themes", []) or []
+    owner_verified = bool(row.get("official_portfolio_match") or row.get("evidence"))
+    gates = {
+        "owner": bool(row.get("sponsor")) and owner_verified,
+        "entry": bool(row.get("entry_date")),
+        "size": bool(size.get("is_target_band")),
+        "quality": bool(row.get("business_model") and row.get("thesis_cluster")),
+        "exit_window": exit_signal or mature_hold,
+        "ai_evidence": not themes or bool(row.get("ai_evidence")),
+    }
+    row["promotion_gates"] = gates
+    row["promote_ready"] = all(gates.values())
+    readiness = sum((
+        10 if row.get("sponsor") else 0,
+        10 if owner_verified else 0,
+        10 if row.get("entry_date") else 0,
+        5 if row.get("region") in {"Europe", "Asia"} else 0,
+        15 if gates["quality"] else 0,
+        5 if gates["ai_evidence"] else 0,
+        20 if size.get("is_target_band") else 10 if size.get("is_capital_scale") else 0,
+        20 if exit_signal else 15 if mature_hold else 8 if financing_signal or building_hold else 0,
+    ))
+    row["outreach_readiness"] = min(100, readiness)
+    if row["promote_ready"] and exit_signal:
+        stage = "contact_now"
+    elif mature_hold:
+        stage = "diligence_now"
+    elif building_hold or size.get("is_target_band"):
+        stage = "build_relationship"
+    else:
+        stage = "monitor"
+    row["actionability_stage"] = stage
+    labels = {
+        "owner": "Verify current control owner", "entry": "Confirm sponsor entry date",
+        "size": "Establish enterprise or equity value", "quality": "Underwrite business quality",
+        "exit_window": "Wait for mature hold or exit signal", "ai_evidence": "Verify AI exposure with primary evidence",
+    }
+    row["next_gate"] = next((labels[key] for key in ("owner", "entry", "size", "quality", "exit_window", "ai_evidence") if not gates[key]), "Promotion gates passed")
+
+
 def deal_job(source: dict) -> dict:
     html, status, elapsed_ms = fetch_page(source["url"])
     parser = PageParser()
@@ -244,8 +329,10 @@ def refresh_idea_queue(payload: dict, signals: list[dict], new_candidates: list[
         row["triage_score"] = min(100, base + min(8, len(related) * 2))
         if related and row.get("status") == "new_official_addition":
             row["status"] = "research_now"
+        assess_idea(row, related)
+    stage_rank = {"contact_now": 0, "diligence_now": 1, "build_relationship": 2, "monitor": 3}
     status_rank = {"research_now": 0, "monitor": 1, "new_official_addition": 2}
-    queue.sort(key=lambda item: (status_rank.get(str(item.get("status")), 3), -int(item.get("triage_score", 0)), str(item.get("company_name", ""))))
+    queue.sort(key=lambda item: (stage_rank.get(str(item.get("actionability_stage")), 4), status_rank.get(str(item.get("status")), 3), -int(item.get("triage_score", 0)), str(item.get("company_name", ""))))
     payload["idea_queue"] = queue[:100]
     payload["idea_sync"] = {
         **payload.get("idea_sync", {}),
@@ -254,6 +341,9 @@ def refresh_idea_queue(payload: dict, signals: list[dict], new_candidates: list[
         "research_now_count": sum(1 for item in queue if item.get("status") == "research_now"),
         "new_official_addition_count": sum(1 for item in queue if item.get("status") == "new_official_addition"),
         "promote_ready_count": sum(1 for item in queue if item.get("promote_ready")),
+        "contact_now_count": sum(1 for item in queue if item.get("actionability_stage") == "contact_now"),
+        "diligence_now_count": sum(1 for item in queue if item.get("actionability_stage") == "diligence_now"),
+        "build_relationship_count": sum(1 for item in queue if item.get("actionability_stage") == "build_relationship"),
         "ai_theme_count": sum(1 for item in queue if item.get("themes")),
     }
 
@@ -336,8 +426,13 @@ def main() -> None:
     payload["sponsor_universe"] = universe
     payload["fund_sync"] = {"generated_at": now, "source_count": len(FUND_SOURCES), "company_candidate_count": len(universe), "new_candidate_count": len(new_candidates), "new_candidates": new_candidates, "health": fund_health, "errors": fund_errors}
     payload["credit_sources"] = [{"name": name, "url": url, "region": region, "identifier": identifier, "price_capability": capability, "source_type": source_type, "kind": "credit_market"} for name, region, url, identifier, capability, source_type in CREDIT_SOURCES]
-    payload["credit"] = {"verified_instruments": payload.get("credit", {}).get("verified_instruments", []), "directory_matches": directory_matches, "generated_at": now}
-    payload["credit_sync"] = {"generated_at": now, "source_count": len(CREDIT_SOURCES), "verified_instrument_count": len(payload["credit"]["verified_instruments"]), "directory_match_count": len(directory_matches), "health": credit_health, "errors": credit_errors}
+    payload["credit"] = {
+        "verified_instruments": payload.get("credit", {}).get("verified_instruments", []),
+        "watch_instruments": payload.get("credit", {}).get("watch_instruments", []),
+        "directory_matches": directory_matches,
+        "generated_at": now,
+    }
+    payload["credit_sync"] = {"generated_at": now, "source_count": len(CREDIT_SOURCES), "verified_instrument_count": len(payload["credit"]["verified_instruments"]), "watch_instrument_count": len(payload["credit"]["watch_instruments"]), "directory_match_count": len(directory_matches), "health": credit_health, "errors": credit_errors}
     DATA_PATH.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
