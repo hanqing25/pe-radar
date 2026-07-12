@@ -16,7 +16,7 @@ const state = {
   ideaQueue: [],
   ideaSync: {},
   creditSources: [],
-  credit: { verified_instruments: [], directory_matches: [] },
+  credit: { verified_instruments: [], watch_instruments: [], directory_matches: [] },
   creditSync: {},
   generatedAt: null,
 };
@@ -26,6 +26,13 @@ const themeMeta = {
   ai_infrastructure: "AI infrastructure",
   ai_picks_and_shovels: "AI picks & shovels",
   ai_beneficiary: "AI beneficiary",
+  credit_signal: "Credit signal",
+};
+const ideaStageMeta = {
+  contact_now: "Contact now",
+  diligence_now: "Diligence now",
+  build_relationship: "Build relationship",
+  monitor: "Monitor",
 };
 const statusMeta = {
   active_watch: ["Watching", "blue"], sale_signal: ["Sale signal", "red"],
@@ -52,6 +59,16 @@ const icon = (name, size = 16) => `<i data-lucide="${name}" style="width:${size}
 function sizeLabel(value) {
   if (value == null) return "Size open";
   return value >= 1000 ? `$${(value / 1000).toFixed(value % 1000 ? 1 : 0)}bn` : `$${value}m`;
+}
+
+function ideaSize(item) {
+  const signal = item.normalized_size_signal || item.size_signal || {};
+  if (item.estimated_ev_usd_m != null) return { label: sizeLabel(item.estimated_ev_usd_m), note: signal.is_target_band ? "EV in target band" : "Enterprise value" };
+  if (signal.value_m == null) return { label: "Size open", note: "Needs EV work" };
+  const prefix = signal.currency === "EUR" ? "€" : signal.currency === "GBP" ? "£" : "$";
+  const kind = String(signal.kind || "capital signal").replaceAll("_", " ");
+  const note = signal.kind === "bond_principal" ? "Debt principal, not EV" : signal.kind === "equity_commitment" ? "Capital commitment, not EV" : signal.is_target_band ? "Target-scale value" : kind;
+  return { label: `${prefix}${signal.value_m}m`, note };
 }
 
 function dateLabel(value) {
@@ -85,7 +102,7 @@ async function loadData() {
     ideaQueue: payload.idea_queue || [],
     ideaSync: payload.idea_sync || {},
     creditSources: payload.credit_sources || [],
-    credit: payload.credit || { verified_instruments: [], directory_matches: [] },
+    credit: payload.credit || { verified_instruments: [], watch_instruments: [], directory_matches: [] },
     creditSync: payload.credit_sync || {},
     generatedAt: payload.generated_at,
   });
@@ -112,16 +129,17 @@ function renderMetrics() {
   const liveProcesses = state.targets.filter((target) => target.actionability === "live_process" && !target.exclude_from_shortlist).length;
   const aiNames = [...state.targets, ...state.ideaQueue].filter((target) => (target.themes || []).some((theme) => theme.startsWith("ai_"))).length;
   const verifiedBonds = state.credit.verified_instruments?.length || 0;
+  const watchBonds = state.credit.watch_instruments?.length || 0;
   $("#metrics").innerHTML = [
     ["ACTIVE TARGETS", active, "ranked universe"],
     ["PRIORITY TARGETS", priorityTargets, "explicit HSG interest"],
     ["LIVE PROCESSES", liveProcesses, "assess now"],
-    ["IDEA INBOX", state.ideaQueue.length, `${state.ideaSync.research_now_count || 0} research now`],
+    ["IDEA INBOX", state.ideaQueue.length, `${state.ideaSync.diligence_now_count || 0} diligence now`],
     ["AI THEMES", aiNames, "evidence-gated exposure"],
     ["LAST REFRESH", timeAgo(state.generatedAt), `${state.signals.length} signals retained`],
   ].map(([label, value, note]) => `<div><span>${label}</span><strong>${value}</strong><small>${note}</small></div>`).join("");
   $("#signal-badge").textContent = actionable;
-  $("#credit-badge").textContent = verifiedBonds;
+  $("#credit-badge").textContent = verifiedBonds + watchBonds;
   $("#idea-badge").textContent = state.ideaQueue.length;
 }
 
@@ -194,12 +212,15 @@ function renderIdeas() {
     const text = [item.company_name, item.sponsor, item.country, item.business_model, ...(item.themes || [])].join(" ").toLowerCase();
     return (!query || text.includes(query)) && (!state.aiOnly || (item.themes || []).some((theme) => theme.startsWith("ai_")));
   });
-  $("#content").innerHTML = `<section class="page-view"><div class="view-heading"><span><small>EVIDENCE-GATED DISCOVERY</small><h2>Idea research inbox</h2></span><div class="idea-heading-actions"><em>${rows.length} candidates · ${state.ideaSync.promote_ready_count || 0} promotion ready</em><button id="idea-ai-filter" class="theme-filter ${state.aiOnly ? "active" : ""}">${icon("cpu", 15)}AI theme</button></div></div>
-    <div class="idea-wrap"><section class="idea-table"><header><span>COMPANY / THESIS</span><span>OWNER / HOLD</span><span>SIZE</span><span>TRIAGE</span><span>NEXT GATE</span></header>
+  $("#content").innerHTML = `<section class="page-view"><div class="view-heading"><span><small>EVIDENCE-GATED DISCOVERY</small><h2>Idea research inbox</h2></span><div class="idea-heading-actions"><em>${rows.length} candidates · ${state.ideaSync.contact_now_count || 0} contact now · ${state.ideaSync.diligence_now_count || 0} diligence</em><button id="idea-ai-filter" class="theme-filter ${state.aiOnly ? "active" : ""}">${icon("cpu", 15)}AI theme</button></div></div>
+    <div class="idea-wrap"><section class="idea-table"><header><span>COMPANY / THESIS</span><span>OWNER / EXIT CLOCK</span><span>SIZE SIGNAL</span><span>READINESS</span><span>NEXT GATE</span></header>
       ${rows.map((item) => {
         const evidence = item.evidence?.[0] || item.ai_evidence?.[0];
-        const gaps = item.evidence_gaps || [];
-        return `<article><span class="idea-company"><strong>${escapeHtml(item.company_name)}</strong><small>${escapeHtml(item.business_model || "Business model classification pending")}</small><span class="theme-tags">${(item.themes || []).map((theme) => `<b>${escapeHtml(themeMeta[theme] || theme)}</b>`).join("")}</span></span><span><strong>${escapeHtml(item.sponsor || "Owner open")}</strong><small>${item.hold_years == null ? "Entry date open" : `${Number(item.hold_years).toFixed(1)} yrs held`}</small></span><span><strong>${sizeLabel(item.estimated_ev_usd_m)}</strong><small>${item.estimated_ev_usd_m >= 800 && item.estimated_ev_usd_m <= 1200 ? "In target band" : "Needs verification"}</small></span><span class="idea-score"><strong>${item.triage_score || 0}</strong><small>${escapeHtml((item.status || "monitor").replaceAll("_", " "))}</small></span><span class="idea-action"><strong>${escapeHtml(gaps[0] || "Promotion gates passed")}</strong><small>${escapeHtml(item.next_action || "Review evidence")}</small>${evidence?.url ? `<a href="${escapeHtml(evidence.url)}" target="_blank" rel="noreferrer">Evidence ${icon("external-link", 12)}</a>` : ""}</span></article>`;
+        const size = ideaSize(item);
+        const effectiveHold = item.effective_hold_years ?? item.hold_years;
+        const holdNote = effectiveHold == null ? "Entry date open" : item.exit_clock_reset ? `${Number(effectiveHold).toFixed(1)} yrs since reset` : `${Number(effectiveHold).toFixed(1)} yrs held`;
+        const stage = ideaStageMeta[item.actionability_stage] || "Qualification pending";
+        return `<article><span class="idea-company"><strong>${escapeHtml(item.company_name)}</strong><small>${escapeHtml(item.business_model || "Business model classification pending")}</small><span class="theme-tags">${(item.themes || []).map((theme) => `<b>${escapeHtml(themeMeta[theme] || theme)}</b>`).join("")}</span></span><span><strong>${escapeHtml(item.sponsor || "Owner open")}</strong><small>${escapeHtml(holdNote)}</small></span><span><strong>${escapeHtml(size.label)}</strong><small>${escapeHtml(size.note)}</small></span><span class="idea-score"><strong>${item.outreach_readiness || 0}</strong><small>${escapeHtml(stage)} · T${item.triage_score || 0}</small></span><span class="idea-action"><strong>${escapeHtml(item.next_gate || "Review promotion gates")}</strong><small>${escapeHtml(item.next_action || "Review evidence")}</small>${evidence?.url ? `<a href="${escapeHtml(evidence.url)}" target="_blank" rel="noreferrer">Evidence ${icon("external-link", 12)}</a>` : ""}</span></article>`;
       }).join("") || `<div class="empty">${icon("lightbulb", 22)}<span>No matching ideas</span></div>`}
     </section></div></section>`;
   $("#idea-ai-filter")?.addEventListener("click", () => { state.aiOnly = !state.aiOnly; renderIdeas(); refreshIcons(); });
@@ -240,10 +261,12 @@ function renderUniverse() {
 
 function renderCredit() {
   const instruments = state.credit.verified_instruments || [];
+  const watch = state.credit.watch_instruments || [];
   const matches = state.credit.directory_matches || [];
-  $("#content").innerHTML = `<section class="page-view"><div class="view-heading"><span><small>CREDIT OVERLAY</small><h2>PE-backed traded debt</h2></span><em>${instruments.length} verified instruments · ${matches.length} pending matches</em></div>
+  $("#content").innerHTML = `<section class="page-view"><div class="view-heading"><span><small>CREDIT OVERLAY</small><h2>PE-backed traded debt</h2></span><em>${instruments.length} verified · ${watch.length} announced · ${matches.length} directory matches</em></div>
     <div class="credit-layout"><section class="credit-table"><header><span>COMPANY / ISSUER</span><span>IDENTIFIER</span><span>COUPON / MATURITY</span><span>PRICE / YTW</span><span>SOURCE</span></header>
       ${instruments.map((item) => { const price = item.last_price ?? item.reference_price; return `<a href="${escapeHtml(item.source_url)}" target="_blank" rel="noreferrer"><span><b>${escapeHtml(item.company_name)}</b><small>${escapeHtml(item.legal_issuer_name || item.issuer_name || "Issuer open")}</small></span><strong>${escapeHtml(item.isin || item.cusip || "Open")}</strong><span>${item.coupon_pct == null ? "Open" : `${item.coupon_pct}%`}<small>${dateLabel(item.maturity_date)} · ${escapeHtml(item.coupon_type || "")}</small></span><span>${price == null ? "Open" : Number(price).toFixed(2)}<small>${item.ytw_pct == null ? escapeHtml(item.price_type || "YTW open") : `${item.ytw_pct}% YTW`}</small></span><em>${escapeHtml(item.source_name || "Verified record")}${icon("external-link", 13)}</em></a>`; }).join("") || `<div class="credit-empty">${icon("shield-check", 24)}<strong>No verified instruments yet</strong><span>Issuer and ISIN/CUSIP evidence is required before a bond enters this table.</span></div>`}
+      ${watch.map((item) => `<a class="credit-watch-row" href="${escapeHtml(item.source_url)}" target="_blank" rel="noreferrer"><span><b>${escapeHtml(item.company_name)}</b><small>${escapeHtml(item.issuer_name || "Issuer open")}</small></span><strong>ISIN pending</strong><span>${item.principal_m ? `${escapeHtml(item.currency)} ${item.principal_m}m` : "Terms open"}<small>${escapeHtml(item.seniority || "Seniority open")}</small></span><span>Unpriced<small>Prospectus required</small></span><em>Announced debt${icon("external-link", 13)}</em></a>`).join("")}
     </section><aside class="venue-panel"><h3>Market coverage</h3>${state.creditSources.map((source) => {
       const failed = (state.creditSync.errors || []).some((error) => error.name === source.name || error.url === source.url);
       return `<a href="${escapeHtml(source.url)}" target="_blank" rel="noreferrer"><b>${icon(failed ? "triangle-alert" : "landmark", 15)}</b><span><strong>${escapeHtml(source.name)}</strong><small>${escapeHtml(source.identifier || "Identifier open")} · ${escapeHtml((source.price_capability || source.source_type || "directory").replaceAll("_", " "))}</small></span><em class="${failed ? "failed" : ""}">${failed ? "Blocked" : "Monitored"}</em></a>`;
