@@ -143,7 +143,18 @@
 .idea-heading-actions {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
   gap: 12px;
+}
+
+.hsg-filter-group {
+  display: flex;
+  gap: 4px;
+}
+
+.hsg-filter-group .theme-filter {
+  padding: 0 8px;
 }
 
 .theme-filter {
@@ -325,7 +336,7 @@
 
 .idea-brief-facts {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   border-bottom: 1px solid var(--line);
 }
 
@@ -395,6 +406,77 @@
   border-color: #e2d1ad;
   background: #fff9eb;
   color: #8b651e;
+}
+
+.hsg-route-section {
+  background: #f5f8f7;
+}
+
+.hsg-route-section .section-title {
+  align-items: center;
+  margin-bottom: 9px;
+}
+
+.hsg-route-section .section-title h3 {
+  margin: 0;
+}
+
+.hsg-route-section > strong,
+.hsg-route-section > small {
+  display: block;
+}
+
+.hsg-route-section > strong {
+  margin-bottom: 6px;
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+.hsg-route-section > small {
+  margin-top: 7px;
+  color: var(--muted);
+  font-size: 8px;
+  line-height: 1.5;
+}
+
+.hsg-route-section ul {
+  margin: 9px 0 0;
+  padding: 8px 0 0 16px;
+  border-top: 1px solid var(--line);
+  color: #5b6662;
+  font-size: 8px;
+  line-height: 1.55;
+}
+
+.hsg-gates {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.hsg-gates span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 6px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  font-size: 7px;
+}
+
+.hsg-gates .passed {
+  color: var(--green);
+  background: var(--green-soft);
+}
+
+.hsg-gates .open {
+  color: var(--amber);
+  background: var(--amber-soft);
+}
+
+.hsg-pipeline {
+  grid-template-columns: repeat(5, minmax(170px, 1fr));
 }
 
 .contact-ask {
@@ -584,6 +666,10 @@
   .credit-layout {
     grid-template-columns: 1fr;
   }
+
+  .hsg-pipeline {
+    grid-template-columns: repeat(2, minmax(240px, 1fr));
+  }
 }
 
 @media (max-width: 860px) {
@@ -727,6 +813,15 @@
     justify-content: space-between;
   }
 
+  .hsg-filter-group {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .hsg-filter-group .theme-filter {
+    flex: 0 0 auto;
+  }
+
   .idea-table {
     min-width: 0;
     border: 0;
@@ -757,6 +852,16 @@
 
   .idea-brief-heading h2 {
     font-size: 15px;
+  }
+
+  .idea-brief-facts {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .idea-brief-facts > div:last-child {
+    grid-column: 1 / -1;
+    border-top: 1px solid var(--line);
+    border-left: 0;
   }
 
   .credit-table {
