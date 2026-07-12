@@ -5,6 +5,7 @@ const state = {
   sizeOnly: false,
   aiOnly: false,
   selectedId: null,
+  selectedIdea: null,
   targets: [],
   signals: [],
   sectors: [],
@@ -33,6 +34,7 @@ const ideaStageMeta = {
   diligence_now: "Diligence now",
   build_relationship: "Build relationship",
   monitor: "Monitor",
+  category_reference: "Category reference",
 };
 const statusMeta = {
   active_watch: ["Watching", "blue"], sale_signal: ["Sale signal", "red"],
@@ -107,6 +109,7 @@ async function loadData() {
     generatedAt: payload.generated_at,
   });
   state.selectedId = state.targets.find((target) => !target.exclude_from_shortlist)?.company_name || state.targets[0]?.company_name || null;
+  state.selectedIdea = state.ideaQueue.find((item) => item.actionability_stage === "contact_now")?.company_name || state.ideaQueue[0]?.company_name || null;
   render();
 }
 
@@ -134,7 +137,7 @@ function renderMetrics() {
     ["ACTIVE TARGETS", active, "ranked universe"],
     ["PRIORITY TARGETS", priorityTargets, "explicit HSG interest"],
     ["LIVE PROCESSES", liveProcesses, "assess now"],
-    ["IDEA INBOX", state.ideaQueue.length, `${state.ideaSync.diligence_now_count || 0} diligence now`],
+    ["IDEA INBOX", state.ideaQueue.length, `${state.ideaSync.contact_now_count || 0} contact now`],
     ["AI THEMES", aiNames, "evidence-gated exposure"],
     ["LAST REFRESH", timeAgo(state.generatedAt), `${state.signals.length} signals retained`],
   ].map(([label, value, note]) => `<div><span>${label}</span><strong>${value}</strong><small>${note}</small></div>`).join("");
@@ -206,24 +209,55 @@ function renderDetail(target) {
   </aside>`;
 }
 
+function renderIdeaBrief(item) {
+  if (!item) return `<aside class="idea-brief"><div class="empty">${icon("contact-round", 22)}<span>Select an idea</span></div></aside>`;
+  const size = ideaSize(item);
+  const stage = ideaStageMeta[item.actionability_stage] || "Qualification pending";
+  const effectiveHold = item.effective_hold_years ?? item.hold_years;
+  const gates = Object.entries(item.promotion_gates || {});
+  const contacts = item.sponsor_contacts || [];
+  const events = item.event_signals || [];
+  const evidence = [...(item.evidence || []), ...(item.ai_evidence || [])].slice(0, 4);
+  return `<aside class="idea-brief">
+    <div class="idea-brief-heading"><span><small>${escapeHtml(stage.toUpperCase())}</small><h2>${escapeHtml(item.company_name)}</h2><p>${escapeHtml(item.sponsor || "Owner open")}</p></span><strong>${item.outreach_readiness || 0}<small>/100</small></strong></div>
+    <div class="idea-brief-facts"><div><span>Size signal</span><strong>${escapeHtml(size.label)}</strong><small>${escapeHtml(size.note)}</small></div><div><span>Exit clock</span><strong>${effectiveHold == null ? "Open" : `${Number(effectiveHold).toFixed(1)} yrs`}</strong><small>${item.exit_clock_reset ? "Since capital reset" : "Since sponsor entry"}</small></div></div>
+    <section><h3>Origination thesis</h3><p>${escapeHtml(item.why_now || item.business_model)}</p></section>
+    <section class="idea-gates"><h3>Promotion gates</h3><div>${gates.map(([name, passed]) => `<span class="${passed ? "passed" : "open"}">${icon(passed ? "check" : "circle-dashed", 12)}${escapeHtml(name.replaceAll("_", " "))}</span>`).join("")}</div></section>
+    <section class="contact-ask"><h3>First contact ask</h3><p>${escapeHtml(item.first_contact_ask || item.next_action || "Confirm ownership, size and exit timing.")}</p></section>
+    <section><div class="section-title"><h3>Sponsor route</h3><span>${contacts.length} contacts</span></div><div class="contact-list">${contacts.map((contact) => `<a href="${escapeHtml(contact.url)}" target="_blank" rel="noreferrer"><span><strong>${escapeHtml(contact.name)}</strong><small>${escapeHtml(contact.role)}</small></span><em>${escapeHtml((contact.priority || "contact").replaceAll("_", " "))}${icon("external-link", 12)}</em></a>`).join("") || `<p class="brief-open">Sponsor contact mapping remains open.</p>`}</div></section>
+    ${events.length ? `<section><div class="section-title"><h3>Transaction signals</h3><span>${events.length} events</span></div><div class="event-list">${events.map((event) => `<a href="${escapeHtml(event.url)}" target="_blank" rel="noreferrer"><b>${dateLabel(event.date)}</b><span><strong>${escapeHtml((event.signal_type || "event").replaceAll("_", " "))}</strong><small>${escapeHtml(event.note || "")}</small></span>${icon("external-link", 12)}</a>`).join("")}</div></section>` : ""}
+    <section><div class="section-title"><h3>Evidence</h3><span>${evidence.length} items</span></div><div class="brief-evidence">${evidence.map((entry) => `<a href="${escapeHtml(entry.url)}" target="_blank" rel="noreferrer"><span><strong>${escapeHtml(entry.source || "Source")}</strong><small>${escapeHtml(entry.note || "")}</small></span>${icon("external-link", 12)}</a>`).join("")}</div></section>
+  </aside>`;
+}
+
 function renderIdeas() {
   const query = state.query.trim().toLowerCase();
   const rows = state.ideaQueue.filter((item) => {
     const text = [item.company_name, item.sponsor, item.country, item.business_model, ...(item.themes || [])].join(" ").toLowerCase();
     return (!query || text.includes(query)) && (!state.aiOnly || (item.themes || []).some((theme) => theme.startsWith("ai_")));
   });
-  $("#content").innerHTML = `<section class="page-view"><div class="view-heading"><span><small>EVIDENCE-GATED DISCOVERY</small><h2>Idea research inbox</h2></span><div class="idea-heading-actions"><em>${rows.length} candidates · ${state.ideaSync.contact_now_count || 0} contact now · ${state.ideaSync.diligence_now_count || 0} diligence</em><button id="idea-ai-filter" class="theme-filter ${state.aiOnly ? "active" : ""}">${icon("cpu", 15)}AI theme</button></div></div>
-    <div class="idea-wrap"><section class="idea-table"><header><span>COMPANY / THESIS</span><span>OWNER / EXIT CLOCK</span><span>SIZE SIGNAL</span><span>READINESS</span><span>NEXT GATE</span></header>
+  if (!rows.some((item) => item.company_name === state.selectedIdea)) state.selectedIdea = rows[0]?.company_name || null;
+  const selected = rows.find((item) => item.company_name === state.selectedIdea);
+  const contactCount = rows.filter((item) => item.actionability_stage === "contact_now").length;
+  const diligenceCount = rows.filter((item) => item.actionability_stage === "diligence_now").length;
+  $("#content").innerHTML = `<section class="page-view"><div class="view-heading"><span><small>EVIDENCE-GATED DISCOVERY</small><h2>Idea research inbox</h2></span><div class="idea-heading-actions"><em>${rows.length} candidates · ${contactCount} contact now · ${diligenceCount} diligence</em><button id="idea-ai-filter" class="theme-filter ${state.aiOnly ? "active" : ""}">${icon("cpu", 15)}AI theme</button></div></div>
+    <div class="idea-layout"><div class="idea-wrap"><section class="idea-table"><header><span>COMPANY / THESIS</span><span>OWNER / EXIT CLOCK</span><span>SIZE SIGNAL</span><span>READINESS</span><span>NEXT GATE</span></header>
       ${rows.map((item) => {
         const evidence = item.evidence?.[0] || item.ai_evidence?.[0];
         const size = ideaSize(item);
         const effectiveHold = item.effective_hold_years ?? item.hold_years;
         const holdNote = effectiveHold == null ? "Entry date open" : item.exit_clock_reset ? `${Number(effectiveHold).toFixed(1)} yrs since reset` : `${Number(effectiveHold).toFixed(1)} yrs held`;
         const stage = ideaStageMeta[item.actionability_stage] || "Qualification pending";
-        return `<article><span class="idea-company"><strong>${escapeHtml(item.company_name)}</strong><small>${escapeHtml(item.business_model || "Business model classification pending")}</small><span class="theme-tags">${(item.themes || []).map((theme) => `<b>${escapeHtml(themeMeta[theme] || theme)}</b>`).join("")}</span></span><span><strong>${escapeHtml(item.sponsor || "Owner open")}</strong><small>${escapeHtml(holdNote)}</small></span><span><strong>${escapeHtml(size.label)}</strong><small>${escapeHtml(size.note)}</small></span><span class="idea-score"><strong>${item.outreach_readiness || 0}</strong><small>${escapeHtml(stage)} · T${item.triage_score || 0}</small></span><span class="idea-action"><strong>${escapeHtml(item.next_gate || "Review promotion gates")}</strong><small>${escapeHtml(item.next_action || "Review evidence")}</small>${evidence?.url ? `<a href="${escapeHtml(evidence.url)}" target="_blank" rel="noreferrer">Evidence ${icon("external-link", 12)}</a>` : ""}</span></article>`;
+        return `<button type="button" class="idea-row ${item.company_name === state.selectedIdea ? "selected" : ""}" data-idea="${escapeHtml(item.company_name)}"><span class="idea-company"><strong>${escapeHtml(item.company_name)}</strong><small>${escapeHtml(item.business_model || "Business model classification pending")}</small><span class="theme-tags">${(item.themes || []).map((theme) => `<b>${escapeHtml(themeMeta[theme] || theme)}</b>`).join("")}</span></span><span><strong>${escapeHtml(item.sponsor || "Owner open")}</strong><small>${escapeHtml(holdNote)}</small></span><span><strong>${escapeHtml(size.label)}</strong><small>${escapeHtml(size.note)}</small></span><span class="idea-score"><strong>${item.outreach_readiness || 0}</strong><small>${escapeHtml(stage)} · T${item.triage_score || 0}</small></span><span class="idea-action"><strong>${escapeHtml(item.next_gate || "Review promotion gates")}</strong><small>${escapeHtml(item.next_action || "Review evidence")}</small>${evidence?.url ? `<em>Evidence ${icon("external-link", 12)}</em>` : ""}</span></button>`;
       }).join("") || `<div class="empty">${icon("lightbulb", 22)}<span>No matching ideas</span></div>`}
-    </section></div></section>`;
+    </section></div>${renderIdeaBrief(selected)}</div></section>`;
   $("#idea-ai-filter")?.addEventListener("click", () => { state.aiOnly = !state.aiOnly; renderIdeas(); refreshIcons(); });
+  document.querySelectorAll("[data-idea]").forEach((button) => button.addEventListener("click", () => {
+    state.selectedIdea = button.dataset.idea;
+    renderIdeas();
+    refreshIcons();
+    if (window.innerWidth <= 1320) document.querySelector(".idea-brief")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }));
 }
 
 function stageFor(target) {
@@ -266,7 +300,7 @@ function renderCredit() {
   $("#content").innerHTML = `<section class="page-view"><div class="view-heading"><span><small>CREDIT OVERLAY</small><h2>PE-backed traded debt</h2></span><em>${instruments.length} verified · ${watch.length} announced · ${matches.length} directory matches</em></div>
     <div class="credit-layout"><section class="credit-table"><header><span>COMPANY / ISSUER</span><span>IDENTIFIER</span><span>COUPON / MATURITY</span><span>PRICE / YTW</span><span>SOURCE</span></header>
       ${instruments.map((item) => { const price = item.last_price ?? item.reference_price; return `<a href="${escapeHtml(item.source_url)}" target="_blank" rel="noreferrer"><span><b>${escapeHtml(item.company_name)}</b><small>${escapeHtml(item.legal_issuer_name || item.issuer_name || "Issuer open")}</small></span><strong>${escapeHtml(item.isin || item.cusip || "Open")}</strong><span>${item.coupon_pct == null ? "Open" : `${item.coupon_pct}%`}<small>${dateLabel(item.maturity_date)} · ${escapeHtml(item.coupon_type || "")}</small></span><span>${price == null ? "Open" : Number(price).toFixed(2)}<small>${item.ytw_pct == null ? escapeHtml(item.price_type || "YTW open") : `${item.ytw_pct}% YTW`}</small></span><em>${escapeHtml(item.source_name || "Verified record")}${icon("external-link", 13)}</em></a>`; }).join("") || `<div class="credit-empty">${icon("shield-check", 24)}<strong>No verified instruments yet</strong><span>Issuer and ISIN/CUSIP evidence is required before a bond enters this table.</span></div>`}
-      ${watch.map((item) => `<a class="credit-watch-row" href="${escapeHtml(item.source_url)}" target="_blank" rel="noreferrer"><span><b>${escapeHtml(item.company_name)}</b><small>${escapeHtml(item.issuer_name || "Issuer open")}</small></span><strong>ISIN pending</strong><span>${item.principal_m ? `${escapeHtml(item.currency)} ${item.principal_m}m` : "Terms open"}<small>${escapeHtml(item.seniority || "Seniority open")}</small></span><span>Unpriced<small>Prospectus required</small></span><em>Announced debt${icon("external-link", 13)}</em></a>`).join("")}
+      ${watch.map((item) => `<a class="credit-watch-row" href="${escapeHtml(item.source_url)}" target="_blank" rel="noreferrer"><span><b>${escapeHtml(item.company_name)}</b><small>${escapeHtml(item.issuer_name || "Issuer open")}</small></span><strong>${escapeHtml(item.identifier_type || "Identifier")} pending</strong><span>${item.principal_m ? `${escapeHtml(item.currency)} ${item.principal_m}m` : "Terms open"}<small>${escapeHtml(item.coupon_type || item.seniority || "Terms open")}</small></span><span>Unpriced<small>${escapeHtml(item.rating || "Market data required")}</small></span><em>Credit watch${icon("external-link", 13)}</em></a>`).join("")}
     </section><aside class="venue-panel"><h3>Market coverage</h3>${state.creditSources.map((source) => {
       const failed = (state.creditSync.errors || []).some((error) => error.name === source.name || error.url === source.url);
       return `<a href="${escapeHtml(source.url)}" target="_blank" rel="noreferrer"><b>${icon(failed ? "triangle-alert" : "landmark", 15)}</b><span><strong>${escapeHtml(source.name)}</strong><small>${escapeHtml(source.identifier || "Identifier open")} · ${escapeHtml((source.price_capability || source.source_type || "directory").replaceAll("_", " "))}</small></span><em class="${failed ? "failed" : ""}">${failed ? "Blocked" : "Monitored"}</em></a>`;
