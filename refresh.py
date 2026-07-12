@@ -192,6 +192,29 @@ def years_since(value: object) -> float | None:
     return round((datetime.now(timezone.utc).date() - entry).days / 365.25, 1)
 
 
+def ensure_hsg_underwriting(row: dict, timing: bool) -> dict:
+    existing = dict(row.get("hsg_underwriting") or {})
+    if existing:
+        return existing
+    return {
+        "decision": "relationship_only",
+        "score": 35,
+        "structure": "Qualify the asset and build sponsor access before selecting an HSG transaction structure",
+        "value_creation_edge": "HSG-specific value creation has not yet been established",
+        "constraints": ["New official portfolio addition has not passed HSG feasibility underwriting"],
+        "estimated_equity_requirement": None,
+        "gates": {
+            "scale_evidenced": False,
+            "sector_or_theme_fit": False,
+            "hsg_value_add": False,
+            "control_path": bool(row.get("sponsor")),
+            "timing": timing,
+            "risk_resolved": True,
+        },
+        "confidence": "low",
+    }
+
+
 def assess_idea(row: dict, related: list[dict]) -> None:
     hold_years = years_since(row.get("entry_date"))
     reset_years = years_since(row.get("ownership_reset_date"))
@@ -240,9 +263,18 @@ def assess_idea(row: dict, related: list[dict]) -> None:
         20 if exit_signal else 15 if mature_hold else 8 if financing_signal or building_hold else 0,
     ))
     row["outreach_readiness"] = min(100, readiness)
+    hsg_underwriting = ensure_hsg_underwriting(row, exit_signal or mature_hold)
+    row["hsg_underwriting"] = hsg_underwriting
+    hsg_decision = str(hsg_underwriting.get("decision", "relationship_only"))
     if row.get("disposition") == "above_band_reference":
         stage = "category_reference"
-    elif row["promote_ready"] and (exit_signal or mature_hold):
+    elif hsg_decision == "pass":
+        stage = "pass"
+    elif hsg_decision == "diligence_only":
+        stage = "diligence_now"
+    elif hsg_decision == "pursue_with_partner" and (exit_signal or mature_hold):
+        stage = "partner_now"
+    elif hsg_decision in {"pursue_solo", "pursue_structured"} and row["promote_ready"] and (exit_signal or mature_hold):
         stage = "contact_now"
     elif mature_hold:
         stage = "diligence_now"
@@ -256,7 +288,13 @@ def assess_idea(row: dict, related: list[dict]) -> None:
         "size": "Establish enterprise or equity value", "quality": "Underwrite business quality",
         "exit_window": "Wait for mature hold or exit signal", "ai_evidence": "Verify AI exposure with primary evidence",
     }
-    row["next_gate"] = next((labels[key] for key in ("owner", "entry", "size", "quality", "exit_window", "ai_evidence") if not gates[key]), "Promotion gates passed")
+    hsg_labels = {
+        "scale_evidenced": "Evidence HSG-sized enterprise value", "sector_or_theme_fit": "Establish HSG sector or AI fit",
+        "hsg_value_add": "Define HSG-specific value creation", "control_path": "Establish a control transaction path",
+        "timing": "Wait for an ownership event", "risk_resolved": "Resolve the principal underwriting risk",
+    }
+    open_hsg_gate = next((hsg_labels[key] for key, passed in (hsg_underwriting.get("gates") or {}).items() if not passed), None)
+    row["next_gate"] = open_hsg_gate or next((labels[key] for key in ("owner", "entry", "size", "quality", "exit_window", "ai_evidence") if not gates[key]), "HSG and promotion gates passed")
     if stage == "category_reference":
         row["next_gate"] = "Above target band; category reference only"
 
@@ -351,7 +389,7 @@ def refresh_idea_queue(payload: dict, signals: list[dict], new_candidates: list[
         assess_idea(row, related)
         qualified_queue.append(row)
     queue = qualified_queue
-    stage_rank = {"contact_now": 0, "diligence_now": 1, "build_relationship": 2, "monitor": 3, "category_reference": 4}
+    stage_rank = {"contact_now": 0, "partner_now": 1, "diligence_now": 2, "build_relationship": 3, "monitor": 4, "category_reference": 5, "pass": 6}
     status_rank = {"research_now": 0, "monitor": 1, "new_official_addition": 2}
     queue.sort(key=lambda item: (stage_rank.get(str(item.get("actionability_stage")), 4), status_rank.get(str(item.get("status")), 3), -int(item.get("triage_score", 0)), str(item.get("company_name", ""))))
     payload["idea_queue"] = queue[:100]
@@ -365,6 +403,7 @@ def refresh_idea_queue(payload: dict, signals: list[dict], new_candidates: list[
         "official_additions_quarantined_count": max(0, len(new_candidates) - admitted_additions),
         "promote_ready_count": sum(1 for item in queue if item.get("promote_ready")),
         "contact_now_count": sum(1 for item in queue if item.get("actionability_stage") == "contact_now"),
+        "partner_now_count": sum(1 for item in queue if item.get("actionability_stage") == "partner_now"),
         "diligence_now_count": sum(1 for item in queue if item.get("actionability_stage") == "diligence_now"),
         "build_relationship_count": sum(1 for item in queue if item.get("actionability_stage") == "build_relationship"),
         "category_reference_count": sum(1 for item in queue if item.get("actionability_stage") == "category_reference"),
