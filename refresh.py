@@ -295,9 +295,17 @@ def refresh_idea_queue(payload: dict, signals: list[dict], new_candidates: list[
     rejected = {re.sub(r"[^a-z0-9]+", "", str(item.get("company_name", "")).casefold()) for item in payload.get("idea_sync", {}).get("rejected_memory", [])}
     target_names = {re.sub(r"[^a-z0-9]+", "", str(item.get("company_name", "")).casefold()) for item in payload.get("targets", [])}
     by_name = {re.sub(r"[^a-z0-9]+", "", str(item.get("company_name", "")).casefold()): item for item in queue}
+    known_aliases = set(by_name)
+    for item in queue:
+        known_aliases.update(re.sub(r"[^a-z0-9]+", "", str(alias).casefold()) for alias in item.get("aliases", []) or [])
+    admitted_additions = 0
     for candidate in new_candidates:
         key = re.sub(r"[^a-z0-9]+", "", str(candidate.get("company_name", "")).casefold())
-        if not key or key in by_name or key in target_names or key in rejected:
+        if not key or key in known_aliases or key in target_names or key in rejected:
+            continue
+        candidate_name = str(candidate.get("company_name", "")).casefold()
+        related = [signal for signal in signals if candidate_name and (str(signal.get("company_name", "")).casefold() == candidate_name or re.search(rf"(?<!\w){re.escape(candidate_name)}(?!\w)", str(signal.get("excerpt", "")).casefold()))]
+        if not related:
             continue
         row = dict(candidate)
         row.update({
@@ -316,11 +324,18 @@ def refresh_idea_queue(payload: dict, signals: list[dict], new_candidates: list[
             "triage_score": 55,
             "promote_ready": False,
         })
+        row["related_signals"] = related[:8]
+        row["signal_count"] = len(related)
         queue.append(row)
         by_name[key] = row
+        known_aliases.add(key)
+        admitted_additions += 1
+    qualified_queue = []
     for row in queue:
         names = [str(row.get("company_name", "")).casefold(), *[str(alias).casefold() for alias in row.get("aliases", []) or []]]
         related = [signal for signal in signals if str(signal.get("company_name", "")).casefold() in names or any(name and name in str(signal.get("excerpt", "")).casefold() for name in names)]
+        if row.get("origin") == "official_portfolio_delta" and not related:
+            continue
         row["related_signals"] = related[:8]
         row["signal_count"] = len(related)
         row["last_reviewed_at"] = now
@@ -330,6 +345,8 @@ def refresh_idea_queue(payload: dict, signals: list[dict], new_candidates: list[
         if related and row.get("status") == "new_official_addition":
             row["status"] = "research_now"
         assess_idea(row, related)
+        qualified_queue.append(row)
+    queue = qualified_queue
     stage_rank = {"contact_now": 0, "diligence_now": 1, "build_relationship": 2, "monitor": 3}
     status_rank = {"research_now": 0, "monitor": 1, "new_official_addition": 2}
     queue.sort(key=lambda item: (stage_rank.get(str(item.get("actionability_stage")), 4), status_rank.get(str(item.get("status")), 3), -int(item.get("triage_score", 0)), str(item.get("company_name", ""))))
@@ -340,6 +357,8 @@ def refresh_idea_queue(payload: dict, signals: list[dict], new_candidates: list[
         "candidate_count": len(queue),
         "research_now_count": sum(1 for item in queue if item.get("status") == "research_now"),
         "new_official_addition_count": sum(1 for item in queue if item.get("status") == "new_official_addition"),
+        "official_additions_admitted_count": admitted_additions,
+        "official_additions_quarantined_count": max(0, len(new_candidates) - admitted_additions),
         "promote_ready_count": sum(1 for item in queue if item.get("promote_ready")),
         "contact_now_count": sum(1 for item in queue if item.get("actionability_stage") == "contact_now"),
         "diligence_now_count": sum(1 for item in queue if item.get("actionability_stage") == "diligence_now"),
